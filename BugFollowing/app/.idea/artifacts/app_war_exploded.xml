@@ -1,0 +1,24 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="app:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/app_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="app/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="app" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/java-jfinal/jfinal-2.2-bin-with-src.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/c3p0/c3p0-0.9.5.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/c3p0/mchange-commons-java-0.2.10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/freemarker/freemarker-2.3.20.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/fastjson/fastjson-1.2.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/mysql/mysql-connector-java-5.1.20-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/log4j/log4j-1.2.16.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/JSTL_for_JSP/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../lib/JSTL_for_JSP/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
