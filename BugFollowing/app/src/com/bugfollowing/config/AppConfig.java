@@ -2,6 +2,7 @@ package com.bugfollowing.config;
 
 
 import com.bugfollowing.model._MappingKit;
+import com.bugfollowing.route.DashboardController;
 import com.bugfollowing.test.TestController;
 import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
@@ -20,7 +21,7 @@ public class AppConfig extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        me.add("/", TestController.class);
+        me.add("/", DashboardController.class, "/Dashboard");
     }
 
     public static C3p0Plugin createC3p0Plugin() {

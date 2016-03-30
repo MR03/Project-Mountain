@@ -26,81 +26,21 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/java-jfinal/jfinal-2.2-bin-with-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/c3p0-0.9.5.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/jfinal-2.2-bin-with-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/mchange-commons-java-0.2.10.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/mysql-connector-java-5.1.20-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../lib/java-jfinal/jfinal-2.2-bin-with-src.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/jfinal-2.2-bin-with-src.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/c3p0/c3p0-0.9.5.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/c3p0/mchange-commons-java-0.2.10.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/freemarker/freemarker-2.3.20.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/mysql/mysql-connector-java-5.1.20-bin.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/log4j/log4j-1.2.16.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/JSTL_for_JSP/javax.servlet.jsp.jstl-1.2.0.v201105211821.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/JSTL_for_JSP/org.apache.taglibs.standard.glassfish-1.2.0.v201112081803.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/fastjson/fastjson-1.2.6.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../lib/all/freemarker-2.3.20.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
