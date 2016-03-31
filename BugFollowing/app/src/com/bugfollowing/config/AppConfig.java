@@ -1,6 +1,7 @@
 package com.bugfollowing.config;
 
 
+import com.bugfollowing.api.AccountsController;
 import com.bugfollowing.model._MappingKit;
 import com.bugfollowing.route.DashboardController;
 import com.bugfollowing.test.TestController;
@@ -21,7 +22,10 @@ public class AppConfig extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        me.add("/", DashboardController.class, "/Dashboard");
+        // 路由
+        me.add("/", DashboardController.class, "/");
+        // API
+        me.add("/api/accounts", AccountsController.class);
     }
 
     public static C3p0Plugin createC3p0Plugin() {

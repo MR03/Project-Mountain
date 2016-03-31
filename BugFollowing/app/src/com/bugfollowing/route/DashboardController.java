@@ -7,6 +7,14 @@ import com.jfinal.core.Controller;
  */
 public class DashboardController extends Controller {
     public void index() {
-        render("index.html");
+        render("dashboard/index.html");
+    }
+
+    public void accounts() {
+        render("accounts/accounts_index.html");
+    }
+
+    public void products() {
+        render("products/index.html");
     }
 }

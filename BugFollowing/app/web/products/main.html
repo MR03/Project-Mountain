@@ -1,0 +1,119 @@
+<section class="container-fluid">
+    <div class="panel panel-default">
+        <div class="ol breadcrumb">
+            <li><i class="fa fa-home"></i></li>
+            <li><span>{{moduleName}}</span></li>
+            <li class="active"><span>{{viewName}}</span></li>
+        </div>
+        <div class="panel-heading">
+            <div class="panel panel-info">
+                <div class="panel-heading"><span>查询筛选</span></div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">表单项</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">表单项</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">表单项</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">表单项</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">表单项</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-9 col-md-offset-2">
+                                <button class="btn btn-primary"><span>开始查询</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <button class="btn btn-primary"><span>新建条目</span></button>
+                    <button class="btn btn-warning"><span>编辑选中</span></button>
+                    <button class="btn btn btn-danger"><span>删除选中</span></button>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox"/>
+                            </th>
+                            <th>用像</th>
+                            <th>用</th>
+                            <th>电箱</th>
+                            <th>话</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="list in data.list">
+                            <td class="table-checkbox">
+                                <input type="checkbox"/>
+                            </td>
+                            <td class="col-70">
+                                <div style="width: 50px;height: 50px">
+                                    <img src="{{list.portrait_image}}" alt="用户头像" class="img-responsive">
+                                </div>
+                            </td>
+                            <td>{{list.account_name}}</td>
+                            <td>{{list.email}}</td>
+                            <td>{{list.tel}}</td>
+                            <td class="table-operationbox">
+                                <button class="btn btn-sm btn-primary"><span>查看</span></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="panel-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-info active">首页</button>
+                            <button class="btn btn-info">上一页</button><span>
+                <button class="btn btn-info">1</button>
+                <button class="btn btn-info">2</button>
+                <button class="btn btn-info">3</button>
+                <button class="btn btn-info">4</button></span>
+                            <button class="btn btn-info">下一页</button>
+                            <button class="btn btn-info">末页</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
