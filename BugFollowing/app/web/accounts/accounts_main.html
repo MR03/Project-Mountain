@@ -48,14 +48,14 @@
                 <div class="panel-heading">
                     <button class="btn btn-primary"><span>新建条目</span></button>
                     <button class="btn btn-warning"><span>编辑选中</span></button>
-                    <button class="btn btn btn-danger"><span>删除选中</span></button>
+                    <button class="btn btn btn-danger" ng-click="deleteSumbit()"><span>删除选中</span></button>
                 </div>
                 <div class="panel-body">
                     <table class="table">
                         <thead>
                         <tr>
                             <th>
-                                <input type="checkbox"/>
+                                <input type="checkbox" ng-checked="save" ng-model="save" ng-init="save = false"/>
                             </th>
                             <th>用户头像</th>
                             <th>用户名</th>
@@ -68,11 +68,11 @@
 
                         <tr ng-repeat="list in data">
                             <td class="table-checkbox">
-                                <input type="checkbox"/>
+                                <input type="checkbox" data-id="{{list.account_id}}" ng-checked="{{'record' + list.account_id}}" ng-model="dfdf" ng-init="save = false"/>
                             </td>
                             <td class="col-70">
                                 <div class="portrait-group">
-                                    <img src="" alt="用户头像" class="img-responsive" data-img="{{list.portrait_image}}">
+                                    <img src="static/img/accounts/user.png" alt="用户头像" class="img-responsive" data-echo="{{list.portrait_image}}">
                                 </div>
                             </td>
                             <td>{{list.account_name}}</td>

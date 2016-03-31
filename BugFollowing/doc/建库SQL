@@ -11,16 +11,14 @@ DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE accounts (
   account_id SERIAL PRIMARY KEY,
   account_name VARCHAR(20),
-  first_name VARCHAR(20),
-  last_name VARCHAR(20),
   email VARCHAR(20),
+  tel VARCHAR(11),
   password_hash CHAR(64),
-  portrait_image BLOB,
-  hourly_rate NUMERIC(9,2)
+  portrait_image VARCHAR(200)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO accounts (account_id, account_name, first_name, last_name, email, password_hash, portrait_image,hourly_rate) 
-VALUES (DEFAULT, 'admin', 'jim','hack', '155@mao.com', '232','','12.54')
+INSERT INTO accounts (account_id, account_name, email, tel, password_hash, portrait_image) 
+VALUES (DEFAULT, 'admin', '155@mao.com', '13112345678', '232','11111')
 
 
 ------------------------------------------------------------------

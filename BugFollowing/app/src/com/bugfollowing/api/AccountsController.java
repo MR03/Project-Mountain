@@ -16,12 +16,12 @@ public class AccountsController extends Controller {
         // 获得姓名
         String name = getPara("name");
         // 获得email
-//        String email = "";
+        String email = getPara("email");
 
         // 获得电话
-//        int tel = getParaToInt("tel");
+        String tel = getPara("tel");
 
-        setAttr("data", Accounts.dao.select(name));
+        setAttr("data", Accounts.dao.select(name, email, tel));
 //        System.out.println(name);
         renderJson(new String[]{"data"});
     }
