@@ -44,4 +44,9 @@ public class Accounts extends Model<Accounts> {
         return sql;
     }
 
+
+    public void getDelete(List<String> list) {
+
+    }
+
 }

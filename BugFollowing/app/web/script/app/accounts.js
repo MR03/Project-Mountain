@@ -30,11 +30,25 @@ app.controller('MainController', function($scope, $http) {
 
     }
 
-    $scope.choose = {
+    $scope.check = false;
 
-    }
+
     $scope.deleteSumbit = function() {
-        alert($scope.save)
+        var params = {};
+        for(var i in  $scope.data) {
+            if($scope.data[i].check) {
+                params[i] = $scope.data[i].account_id;
+            }
+        }
+
+        var url = "/api/accounts/delete?" + "id=" + JSON.stringify(params);
+        console.log(url)
+        $http.get(url)
+            .success(function(response) {
+
+            }
+        );
+
     }
     $http.get("/api/accounts")
         .success(function(response) {

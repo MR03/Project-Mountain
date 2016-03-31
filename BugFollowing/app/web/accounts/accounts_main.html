@@ -68,7 +68,7 @@
 
                         <tr ng-repeat="list in data">
                             <td class="table-checkbox">
-                                <input type="checkbox" data-id="{{list.account_id}}" ng-checked="{{'record' + list.account_id}}" ng-model="dfdf" ng-init="save = false"/>
+                                <input type="checkbox" ng-checked="list.check" ng-model="list.check" ng-init="list.check = false"/>
                             </td>
                             <td class="col-70">
                                 <div class="portrait-group">
