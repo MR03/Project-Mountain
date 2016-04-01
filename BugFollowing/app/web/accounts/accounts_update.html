@@ -9,7 +9,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><span>更新用户</span></div>
                 <div class="panel-body">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" method="post">
                         <div class="form-group">
                             <div class="col-md-2 text-right">
                                 <label class="control-label mr-20">用户名</label>
@@ -53,10 +53,10 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-1 col-md-offset-2">
-                                <button class="btn btn-primary btn-block" ng-click="updateSumbit()">提交</button>
+                                <button class="btn btn-primary btn-block" type="button" ng-click="updateSumbit()">提交</button>
                             </div>
                             <div class="col-md-1 col-md-offset-1">
-                                <button class="btn btn-default btn-block" ng-click="cancel()">取消</button>
+                                <button class="btn btn-default btn-block" type="button" ng-click="cancel()" >取消</button>
                             </div>
                         </div>
                     </form>

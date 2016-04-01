@@ -1,9 +1,13 @@
 package com.bugfollowing.api;
 
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.bugfollowing.model.general.Accounts;
 import com.jfinal.core.Controller;
+import com.jfinal.core.JFinal;
 
+import java.rmi.Naming;
 import java.util.Enumeration;
 import java.util.Map;
 
@@ -40,8 +44,22 @@ public class AccountsController extends Controller {
     }
 
     public void create() {
-        Map<String, String[]> map = getParaMap();
-        System.out.println(map.get("name"));
+        String para = getPara("post");
+        JSONObject paraObject = JSON.parseObject(para);
+        Accounts.create(paraObject);
+    }
+
+    public void one() {
+        String id = getPara("id");
+        setAttr("data", Accounts.dao.findById(id));
+        renderJson(new String[]{"data"});
+        System.out.println(id);
+    }
+
+    public void myupdate() {
+        Integer id = getParaToInt("id");
+        Accounts.dao.myupdate();
+        System.out.println(id);
     }
 
 }

@@ -46,8 +46,7 @@
         <div class="panel-body">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <button class="btn btn-primary" ng-click="updateView()"><span>新建条目</span></button>
-                    <button class="btn btn-warning"><span>编辑选中</span></button>
+                    <button class="btn btn-primary" ng-click="createView()"><span>新建条目</span></button>
                     <button class="btn btn btn-danger" ng-click="deleteSumbit()"><span>删除选中</span></button>
                 </div>
                 <div class="panel-body">
@@ -79,7 +78,7 @@
                             <td>{{list.email}}</td>
                             <td>{{list.tel}}</td>
                             <td class="table-operationbox">
-                                <button class="btn btn-sm btn-primary"><span>查看</span></button>
+                                <button class="btn btn-warning" ng-click="updateView(list.account_id)"><span>编辑该项</span></button>
                             </td>
                         </tr>
                         </tbody>

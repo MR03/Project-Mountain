@@ -1,11 +1,8 @@
 package com.bugfollowing.model.general;
 
+import com.alibaba.fastjson.JSONObject;
+import com.bugfollowing.utils.AES;
 import com.jfinal.plugin.activerecord.*;
-import sun.awt.SunHints;
-import sun.security.ssl.SSLContextImpl;
-
-import javax.sound.midi.Soundbank;
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -44,9 +41,18 @@ public class Accounts extends Model<Accounts> {
         return sql;
     }
 
+    public static void create(JSONObject obj) {
 
-    public void getDelete(List<String> list) {
+        //加密
+        String password = AES.GetAESCode(obj.getString("pwd"));
 
+        // 创建新用户
+        new Accounts().set("account_name", obj.getString("name")).set("email", obj.getString("email")).set("tel", obj.getString("tel")).set("password_hash", password).save();
+    }
+
+    public boolean myupdate() {
+        Accounts.dao.findByIdLoadColumns(18, "*").set("account_name","dfsfsdfsdf").update();
+        return true;
     }
 
 }

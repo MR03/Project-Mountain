@@ -4,19 +4,67 @@
 //定义模块
 var app = angular.module("accounts", ['ngRoute']);
 
+app.config(function($httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+    var param = function(obj) {
+        var query = '', name, value, fullSubName, subName, subValue, innerObj, i;
+
+        for(name in obj) {
+            value = obj[name];
+
+            if(value instanceof Array) {
+                for(i=0; i<value.length; ++i) {
+                    subValue = value[i];
+                    fullSubName = name + '[' + i + ']';
+                    innerObj = {};
+                    innerObj[fullSubName] = subValue;
+                    query += param(innerObj) + '&';
+                }
+            }
+            else if(value instanceof Object) {
+                for(subName in value) {
+                    subValue = value[subName];
+                    fullSubName = name + '[' + subName + ']';
+                    innerObj = {};
+                    innerObj[fullSubName] = subValue;
+                    query += param(innerObj) + '&';
+                }
+            }
+            else if(value !== undefined && value !== null)
+                query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
+        }
+
+        return query.length ? query.substr(0, query.length - 1) : query;
+    };
+    $httpProvider.defaults.transformRequest = [function(data) {
+        return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
+    }];
+});
+
+
 //控制器-tableCtrl
 app.config(['$routeProvider', function($routeProvider) {
+
+
+
     $routeProvider
         .when('/' ,{
             templateUrl: 'accounts/accounts_main.html',
             controller: 'MainController'
         })
+        .when('/create' ,{
+            templateUrl: 'accounts/accounts_update.html',
+            controller: 'CreateController'
+        })
         .when('/update' ,{
             templateUrl: 'accounts/accounts_update.html',
             controller: 'UpdateController'
         })
-}])
+}]);
 app
+    .controller('IndexController', function($scope, $http) {
+        $scope.updateId = {};
+    })
     .controller('MainController', function($scope, $http) {
     $scope.moduleName = "用户管理模块";
     $scope.viewName = "用户列表界面";
@@ -64,7 +112,13 @@ app
     }
 
 
-    $scope.updateView = function() {
+    $scope.createView = function() {
+        window.location = '/accounts/#/create';
+    }
+
+    $scope.updateView = function(i) {
+        $scope.updateId.data = i;
+        console.log($scope.updateId.data)
         window.location = '/accounts/#/update';
     }
 
@@ -78,29 +132,58 @@ app
     getdata();
 
 })
-    .controller('UpdateController', function($scope, $http){
+    .controller('CreateController', function($scope, $http){
         $scope.cancel = function() {
             history.back();
         }
 
 
         $scope.updateSumbit = function() {
+            json = {
+                code: 'create',
+                name: $scope.name,
+                email: $scope.email,
+                tel: $scope.tel,
+                pwd: $scope.pwd
+            };
+            json = JSON.stringify(json);
 
-            $http({
-                method: 'POST',
-                url: '/api/accounts/create',
-                data : {
-                    code: 'create',
-                    name: $scope.name,
-                    email: $scope.email,
-                    tel: $scope.tel,
-                    pwd: $scope.pwd
-                }
-            }).success(function(data) {
+            $http.post('/api/accounts/create',  "post=" + json).success(function(data) {
                 alert('添加成功')
             })
         }
     })
+    .controller('UpdateController', function($scope, $http){
+        var getData = function() {
+            var url = "/api/accounts/one?" + "id=" + $scope.updateId.data;
+            $http.get(url)
+                .success(function(response) {
+                    $scope.id = response.data.account_id;
+                    $scope.name = response.data.account_name;
+                    $scope.email = response.data.email;
+                    $scope.tel = response.data.tel;
+                }
+            );
+        };
+        getData();
+
+        $scope.cancel = function() {
+            history.back();
+        }
+
+        $scope.updateSumbit = function() {
+
+
+            var url = "/api/accounts/myupdate?" + "id=" + $scope.id + "&name=" + $scope.name + "&email=" + $scope.email + "&tel=" + $scope.tel;
+            $http.get(url)
+                .success(function(response) {
+                    alert("修改成功")
+                }
+            );
+
+        }
+    })
+
 //-----------------------------------------------------------------
 // require
 require(['echo'], function(echo) {
