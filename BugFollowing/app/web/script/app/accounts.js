@@ -11,8 +11,13 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'accounts/accounts_main.html',
             controller: 'MainController'
         })
+        .when('/update' ,{
+            templateUrl: 'accounts/accounts_update.html',
+            controller: 'UpdateController'
+        })
 }])
-app.controller('MainController', function($scope, $http) {
+app
+    .controller('MainController', function($scope, $http) {
     $scope.moduleName = "用户管理模块";
     $scope.viewName = "用户列表界面";
     $scope.select = {
@@ -34,30 +39,68 @@ app.controller('MainController', function($scope, $http) {
 
 
     $scope.deleteSumbit = function() {
-        var params = {};
+        var ids = [];
         for(var i in  $scope.data) {
             if($scope.data[i].check) {
-                params[i] = $scope.data[i].account_id;
+                ids.push($scope.data[i].account_id);
             }
         }
+        if(ids.length <= 0){
+            alert("没有选中任何一项!")
+            return;
+        }
 
-        var url = "/api/accounts/delete?" + "id=" + JSON.stringify(params);
-        console.log(url)
-        $http.get(url)
-            .success(function(response) {
-
+        $http({
+            method: 'GET',
+            url: "/api/accounts/delete",
+            params : {
+                code: 'delete',
+                id: ids
             }
-        );
+        }).success(function(data) {
+            getdata();
+        })
 
     }
-    $http.get("/api/accounts")
-        .success(function(response) {
-            $scope.data = response.data.list;
-        }
-    );
+
+
+    $scope.updateView = function() {
+        window.location = '/accounts/#/update';
+    }
+
+    var getdata  = function() {
+        $http.get("/api/accounts")
+            .success(function(response) {
+                $scope.data = response.data.list;
+            }
+        );
+    }
+    getdata();
 
 })
+    .controller('UpdateController', function($scope, $http){
+        $scope.cancel = function() {
+            history.back();
+        }
 
+
+        $scope.updateSumbit = function() {
+
+            $http({
+                method: 'POST',
+                url: '/api/accounts/create',
+                data : {
+                    code: 'create',
+                    name: $scope.name,
+                    email: $scope.email,
+                    tel: $scope.tel,
+                    pwd: $scope.pwd
+                }
+            }).success(function(data) {
+                alert('添加成功')
+            })
+        }
+    })
 //-----------------------------------------------------------------
 // require
 require(['echo'], function(echo) {
