@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="dashboard">
+<head>
+    <meta charset="utf-8">
+    <title>主页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/lib/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/lib/font-awesome.css">
+    <link rel="stylesheet" href="../static/css/app/main.css">
+    <!--前置js-->
+    <script src="script/lib/Angular/angular.js"></script>
+    <script src="script/lib/Angular/angular-route.js"></script>
+    <script src="script/require.js"></script>
+    <script src="script/modules/config.js"></script>
+    <script src="script/admin/dashboard.js"></script>
+</head>
+<body>
+<!--content-->
+<div class="wrapper">
+    <header class="myheader">
+        <div ng-include="'admin/common/header-bar.html'"></div>
+    </header>
+    <section class="mysection">
+        <div id="menu" class="leftpanel">
+            <div ng-include="'admin/common/menu.html'"></div>
+        </div>
+        <div class="mainpanel">
+            <div ng-view></div>
+        </div>
+    </section>
+    <footer class="myfooter">
+        <div ng-include="'admin/common/footer.html'"></div>
+    </footer>
+</div>
+<!-- content end-->
+</body>
+</html>

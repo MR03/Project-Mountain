@@ -1,0 +1,104 @@
+<section class="container-fluid">
+    <div class="panel panel-default">
+        <div class="ol breadcrumb">
+            <li><i class="fa fa-home"></i></li>
+            <li><span>{{moduleName}}</span></li>
+            <li class="active"><span>{{viewName}}</span></li>
+        </div>
+        <div class="panel-heading">
+            <div class="panel panel-info">
+                <div class="panel-heading"><span>查询筛选</span></div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">状态</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">电子邮箱</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.email"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">联系电话</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.tel"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-9 col-md-offset-2">
+                                <button class="btn btn-primary" type="button" ng-click="selectSumbit()"><span>开始查询</span></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <button class="btn btn-primary" ng-click="createView()"><span>新建条目</span></button>
+                    <button class="btn btn btn-danger" ng-click="deleteSumbit()"><span>删除选中</span></button>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" ng-checked="save" ng-model="save" ng-init="save = false"/>
+                            </th>
+                            <th>用户头像</th>
+                            <th>用户名</th>
+                            <th>电子邮箱</th>
+                            <th>联系电话</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr ng-repeat="list in data">
+                            <td class="table-checkbox">
+                                <input type="checkbox" ng-checked="list.check" ng-model="list.check" ng-init="list.check = false"/>
+                            </td>
+                            <td class="col-70">
+                                <div class="portrait-group">
+                                    <img src="static/img/admin_users/user.png" alt="用户头像" class="img-responsive" data-echo="{{list.portrait_image}}">
+                                </div>
+                            </td>
+                            <td>{{list.account_name}}</td>
+                            <td>{{list.email}}</td>
+                            <td>{{list.tel}}</td>
+                            <td class="table-operationbox">
+                                <button class="btn btn-warning" ng-click="updateView(list.account_id)"><span>编辑该项</span></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="panel-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-info active">首页</button>
+                            <button class="btn btn-info">上一页</button>
+                            <span>
+                                <button class="btn btn-info">1</button>
+                                <button class="btn btn-info">2</button>
+                                <button class="btn btn-info">3</button>
+                                <button class="btn btn-info">4</button>
+                            </span>
+                            <button class="btn btn-info">下一页</button>
+                            <button class="btn btn-info">末页</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

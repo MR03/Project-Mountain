@@ -2,7 +2,7 @@
 //-----------------------------------------------------------------
 
 //定义模块
-var app = angular.module("accounts", ['ngRoute']);
+var app = angular.module("users", ['ngRoute']);
 
 app.config(function($httpProvider) {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
@@ -47,23 +47,24 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
         .when('/' ,{
-            templateUrl: 'accounts/accounts_main.html',
+            templateUrl: 'admin/users/users_list.html',
             controller: 'MainController'
         })
-        .when('/create' ,{
-            templateUrl: 'accounts/accounts_update.html',
-            controller: 'CreateController'
-        })
-        .when('/update' ,{
-            templateUrl: 'accounts/accounts_update.html',
-            controller: 'UpdateController'
-        })
+        //.when('/create' ,{
+        //    templateUrl: 'accounts/accounts_update.html',
+        //    controller: 'CreateController'
+        //})
+        //.when('/update' ,{
+        //    templateUrl: 'accounts/accounts_update.html',
+        //    controller: 'UpdateController'
+        //})
 }]);
 app
     .controller('IndexController', function($scope, $http) {
         $scope.updateId = {};
     })
     .controller('MainController', function($scope, $http) {
+
     $scope.moduleName = "用户管理模块";
     $scope.viewName = "用户列表界面";
     $scope.select = {
@@ -78,7 +79,6 @@ app
                 $scope.data = response.data;
             }
         );
-
     }
 
     $scope.check = false;
@@ -121,7 +121,8 @@ app
     }
 
     var getdata  = function() {
-        $http.get("/api/accounts")
+
+        $http.get("/api/users")
             .success(function(response) {
                 $scope.data = response.data.list;
             }
