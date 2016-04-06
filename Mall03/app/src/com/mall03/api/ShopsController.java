@@ -35,7 +35,13 @@ public class ShopsController extends Controller {
 
     // 查询商品信息
     private void getFind() {
+//        获得名称
+        String name = getPara("name");
+        // 获得状态
+        String status = getPara("status");
 
-
+       setAttr("data", Shops.dao.findByParams(name, status));
+//        System.out.println(name);
+        renderJson(new String[]{"data"});
     }
 }

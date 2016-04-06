@@ -7,7 +7,9 @@ import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.mall03.api.ShopsController;
 import com.mall03.api.UsersController;
 import com.mall03.model._MappingKit;
-import com.mall03.route.RouteController;
+import com.mall03.route.MobileController;
+import com.mall03.route.AdminController;
+import com.mall03.route.ShopController;
 
 /**
  * Created by Administrator on 2016/3/5.
@@ -22,9 +24,10 @@ public class AppConfig extends JFinalConfig {
     @Override
     public void configRoute(Routes me) {
         // 路由
-        me.add("/", RouteController.class, "/");
+        me.add("/", ShopController.class, "/");
+        me.add("/admin", AdminController.class, "/");
+        me.add("/mobile", MobileController.class, "/");
         // API
-        // 版本号v1
         me.add("/api/users", UsersController.class);
         me.add("/api/shops", ShopsController.class);
     }

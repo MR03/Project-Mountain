@@ -16,12 +16,11 @@ public class Accounts extends Model<Accounts> {
         return paginate(pageNumber, pageSize, "select *", "from accounts order by account_id asc");
     }
 
-    public List<Accounts> select(String name, String email, String tel) {
+    public List<Accounts> select(String name, String status) {
 //        查询字段和数据合为一个map
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("account_name", name);
-        map.put("email", email);
-        map.put("tel", tel);
+        map.put("email", status);
 
         List<Accounts> accounts = Accounts.dao.find(getSql(map));
         return accounts;

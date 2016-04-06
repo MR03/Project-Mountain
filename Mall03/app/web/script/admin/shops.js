@@ -40,14 +40,14 @@ app
     }
 })
 // 主视图->列表视图->过滤器视图
-.controller('FilterController', function($scope) {
+.controller('FilterController', function($scope, $http) {
     $scope.find = {
         name : '',
         status: '',
         sumbit: function() {
-
             u.log($scope.find.name)
-            var url = "/api/accounts/select?" + "name=" + $scope.select.name + "&email=" + $scope.select.email + "&tel=" + $scope.select.tel;
+            var url = "/api/shops?op=find" + "&name=" + this.name + "&status=" + this.status;
+            u.log(url)
             $http.get(url)
                 .success(function(response) {
                     $scope.data = response.data;

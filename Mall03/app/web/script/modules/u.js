@@ -35,6 +35,10 @@
         console.dir(obj);
     }
 
+    function get() {
+
+    }
+
 
 //---
 })( window );
