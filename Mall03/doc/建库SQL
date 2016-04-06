@@ -2,52 +2,58 @@
 
 CREATE DATABASE mall03;USE mall03;
 
+------------------------------------------------------------------
+表信息:用户表
+类型:普通表
+
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `users_id` SERIAL PRIMARY KEY COMMENT 'ID',
+  `users_id` SERIAL PRIMARY KEY COMMENT '用户ID',
+  `users_name` VARCHAR(20) COMMENT '用户名称',
   `email` VARCHAR(20) NOT NULL COMMENT '注册邮箱',
   `tel` VARCHAR(20) COMMENT '注册电话',
   `password_hash` CHAR(64) NOT NULL COMMENT '密码',
   `salt` VARCHAR(10) NOT NULL COMMENT '密码干扰串',
-  `status` TINYINT(1) NOT NULL COMMENT '状态'
+  `users_status` TINYINT(1) NOT NULL COMMENT '用户状态',
+  `portrait_image` VARCHAR(200) COMMENT '用户头像'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '管理员账号表';
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO users (users_id, users_name, email, tel, password_hash, salt, users_status, portrait_image) 
+VALUES (DEFAULT, 'admin', 'admin@mao.com', '13012345678', 'admin','admin', 1 , 'static/img/admin_users/blog_1.jpg')
 ------------------------------------------------------------------
-表信息:用户表
-类型：普通表
-DROP TABLE IF EXISTS `accounts`;
-CREATE TABLE accounts (
-  account_id SERIAL PRIMARY KEY,
-  account_name VARCHAR(20),
-  email VARCHAR(20),
-  tel VARCHAR(11),
-  password_hash CHAR(64),
-  portrait_image VARCHAR(200)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+表信息:店铺表
+类型:普通表
 
-INSERT INTO accounts (account_id, account_name, email, tel, password_hash, portrait_image) 
-VALUES (DEFAULT, 'admin', '155@mao.com', '13112345678', '232','11111')
+DROP TABLE IF EXISTS `shops`;
+CREATE TABLE `shops` (
+  `shops_id` SERIAL PRIMARY KEY COMMENT '店铺ID',
+  `shops_name` VARCHAR(20) COMMENT '店铺名称',
+  `logo` VARCHAR(255) COMMENT '店铺logo',
+  `description` VARCHAR(500) COMMENT '店铺简介',
+  `province` VARCHAR(30) COMMENT '省',
+  `city` VARCHAR(30) COMMENT '市',
+  `district` VARCHAR(30) COMMENT '区',
+  `address` VARCHAR(255) COMMENT '详细地址',
+  `start` DATE COMMENT '开店时间',
+  `shops_status` TINYINT(1) NOT NULL COMMENT '店铺状态'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '店铺表';
+
+INSERT INTO shops (shops_id, shops_name, logo, description, province, city, district, address, start, shops_status) 
+VALUES (DEFAULT, '测试店铺', 'static/img/admin_users/blog_1.jpg', '这是一个测试店铺', '四川','成都', '武侯区', '高薪大道', '2015-11-15', 1)
+------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ------------------------------------------------------------------

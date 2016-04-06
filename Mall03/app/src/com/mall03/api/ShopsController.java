@@ -1,0 +1,41 @@
+package com.mall03.api;
+
+import com.jfinal.core.Controller;
+import com.mall03.model.general.Shops;
+
+import java.util.Map;
+
+/**
+ * Created by Administrator on 2016/4/6.
+ */
+public class ShopsController extends Controller {
+
+    // API开口
+    public void index() {
+        String op = getPara("op");
+
+        if( op.equals("all") ) {
+            getAll();
+            return;
+        }
+        if( op.equals("find") ) {
+            getFind();
+            return;
+        }
+
+        setAttr("status", "返回结果失败!");
+        renderJson(new String[]{"data"});
+    }
+
+    // 获取全部商品信息
+    private void getAll() {
+        setAttr("data", Shops.dao.paginate(getParaToInt(0, 1), 10));
+        renderJson(new String[]{"data"});
+    }
+
+    // 查询商品信息
+    private void getFind() {
+
+
+    }
+}

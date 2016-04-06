@@ -2,8 +2,9 @@
 //-----------------------------------------------------------------
 
 //定义模块
-var app = angular.module("users", ['ngRoute']);
+var app = angular.module("users", ['ngRoute', 'myApp.services']);
 
+// ajax修改
 app.config(function($httpProvider) {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     var param = function(obj) {
@@ -42,28 +43,33 @@ app.config(function($httpProvider) {
 });
 
 
-//控制器-tableCtrl
+// 路由注册
 app.config(['$routeProvider', function($routeProvider) {
-
     $routeProvider
+        // 列表页路由
         .when('/' ,{
             templateUrl: 'admin/users/users_list.html',
             controller: 'MainController'
         })
-        //.when('/create' ,{
-        //    templateUrl: 'accounts/accounts_update.html',
-        //    controller: 'CreateController'
-        //})
-        //.when('/update' ,{
-        //    templateUrl: 'accounts/accounts_update.html',
-        //    controller: 'UpdateController'
-        //})
+        // 新建页路由
+        .when('/create' ,{
+            templateUrl: 'admin/users/users_update.html',
+            controller: 'CreateController'
+        })
+        // 更新页路由
+        .when('/update' ,{
+            templateUrl: 'admin/users/users_update.html',
+            controller: 'UpdateController'
+        })
 }]);
+// 定义全局变量
+app.constant('headtitle', '店铺管理')
+//控制器
 app
     .controller('IndexController', function($scope, $http) {
         $scope.updateId = {};
     })
-    .controller('MainController', function($scope, $http) {
+    .controller('MainController', function($scope, $http, usersService) {
 
     $scope.moduleName = "用户管理模块";
     $scope.viewName = "用户列表界面";
@@ -82,7 +88,6 @@ app
     }
 
     $scope.check = false;
-
 
     $scope.deleteSumbit = function() {
         var ids = [];
@@ -111,22 +116,19 @@ app
 
 
     $scope.createView = function() {
-        window.location = '/accounts/#/create';
+        window.location = '/users/#/create';
     }
 
     $scope.updateView = function(i) {
         $scope.updateId.data = i;
         console.log($scope.updateId.data)
-        window.location = '/accounts/#/update';
+        window.location = '/users/#/update';
     }
 
     var getdata  = function() {
-
-        $http.get("/api/users")
-            .success(function(response) {
-                $scope.data = response.data.list;
-            }
-        );
+        usersService.usersaAllRequest('/api/users').success(function(response) {
+            $scope.data = response.data.list;
+        })
     }
     getdata();
 
@@ -171,7 +173,6 @@ app
         }
 
         $scope.updateSumbit = function() {
-
 
             var url = "/api/accounts/myupdate?" + "id=" + $scope.id + "&name=" + $scope.name + "&email=" + $scope.email + "&tel=" + $scope.tel;
             $http.get(url)

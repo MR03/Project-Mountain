@@ -1,49 +1,41 @@
 <section class="container-fluid">
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-controller="ListController">
         <div class="ol breadcrumb">
             <li><i class="fa fa-home"></i></li>
-            <li><span>{{moduleName}}</span></li>
-            <li class="active"><span>{{viewName}}</span></li>
+            <li><span>{{breadcrumb.moduleName}}</span></li>
+            <li class="active"><span>{{breadcrumb.viewName}}</span></li>
         </div>
-        <div class="panel-heading">
+        <div class="panel-heading" ng-controller="FilterController">
             <div class="panel panel-info">
                 <div class="panel-heading"><span>查询筛选</span></div>
                 <div class="panel-body">
                     <form class="form-horizontal">
                         <div class="form-group col-md-4">
                             <div class="col-md-2 text-right">
+                                <label class="control-label mr-10">名称</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="查询条件" class="form-control" ng-model="find.name"/>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <div class="col-md-2 text-right">
                                 <label class="control-label mr-10">状态</label>
                             </div>
                             <div class="col-md-9">
-                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.name"/>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class="col-md-2 text-right">
-                                <label class="control-label mr-10">电子邮箱</label>
-                            </div>
-                            <div class="col-md-9">
-                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.email"/>
-                            </div>
-                        </div>
-                        <div class="form-group col-md-4">
-                            <div class="col-md-2 text-right">
-                                <label class="control-label mr-10">联系电话</label>
-                            </div>
-                            <div class="col-md-9">
-                                <input type="text" placeholder="查询条件" class="form-control" ng-model="select.tel"/>
+                                <input type="text" placeholder="查询条件" class="form-control" ng-model="find.status"/>
                             </div>
                         </div>
                         <div class="form-group col-md-4">
                             <div class="col-md-9 col-md-offset-2">
-                                <button class="btn btn-primary" type="button" ng-click="selectSumbit()"><span>开始查询</span></button>
+                                <button class="btn btn-primary" type="button" ng-click="find.sumbit()"><span>开始查询</span></button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-        <div class="panel-body">
+        <div class="panel-body" ng-controller="TableController">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <button class="btn btn-primary" ng-click="createView()"><span>新建条目</span></button>
@@ -57,10 +49,11 @@
                             <th>
                                 <input type="checkbox" ng-checked="save" ng-model="save" ng-init="save = false"/>
                             </th>
-                            <th>用户头像</th>
-                            <th>用户名</th>
-                            <th>电子邮箱</th>
-                            <th>联系电话</th>
+                            <th>序号</th>
+                            <th>店铺名称</th>
+                            <th>logo</th>
+                            <th>店铺地址</th>
+                            <th>开店时间</th>
                             <th>状态</th>
                         </tr>
                         </thead>
@@ -70,15 +63,16 @@
                             <td class="table-checkbox">
                                 <input type="checkbox" ng-checked="list.check" ng-model="list.check" ng-init="list.check = false"/>
                             </td>
+                            <td class="col-50">1</td>
+                            <td>{{list.shops_name}}</td>
                             <td class="col-70">
                                 <div class="portrait-group">
-                                    <img src="static/img/admin_users/user.png" alt="用户头像" class="img-responsive" data-echo="{{list.portrait_image}}">
+                                    <img src="static/img/admin_users/user.png" alt="用户头像" class="img-responsive" data-echo="{{list.logo}}">
                                 </div>
                             </td>
-                            <td>{{list.users_name}}</td>
-                            <td>{{list.email}}</td>
-                            <td>{{list.tel}}</td>
-                            <td ng-if="list.users_status == 1">启用</td><td ng-if="list.users_status == 0" class="text-danger">停用</td>
+                            <td>{{list.province}}-{{list.city}}-{{list.district}}-{{list.address}}</td>
+                            <td>{{list.start}}</td>
+                            <td ng-if="list.shops_status == 1">启用</td><td ng-if="list.shops_status == 0" class="text-danger">停用</td>
                         </tr>
                         </tbody>
                     </table>

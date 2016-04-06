@@ -1,6 +1,7 @@
 package com.mall03.model;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.mall03.model.general.Shops;
 import com.mall03.model.general.Users;
 
 /**
@@ -18,6 +19,7 @@ public class _MappingKit {
 
 	public static void mapping(ActiveRecordPlugin arp) {
 		arp.addMapping("users", "users_id", Users.class);
+		arp.addMapping("shops", "shops_id", Shops.class);
 	}
 }
 

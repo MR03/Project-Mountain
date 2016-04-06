@@ -15,4 +15,8 @@ public class RouteController extends Controller {
         render("admin/users/users_index.html");
     }
 
+    public void shops() {
+        render("admin/shops/shops_index.html");
+    }
+
 }

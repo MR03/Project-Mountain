@@ -15,7 +15,7 @@ public class Users extends Model<Users> {
     public static final Users dao = new Users();
 
     public Page<Users> paginate(int pageNumber, int pageSize) {
-        return paginate(pageNumber, pageSize, "select *", "from accounts order by account_id asc");
+        return paginate(pageNumber, pageSize, "select *", "from users order by users_id asc");
     }
 
     public List<Users> select(String name, String email, String tel) {

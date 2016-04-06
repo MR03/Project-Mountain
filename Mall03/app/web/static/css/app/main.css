@@ -1,4 +1,20 @@
 @charset "UTF-8";
+
+table tbody tr:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.col-50 {
+  width: 50px;
+}
+.col-70 {
+  width: 70px;
+}
+.portrait-group {
+  width: 50px;
+  height: 50px
+}
+
 /* 工具类 */
 input, button {
   outline: none !important; }

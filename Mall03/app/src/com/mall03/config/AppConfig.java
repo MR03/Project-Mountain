@@ -4,6 +4,7 @@ import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.mall03.api.ShopsController;
 import com.mall03.api.UsersController;
 import com.mall03.model._MappingKit;
 import com.mall03.route.RouteController;
@@ -23,7 +24,9 @@ public class AppConfig extends JFinalConfig {
         // 路由
         me.add("/", RouteController.class, "/");
         // API
+        // 版本号v1
         me.add("/api/users", UsersController.class);
+        me.add("/api/shops", ShopsController.class);
     }
 
     public static C3p0Plugin createC3p0Plugin() {
