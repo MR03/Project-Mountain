@@ -34,3 +34,4 @@ node_modules
 
 /BugFollowing/app/out/*
 /Mall03/app/out/*
+/Mall03/front-mobile/node_modules/*

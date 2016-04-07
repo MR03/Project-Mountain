@@ -1,0 +1,6 @@
+
+<script type="text/template" id="produceBoxTpl"><% _.each(obj, function(e){ %>
+  <div class="col-xs-6 padding-1"><a href="WEB-INF/front/mall/produce/produce_detail.html" class="box-produce"><img src="static/img/demo/blank.gif" data-echo="static/img/demo/banner01.jpg" class="img-1"/>
+      <h4><%=e.name%></h4><span><%=e.price%></span>
+      <s><%=e.pcs%></s></a></div><% }); %>
+</script>
