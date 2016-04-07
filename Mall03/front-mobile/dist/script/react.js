@@ -1,7 +1,7 @@
 var Goods = React.createClass({
     render: function() {
         return <div className="col goods-wrap">
-            <div className="goods-group"><img src="../../static/img/banner01.jpg" /></div>
+            <div className="goods-group"><img src="../static/img/banner01.jpg" /></div>
             <div>
                 <h6>测试商品</h6>
                 <h5>dfdf</h5>
@@ -11,4 +11,5 @@ var Goods = React.createClass({
     }
 });
 
-ReactDOM.render(<Goods />, document.getElementById('example'));
+ReactDOM.render(<Goods />, document.getElementById('e1'));
+ReactDOM.render(<Goods />, document.getElementById('e2'));

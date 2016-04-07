@@ -25,19 +25,18 @@ var BP = {
         src: 'dist/script/**/*.js'
     },
     sass: {
-        src: 'source/scss/**/*.scss',
+        src: 'dist/sass/**/*.scss',
         dist: 'dist/static/css',
     }
 };
 //默认任务,开发监听
-gulp.task('default',['jade', 'sass'],function() {
+gulp.task('default',['sass'],function() {
     browserSync.init({
         server: {
             baseDir: BP.html.baseDir
         }
     });
-    //jade
-    gulp.watch(BP.jade.src,['jade']);
+
     //sass
     gulp.watch(BP.sass.src,['sass']);
     //page change
