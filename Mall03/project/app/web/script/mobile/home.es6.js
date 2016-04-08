@@ -1,9 +1,22 @@
 'use strict';
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+// angular
+//-----------------------------------------------------------------
 
-var pont = function pont(x, y) {
-    _classCallCheck(this, pont);
+var app = angular.module("home", ['ngRoute']);
 
-    this.x = y;
-};
+// 路由注册
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider
+    // 列表页路由
+    .when('/', {
+        //templateUrl: 'admin/shops/shops_list.html',
+        //controller: 'ViewController'
+    });
+}]);
+//控制器
+app.controller('NavController', function ($scope) {
+    $scope.snap = function () {
+        alert("跳转至抢购页面");
+    };
+});

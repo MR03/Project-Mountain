@@ -86,3 +86,10 @@ body {
 
 .goods-wrap-info .price {
   color: #e21d1d; }
+
+.shop-banner-wrap img {
+  width: 16rem;
+  height: 5rem; }
+
+.shop-banner-wrap {
+  margin-top: .2rem; }

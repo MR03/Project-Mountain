@@ -114,7 +114,6 @@ app
 
     }
 
-
     $scope.createView = function() {
         window.location = '/users/#/create';
     }

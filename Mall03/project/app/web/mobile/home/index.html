@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" ng-app="home">
 <head>
-    <!--<#include "/mobile/common/mobile-head.html" />-->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -56,8 +55,8 @@
         <div class="banner">
             <img src="/static/img/mobile_home/banner01.jpg" />
         </div>
-        <div class="row nav-group">
-            <div class="col nav">
+        <div class="row nav-group" ng-controller="NavController">
+            <div class="col nav" ng-click="snap()">
                 <i class="fa fa-bus"></i>
                 <h6>下班抢</h6>
             </div>
@@ -102,6 +101,20 @@
                 <img src="/static/img/mobile_home/ad.jpg" />
             </a>
             <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+        </div>
+        <div class="row">
+            <h1 class="goods-group-title">名商家</h1>
+        </div>
+        <div class="row shop-banner-group">
+            <a class="col shop-banner-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col shop-banner-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col shop-banner-wrap">
                 <img src="/static/img/mobile_home/ad.jpg" />
             </a>
         </div>
