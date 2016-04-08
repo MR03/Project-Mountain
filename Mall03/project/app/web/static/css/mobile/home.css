@@ -1,0 +1,88 @@
+body {
+  background: #eeeeee; }
+
+.bar-search {
+  height: 2rem;
+  width: 16rem;
+  background: #fabc09;
+  position: fixed;
+  top: 0;
+  z-index: 1000; }
+
+.bar-search > .fa {
+  font-size: 1rem;
+  color: #333333;
+  margin: .5rem .5rem; }
+
+.bar-search-box {
+  width: 12rem; }
+
+.bar-search-box .search {
+  display: block;
+  height: 1.4rem;
+  line-height: 1.4rem;
+  margin: .3rem 0;
+  padding: 0 1rem;
+  color: #999;
+  font-size: .7rem;
+  background: rgba(255, 255, 255, 0.8);
+  overflow: hidden; }
+
+.banner img {
+  width: 16rem;
+  height: 7rem; }
+
+.nav-group {
+  margin: .5rem 0;
+  padding-top: .5rem;
+  background: #ffffff; }
+
+.nav {
+  width: 3.2rem;
+  height: 3.2rem;
+  text-align: center; }
+
+.nav .fa {
+  font-size: 2rem;
+  color: #d4d4d4; }
+
+.nav h6 {
+  line-height: 1rem; }
+
+.ad-wrap {
+  line-height: 0;
+  margin: .05rem .05rem .05rem .05rem; }
+
+.ad-wrap img {
+  width: 3.9rem;
+  height: 7rem; }
+
+.ad-line {
+  width: 1px;
+  height: 7rem;
+  float: left; }
+
+.goods-group-title {
+  margin-top: .5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  font-size: .8rem;
+  border-bottom: 1px solid #dcdcdc; }
+
+.goods-wrap {
+  width: 7.4rem;
+  margin: .4rem 0 .4rem .4rem;
+  background: #ffffff; }
+
+.goods-wrap-img img {
+  width: 7.4rem;
+  height: 7rem; }
+
+.goods-wrap-info {
+  padding: .2rem; }
+
+.goods-wrap-info .title {
+  padding: .2rem 0; }
+
+.goods-wrap-info .price {
+  color: #e21d1d; }

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<#include "/mobile/common/mobile-head.html" />-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0">
+    <!--前置js-->
+    <script src="/script/modules/u.js"></script>
+    <script src="/script/lib/Angular/angular.js"></script>
+    <script src="/script/lib/Angular/angular-route.js"></script>
+    <script src="/script/require.js"></script>
+    <script src="/script/modules/config.js"></script>
+    <script>
+        // rem布局自动计算font-size
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <link rel="stylesheet" href="/static/css/lib/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/mobile/common.css">
+    <title>移动端首页</title>
+    <link rel="stylesheet" href="/static/css/mobile/home.css">
+    <script src="/script/mobile/home.es6.js"></script>
+</head>
+<body>
+<!--content-->
+<div class="container">
+    <header class="row bar-search">
+        <i class="col fa fa-list"></i>
+        <div class="col bar-search-box">
+            <a class="search">
+                <i class="fa fa-search"></i>
+                <span>超级手机节</span>
+            </a>
+        </div>
+        <i class="col fa fa-shopping-cart"></i>
+    </header>
+    <section class="row view-1">
+        <div class="banner">
+            <img src="/static/img/mobile_home/banner01.jpg" />
+        </div>
+        <div class="row nav-group">
+            <div class="col nav">
+                <i class="fa fa-bus"></i>
+                <h6>下班抢</h6>
+            </div>
+            <div class="col nav">
+                <i class="fa fa-user"></i>
+                <h6>我的易购</h6>
+            </div>
+            <div class="col nav">
+                <i class="fa fa-bank"></i>
+                <h6>金融</h6>
+            </div>
+            <div class="col nav">
+                <i class="fa fa-plane"></i>
+                <h6>海外购</h6>
+            </div>
+            <div class="col nav">
+                <i class="fa fa-cloud-download"></i>
+                <h6>客户端</h6>
+            </div>
+        </div>
+        <div class="row ad-group">
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <!--<div class="ad-line"></div>-->
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+            <a class="col ad-wrap">
+                <img src="/static/img/mobile_home/ad.jpg" />
+            </a>
+        </div>
+        <div class="row">
+            <h1 class="goods-group-title">热卖商品</h1>
+        </div>
+        <div class="row goods-group">
+            <a class="col goods-wrap">
+                <div class="goods-wrap-img">
+                    <img src="/static/img/mobile_home/produce01.jpg"/>
+                </div>
+                <div class="goods-wrap-info">
+                    <h6 class="title line-clamp-2">【苏宁自营】丽得姿 美帝优超强补水面膜（10片装）</h6>
+                    <h5 class="price">￥34.50</h5>
+                </div>
+            </a>
+            <a class="col goods-wrap">
+                <div class="goods-wrap-img">
+                    <img src="/static/img/mobile_home/produce01.jpg"/>
+                </div>
+                <div class="goods-wrap-info">
+                    <h6 class="title line-clamp-2">【苏宁自营】丽得姿 美帝优超强补水面膜（10片装）</h6>
+                    <h5 class="price">￥34.50</h5>
+                </div>
+            </a>
+        </div>
+    </section>
+    <footer></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.container {
+  width: 16rem;
+  margin-right: auto;
+  margin-left: auto;
+  @include clearfix;
+}
+
+.row {
+  width: 16rem;
+  position: relative;
+  @include clearfix;
+}
+
+.col {
+  display: block;
+  position: relative;
+  min-height: 1px;
+  float: left;
+}
+
+//margin&padding
+
+.margin-1 {
+  margin: .3rem 0 .3rem .4rem;
+}
+
+
+// text
+
+.line-clamp-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+//layout
+
+.view-1 {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
