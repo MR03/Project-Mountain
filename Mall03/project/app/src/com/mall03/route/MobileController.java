@@ -11,4 +11,8 @@ public class MobileController extends Controller {
         render("mobile/home/index.html");
     }
 
+    public void shop() {
+        render("mobile/shop/index.html");
+    }
+
 }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="shop">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="wap-font-scale" content="no">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0">
+    <!--前置js-->
+    <script src="/script/modules/u.js"></script>
+    <script src="/script/lib/Angular/angular.js"></script>
+    <script src="/script/lib/Angular/angular-route.js"></script>
+    <script src="/script/require.js"></script>
+    <script src="/script/modules/config.js"></script>
+    <script>
+        // rem布局自动计算font-size
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+                    };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+
+    </script>
+    <link rel="stylesheet" href="/static/css/lib/font-awesome.css">
+    <link rel="stylesheet" href="/static/css/mobile/common.css">
+    <title>移动端首页</title>
+    <link rel="stylesheet" href="/static/css/mobile/home.css">
+    <script src="/script/mobile/shop.es6.js"></script>
+</head>
+<body>
+<!--content-->
+<div class="container" ng-controller="NavController">
+    {{shopid}}
+    我是商店界面111
+</div>
+</body>
+</html>
