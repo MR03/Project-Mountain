@@ -4,13 +4,13 @@ require.config({
         'jquery': '/script/lib/jquery/jquery-2.0.3',
         'bootstrap': '/script/lib/bootstrap/bootstrap',
         'echo': '/script/lib/echo/echo',
-        // 一定要这么写,AMD规范
-        //'jquery.validate': '../plugin/validate/jquery.validate',
-        //'validateHelp': '../plugin/validate/additional-methods',
+        'swiper': '/script/lib/swiper/swiper'
     },
     shim: {
         'bootstrap': {
-            exports: "$",
+            deps: ['jquery']
+        },
+        'swiper': {
             deps: ['jquery']
         }
     }

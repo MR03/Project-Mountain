@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="home">
+<head>
+    <#include "/admin/common/head.html" />
+    <!--angular-->
+    <script src="script/admin/home.js"></script>
+</head>
+<body>
+<!--content-->
+<div class="wrapper">
+    <header class="myheader">
+        <div ng-include="'admin/common/header-bar.html'"></div>
+    </header>
+    <section class="mysection">
+        <div id="menu" class="leftpanel">
+            <div ng-include="'admin/common/menu.html'"></div>
+        </div>
+        <div class="mainpanel">
+            <section class="container-fluid">
+                <div class="panel panel-default">
+                    <div class="ol breadcrumb">
+                        <li><i class="fa fa-home"></i></li>
+                        <li><span>{{breadcrumb.moduleName}}</span></li>
+                        <li class="active"><span>{{breadcrumb.viewName}}</span></li>
+                    </div>
+                    <div class="panel-heading">
+                        <button class="btn btn-primary" ng-click=""><span>首页banner管理</span></button>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-view></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </section>
+    <footer class="myfooter">
+        <div ng-include="'admin/common/footer.html'"></div>
+    </footer>
+</div>
+<!-- content end-->
+</body>
+</html>

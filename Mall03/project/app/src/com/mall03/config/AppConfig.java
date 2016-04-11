@@ -5,6 +5,7 @@ import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 import com.mall03.api.ShopsAdminController;
+import com.mall03.api.ShopsMobileController;
 import com.mall03.api.UsersController;
 import com.mall03.model._MappingKit;
 import com.mall03.route.MobileController;
@@ -27,9 +28,12 @@ public class AppConfig extends JFinalConfig {
         me.add("/", ShopController.class, "/");
         me.add("/admin", AdminController.class, "/");
         me.add("/mobile", MobileController.class, "/");
-        // API
+        // 后台API
         me.add("/api/users", UsersController.class);
         me.add("/api/shops", ShopsAdminController.class);
+        // 移动端API
+        me.add("/api/mobile/shops", ShopsMobileController.class);
+        // PC端API
     }
 
     public static C3p0Plugin createC3p0Plugin() {

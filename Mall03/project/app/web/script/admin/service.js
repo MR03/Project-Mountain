@@ -1,11 +1,10 @@
-angular.module('myApp.services', [])
-.factory('usersService', function($http) {
+angular.module('myApp.services', []).factory('usersService', function ($http) {
 
-        var usersaAllRequest = function(url) {
-            return $http.get(url);
-        }
+    var usersaAllRequest = function (url) {
+        return $http.get(url);
+    };
 
-        return {
-            usersaAllRequest: usersaAllRequest
-        };
+    return {
+        usersaAllRequest: usersaAllRequest
+    };
 });
