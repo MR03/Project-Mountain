@@ -16,7 +16,7 @@
             <div ng-include="'admin/common/menu.html'"></div>
         </div>
         <div class="mainpanel">
-            <section class="container-fluid">
+            <section class="container-fluid" ng-controller="MainController">
                 <div class="panel panel-default">
                     <div class="ol breadcrumb">
                         <li><i class="fa fa-home"></i></li>
@@ -24,14 +24,13 @@
                         <li class="active"><span>{{breadcrumb.viewName}}</span></li>
                     </div>
                     <div class="panel-heading">
-                        <button class="btn btn-primary" ng-click=""><span>首页banner管理</span></button>
+                        <button class="btn btn-primary" ng-click="HomeBanner()"><span>首页banner管理</span></button>
                     </div>
                     <div class="panel-body">
                         <div ng-view></div>
                     </div>
                 </div>
             </section>
-
         </div>
     </section>
     <footer class="myfooter">

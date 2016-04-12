@@ -1,3 +1,5 @@
+'use strict';
+
 // angular
 //-----------------------------------------------------------------
 
@@ -7,7 +9,7 @@ var app = angular.module("users", ['ngRoute', 'myApp.services']);
 // ajax修改
 app.config(function ($httpProvider) {
     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-    var param = function (obj) {
+    var param = function param(obj) {
         var query = '',
             name,
             value,
@@ -122,7 +124,7 @@ app.controller('IndexController', function ($scope, $http) {
         window.location = '/users/#/update';
     };
 
-    var getdata = function () {
+    var getdata = function getdata() {
         usersService.usersaAllRequest('/api/users').success(function (response) {
             $scope.data = response.data.list;
         });
@@ -148,7 +150,7 @@ app.controller('IndexController', function ($scope, $http) {
         });
     };
 }).controller('UpdateController', function ($scope, $http) {
-    var getData = function () {
+    var getData = function getData() {
         var url = "/api/accounts/one?" + "id=" + $scope.updateId.data;
         $http.get(url).success(function (response) {
             $scope.id = response.data.account_id;

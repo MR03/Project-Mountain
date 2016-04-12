@@ -1,0 +1,56 @@
+<div class="panel panel-default" ng-controller="BannerController">
+    <div class="panel-heading">
+        <button class="btn btn-primary" ng-click="createView()"><span>新建条目</span></button>
+        <button class="btn btn btn-danger" ng-click="deleteSumbit()"><span>删除选中</span></button>
+    </div>
+    <h6>双击编辑选中项目</h6>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" ng-checked="save" ng-model="save" ng-init="save = false"/>
+                </th>
+                <th>序号</th>
+                <th>店铺名称</th>
+                <th>logo</th>
+                <th>店铺地址</th>
+                <th>开店时间</th>
+                <th>状态</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="list in data" ng-dblclick="updateView(list.account_id)">
+                <td class="table-checkbox">
+                    <input type="checkbox" ng-checked="list.check" ng-model="list.check" ng-init="list.check = false"/>
+                </td>
+                <td class="col-50">1</td>
+                <td>{{list.shops_name}}</td>
+                <td class="col-70">
+                    <div class="portrait-group">
+                        <img src="/static/img/admin_users/user.png" alt="用户头像" class="img-responsive" data-echo="{{list.logo}}">
+                    </div>
+                </td>
+                <td>{{list.province}}-{{list.city}}-{{list.district}}-{{list.address}}</td>
+                <td>{{list.start}}</td>
+                <td ng-if="list.shops_status == 1">启用</td><td ng-if="list.shops_status == 0" class="text-danger">停用</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="panel-footer">
+            <div class="pull-right">
+                <button class="btn btn-info active">首页</button>
+                <button class="btn btn-info">上一页</button>
+                            <span>
+                                <button class="btn btn-info">1</button>
+                                <button class="btn btn-info">2</button>
+                                <button class="btn btn-info">3</button>
+                                <button class="btn btn-info">4</button>
+                            </span>
+                <button class="btn btn-info">下一页</button>
+                <button class="btn btn-info">末页</button>
+            </div>
+        </div>
+    </div>
+</div>

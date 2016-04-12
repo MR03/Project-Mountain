@@ -4,9 +4,7 @@ import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
-import com.mall03.api.ShopsAdminController;
-import com.mall03.api.ShopsMobileController;
-import com.mall03.api.UsersController;
+import com.mall03.api.*;
 import com.mall03.model._MappingKit;
 import com.mall03.route.MobileController;
 import com.mall03.route.AdminController;
@@ -29,10 +27,12 @@ public class AppConfig extends JFinalConfig {
         me.add("/admin", AdminController.class, "/");
         me.add("/mobile", MobileController.class, "/");
         // 后台API
-        me.add("/api/users", UsersController.class);
+        me.add("/api/home", HomeAdminController.class);
+        me.add("/api/users", UsersAdminController.class);
         me.add("/api/shops", ShopsAdminController.class);
         // 移动端API
         me.add("/api/mobile/shops", ShopsMobileController.class);
+        me.add("/api/mobile/home", HomeMobileController.class);
         // PC端API
     }
 

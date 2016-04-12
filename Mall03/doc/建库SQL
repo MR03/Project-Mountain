@@ -59,10 +59,26 @@ INSERT INTO goods (goods_id, goods_name, showimg, goods_status, oldprice, nowpri
 VALUES (DEFAULT, '测试商品', 'static/img/admin_users/blog_1.jpg', 1, 478.00, 896.00)
 
 ------------------------------------------------------------------
-DROP TABLE IF EXISTS `bugstatus`;
-CREATE TABLE bugstatus (
-  status VARCHAR(20) PRIMARY KEY
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+表信息: 广告表
+类型: 普通表
+DROP TABLE IF EXISTS `advs`;
+CREATE TABLE `advs` (
+  `advs_id` SERIAL PRIMARY KEY COMMENT '广告ID',
+  `advs_name` VARCHAR(20) COMMENT '广告名称',
+  `img_src` VARCHAR(100) COMMENT '广告图片',
+  `link` VARCHAR(200) COMMENT '广告链接',
+  `advs_status` TINYINT(1) NOT NULL COMMENT '广告状态',
+  `advs_type` TINYINT(1) COMMENT '广告类型'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '广告表';
+
+ALTER table advs add `link` VARCHAR(200) COMMENT '广告链接'
+
+INSERT INTO advs (advs_id, advs_name, img_src, link, advs_status, advs_type) 
+VALUES (DEFAULT, '推广广告', 'static/img/admin_users/blog_1.jpg', 'https://www.baidu.com/',  1, 2)
+
+类型1: banner广告
+类型2: 推广广告
+
 ------------------------------------------------------------------
 DROP TABLE IF EXISTS `bugs`;
 CREATE TABLE bugs (

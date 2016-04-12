@@ -1,6 +1,8 @@
+'use strict';
+
 angular.module('myApp.services', []).factory('usersService', function ($http) {
 
-    var usersaAllRequest = function (url) {
+    var usersaAllRequest = function usersaAllRequest(url) {
         return $http.get(url);
     };
 

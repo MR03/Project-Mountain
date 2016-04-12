@@ -1,6 +1,8 @@
 package com.mall03.model;
 
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
+import com.mall03.model.general.Advs;
+import com.mall03.model.general.Goods;
 import com.mall03.model.general.Shops;
 import com.mall03.model.general.Users;
 import com.mall03.model.mobile.ShopsMobile;
@@ -22,6 +24,8 @@ public class _MappingKit {
 		arp.addMapping("users", "users_id", Users.class);
 		arp.addMapping("shops", "shops_id", Shops.class);
 		arp.addMapping("shops", "shops_id", ShopsMobile.class);
+		arp.addMapping("advs",  "advs_id", Advs.class);
+		arp.addMapping("goods", "gddos_id", Goods.class);
 	}
 }
 

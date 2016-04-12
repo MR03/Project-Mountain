@@ -1,3 +1,4 @@
+'use strict';
 
 // angular
 //-----------------------------------------------------------------
@@ -44,7 +45,7 @@ app
     $scope.find = {
         name: '',
         status: '',
-        sumbit: function () {
+        sumbit: function sumbit() {
             u.log($scope.find.name);
             var url = "/api/shops?op=find" + "&name=" + this.name + "&status=" + this.status;
             u.log(url);

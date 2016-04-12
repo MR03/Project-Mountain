@@ -37,7 +37,7 @@
     <title>移动端首页</title>
     <link rel="stylesheet" href="/static/css/lib/swiper-3.3.1.min.css">
     <link rel="stylesheet" href="/static/css/mobile/home.css">
-    <script src="/script/mobile/home.es6.js"></script>
+    <script src="/script/mobile/home.js"></script>
 </head>
 <body>
 <!--content-->
@@ -52,25 +52,19 @@
         </div>
         <i class="col fa fa-shopping-cart"></i>
     </header>
-    <section class="row view-1">
+    <section class="row view-1" ng-controller="MainController">
         <div class="banner swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img src="/static/img/mobile_home/banner01.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="/static/img/mobile_home/banner02.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="/static/img/mobile_home/banner03.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="/static/img/mobile_home/banner04.jpg" />
+                <div class="swiper-slide" ng-repeat="list in data.topBanner">
+                    <a href="{{list.link}}">
+                        <img ng-src="{{list.img_src}}" />
+                    </a>
+
                 </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="row nav-group" ng-controller="NavController">
+        <div class="row nav-group">
             <div class="col nav" ng-click="snap()">
                 <i class="fa fa-bus"></i>
                 <h6>下班抢</h6>
@@ -93,30 +87,8 @@
             </div>
         </div>
         <div class="row ad-group">
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <!--<div class="ad-line"></div>-->
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
-            </a>
-            <a class="col ad-wrap">
-                <img src="/static/img/mobile_home/ad.jpg" />
+            <a class="col ad-wrap" ng-repeat="list in data.navBanner" href="{{list.link}}">
+                <img ng-src="{{list.img_src}}" />
             </a>
         </div>
         <div class="row">

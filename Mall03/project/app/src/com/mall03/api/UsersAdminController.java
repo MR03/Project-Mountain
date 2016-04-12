@@ -11,7 +11,7 @@ import com.mall03.model.general.Users;
 /**
  * Created by Administrator on 2016/3/31.
  */
-public class UsersController extends Controller {
+public class UsersAdminController extends Controller {
     public void index() {
         setAttr("data", Users.dao.paginate(getParaToInt(0, 1), 10));
         renderJson(new String[]{"data"});

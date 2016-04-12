@@ -2,7 +2,6 @@
 
 // angular
 //-----------------------------------------------------------------
-
 var app = angular.module("home", ['ngRoute']);
 
 // 路由注册
@@ -15,7 +14,17 @@ app.config(['$routeProvider', function ($routeProvider) {
     });
 }]);
 //控制器
-app.controller('NavController', function ($scope) {
+app.controller('MainController', function ($scope, $http) {
+    var requestData = {
+        op: "all",
+        size: 4
+    };
+
+    var url = "/api/mobile/home?req=" + JSON.stringify(requestData);
+    $http.get(url).success(function (response) {
+        $scope.data = response;
+    });
+
     $scope.snap = function () {
         alert("跳转至抢购页面");
     };
