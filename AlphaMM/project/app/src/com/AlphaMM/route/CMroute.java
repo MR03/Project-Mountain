@@ -8,6 +8,6 @@ import com.jfinal.core.Controller;
 public class CMroute extends Controller {
 
     public void index() {
-        render("customer-mobile/home/v1/home_index.html");
+        render("page/customer-mobile/home/v1/home_index.html");
     }
 }

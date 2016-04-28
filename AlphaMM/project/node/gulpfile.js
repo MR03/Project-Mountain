@@ -17,47 +17,37 @@ var gulp = require('gulp'),
     // 文件排除
     gulpFilter = require('gulp-filter');
 
-    // 浏览器自动刷新
-var browserSync = require('browser-sync').create(),
-    reload = browserSync.reload;
-
     // 基础参数, BP = Basic Params
 var BP = {
-    html: {
-        baseDir: '../app/web',                                              //根路径
-        src: '../app/web/mobile/**/*.html'                         //监听文件,在某些情况下,browser-sync刷新有点问题
-    },
-    css: {
-        src: '../app/web/static/css/**/*.css'          //输出目录全部文件
-    },
-    js: {
-        src: '../app/web/script/**/*.js'
+    jade: {
+        src: './page/****/***/**/*.jade',                                //sass文件
+        dist: '../app/web/page/'            //输出目录
     },
     sass: {
-        src: './sass/**/*.scss',                                //sass文件
+        src: './scss/****/***/**/*.scss',                                //sass文件
         dist: '../app/web/static/css/'            //输出目录
     },
-    script: {
-        src: './script/**/*.js',
-        dist:'../app/web/script'
+    scripts: {
+        src: './scripts/****/***/**/*.js',
+        dist:'../app/web/js'
     }
 };
 // 默认任务,开发监听
-gulp.task('default',['sass', 'script'],function() {
-    browserSync.init({
-        server: {
-            baseDir: BP.html.baseDir
-        }
-    });
-
+gulp.task('default',['jade', 'sass', 'scripts'],function() {
+    // jade
+    gulp.watch(BP.jade.src,['jade']);
     // sass
     gulp.watch(BP.sass.src,['sass']);
     // script
-    gulp.watch(BP.script.src,['script']);
-    // page reload(html/css/js)
-    gulp.watch(BP.html.src).on('change', reload);
-    gulp.watch(BP.css.src).on('change', reload);
-    gulp.watch(BP.js.src).on('change', reload);
+    gulp.watch(BP.scripts.src,['scripts']);
+});
+//jade任务
+gulp.task('jade', function() {
+    return gulp.src(BP.jade.src)
+        .pipe(jade({
+            pretty: true
+        }))
+        .pipe(gulp.dest(BP.jade.dist))
 });
 //sass任务
 gulp.task('sass', function() {
@@ -67,21 +57,30 @@ gulp.task('sass', function() {
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest(BP.sass.dist))
 });
-gulp.task('script', function() {
-    return gulp.src(BP.script.src)
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-
-        .pipe(gulp.dest(BP.script.dist));
+gulp.task('scripts', function() {
+    return gulp.src(BP.scripts.src)
+        .pipe(gulp.dest(BP.scripts.dist));
 });
 
 
 // angular打包
 gulp.task('angular', function() {
-    return gulp.src(['./lib/scripts/Angular/angular.js','./lib/scripts/Angular/angular-route.js'])
+    return gulp.src(['./lib/scripts/angular/angular.js','./lib/scripts/angular/angular-route.js'])
         .pipe(concat('angular-framework.js'))//合并后的文件名
-        .pipe(gulp.dest('../app/web/scripts/lib'));
+        .pipe(gulp.dest('../app/web/scripts/lib/angular'));
 });
-
+// lib打包
+gulp.task('scriptLib', function() {
+    var f = gulpFilter(['**', '!*lib/scripts/angular/*.js']);
+    return gulp.src('lib/scripts/**/*.js')
+        .pipe(f)
+        .pipe(gulp.dest('../app/web/js/lib'));
+});
+// lib打包
+gulp.task('styleLib', function() {
+    //var f = gulpFilter(['**', '!*lib/scripts/angular/*.js']);
+    return gulp.src('lib/style/**/*.css')
+        //.pipe(f)
+        .pipe(gulp.dest('../app/web/static/css/lib'));
+});
 

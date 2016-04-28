@@ -1,0 +1,357 @@
+doctype html
+html(lang='zh-CN')
+   head
+      //- 编码和渲染
+      meta(charset='utf-8')
+      meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+      //- SEO
+      meta(name='keywords' content='模版,苏宁首页模版')
+      meta(name='description' content='苏宁首页模版')
+      meta(name='author' content='mr03')
+      //- 临时地址
+      base(href='./')
+      //- viewport
+      meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
+      //- 编码和渲染
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='renderer' content='webkit')
+      meta(name='apple-mobile-web-app-capable' content='yes')
+      meta(name='apple-mobile-web-app-status-bar-style' content='black')
+      meta(name='format-detection' content='telephone=no')
+      meta(name='wap-font-scale' content='no')
+      //- 网页title
+      title 苏宁首页
+      //- CSS
+      link(rel='stylesheet' href='static/css/core/v1/lib.css')
+      link(rel='stylesheet' href='static/css/lib/font-awesome.min.css')
+      link(rel='stylesheet' href='static/css/lib/swiper-3.3.1.min.css')
+      link(rel='stylesheet' href='static/css/lib/normalize.css')
+      link(rel='stylesheet' href='static/css/customer-mobile/home/v1/home.css')
+      //- 前置js
+      script(src='js/lib/rem/rem.js')
+      script(src='js/require.js')
+      script(src='js/config.js')
+      script(src='js/core/v1/core.js')
+      script(src='js/customer-mobile/home/v1/home.js')
+   body
+      .overlay-black.none
+      //content
+      .body-container
+         header.header-container
+           .bar.bar-header-fixed.bar-sn
+              i.col.fa.fa-list.fa-2x
+              a.col.bar-search
+                 .bar-search-input
+                    i.fa.fa-search.ml-02r
+                    span.ml-02r 搜索
+                    span.ml-02r 巴拉巴拉小魔仙
+              i.col.fa.fa-opencart.fa-2x
+         section.section-container
+            .banner.swiper-container
+               .swiper-wrapper
+                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
+                     img(src='static/img/demo/banner01.jpg')
+                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
+                     img(src='static/img/demo/banner02.jpg')
+                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
+                     img(src='static/img/demo/banner03.jpg')
+               .swiper-pagination
+            a.banner-small(href='http://es6.ruanyifeng.com/')
+               img(src='static/img/demo/banner-son.webp')
+            ul.row.nav
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_01.webp')
+                     h6.nav-title 分类
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_02.webp')
+                     h6.nav-title 大聚惠
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_03.webp')
+                     h6.nav-title 苏宁超市
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_04.webp')
+                     h6.nav-title 红孩子
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_05.webp')
+                     h6.nav-title 嗨购精选
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_06.webp')
+                     h6.nav-title 我的易购
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_07.webp')
+                     h6.nav-title 赚钱
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_08.webp')
+                     h6.nav-title 领云钻
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_09.webp')
+                     h6.nav-title 门店导购
+               li
+                  a.col.nav-group(href='http://es6.ruanyifeng.com/')
+                     .nav-img
+                        img(src='static/img/demo/nav_10.webp')
+                     h6.nav-title 有奖活动
+            .news
+               .row
+                  .col.news-title
+                     img(src='static/img/demo/news_title.png')
+                  ul.col.news-list
+                     - for (var i = 0; i < 7; i++) {
+                        li
+                           a.news-list-group(href='http://es6.ruanyifeng.com/')
+                              span.news-content.line-clamp-1 最适合处女座的微波炉 399元火热预订中最适合处女座的微波炉
+                     - }
+            .zsq.mt-05r
+               .row.zsq-header
+                  .col.logo
+                     .zsq-header-logo
+                        img(src="static/img/demo/zsq_title.png")
+                  .col.tag
+                     span 10点抢
+                  .col.time
+                     span.hour-node 03
+                     b :
+                     span.minute-node 02
+                     b :
+                     span.second-node 50
+                  .col.more
+                     span 天天秒杀
+                     i.fa.fa-angle-right
+               .row.zsq-body
+                  ul.row.zsq-body-list
+                     - for (var i = 0; i < 7; i++) {
+                        li
+                           a.col.zsq-body-wrap(href='http://es6.ruanyifeng.com/')
+                              .zsq-img
+                                 img(src="static/img/demo/zsq_goods.webp")
+                              h5.price-now $54.3
+                              h6.price-old $58.6
+                              label.sale
+                                 span 0.3
+                                 br
+                                 span 折
+                     - }
+            .row.channel.mt-05r
+               a.col.channel-wrap(href='http://es6.ruanyifeng.com/')
+                  img(src="static/img/demo/channel01.webp")
+               a.col.channel-wrap(href='http://es6.ruanyifeng.com/')
+                  img(src="static/img/demo/channel02.jpg")
+               a.col.channel-wrap(href='http://es6.ruanyifeng.com/')
+                  img(src="static/img/demo/channel03.webp")
+               a.col.channel-wrap(href='http://es6.ruanyifeng.com/')
+                  img(src="static/img/demo/channel04.webp")
+            //- 大聚惠
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/djh_title.png")
+               .row
+                  a.col.floor-channel-1.floor-channel-border-1
+                     img(src="static/img/demo/djh_channel_big_1.webp")
+                  a.col.floor-channel-2
+                     img(src="static/img/demo/djh_channel_1.webp")
+                  a.col.floor-channel-3.floor-channel-border-1
+                     img(src="static/img/demo/djh_channel_2.webp")
+                  a.col.floor-channel-3
+                     img(src="static/img/demo/djh_channel_2.webp")
+            .row.banner-small.mt-05r
+               a(href='http://es6.ruanyifeng.com/')
+                  img(src='static/img/demo/banner-son.webp')
+            //- 特色好货
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/tshh_title.png")
+               .row
+                  a.col.floor-channel-5.floor-channel-border-1
+                     img(src="static/img/demo/tshh_channel_1.webp")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/tshh_channel_2.jpg")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/tshh_channel_3.webp")
+                  a.col.floor-channel-4.floor-channel-border-1
+                     img(src="static/img/demo/tshh_channel_4.webp")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/tshh_channel_5.webp")
+                  a.col.floor-channel-4.floor-channel-border-1
+                     img(src="static/img/demo/tshh_channel_6.webp")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/tshh_channel_7.webp")
+                  a.col.floor-channel-4.floor-channel-border-1
+                     img(src="static/img/demo/tshh_channel_8.webp")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/tshh_channel_9.jpg")
+            .row.banner-small.mt-05r
+               a(href='http://es6.ruanyifeng.com/')
+                  img(src='static/img/demo/banner-son.webp')
+            //- 热门市场
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/rmsc_title.png")
+               .row
+                  a.col.floor-channel-5.floor-channel-border-1
+                     img(src="static/img/demo/rmsc_channel_1.webp")
+                  a.col.floor-channel-5
+                     img(src="static/img/demo/rmsc_channel_2.webp")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_3.webp")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_4.webp")
+                  a.col.floor-channel-6.floor-channel-border-0
+                     img(src="static/img/demo/rmsc_channel_5.webp")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_6.webp")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_7.webp")
+                  a.col.floor-channel-6.floor-channel-border-0
+                     img(src="static/img/demo/rmsc_channel_8.jpg")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_9.jpg")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_10.webp")
+                  a.col.floor-channel-6.floor-channel-border-0
+                     img(src="static/img/demo/rmsc_channel_11.webp")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_12.jpg")
+                  a.col.floor-channel-6
+                     img(src="static/img/demo/rmsc_channel_13.webp")
+                  a.col.floor-channel-6.floor-channel-border-0
+                     img(src="static/img/demo/rmsc_channel_14.webp")
+            //- 品牌荟萃
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/pphc_title.png")
+               .row
+                  a.col.floor-channel-5.floor-channel-border-1
+                     img(src="static/img/demo/pphc_channel_1.webp")
+                  a.col.floor-channel-3.floor-channel-border-3.floor-channel-border-1
+                     img(src="static/img/demo/pphc_channel_2.webp")
+                  a.col.floor-channel-3.floor-channel-border-3
+                     img(src="static/img/demo/pphc_channel_3.webp")
+            //- 苏宁金融
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/snjr_title.png")
+               .row
+                  a.col.floor-channel-5.floor-channel-border-1
+                     img(src="static/img/demo/snjr_channel_1.webp")
+                  a.col.floor-channel-4.floor-channel-border-3
+                     img(src="static/img/demo/snjr_channel_2.webp")
+                  a.col.floor-channel-4
+                     img(src="static/img/demo/snjr_channel_3.webp")
+            //- 好店推荐
+            .mt-05r
+               .floor-title
+                  img(src="static/img/demo/hdtj_title.png")
+               .floor-body
+                  .row
+                     a.col.floor-channel-7
+                        .floor-channel-8.clearfix
+                           .hdtj-logo
+                              img(src="static/img/demo/hdtj_phone.webp")
+                           .hdtj-content
+                              h5.title.line-clamp-1 搞机大咖
+                              h6.des.line-clamp-1 潮机新时尚
+                        .floor-channel-9.clearfix
+                           .hdti-img-big
+                              img(src="static/img/demo/hdtj_1.webp")
+                           .hdti-img-small
+                              img(src="static/img/demo/hdtj_2.webp")
+                           .hdti-img-small
+                              img(src="static/img/demo/hdtj_3.webp")
+                     a.col.floor-channel-7
+                        .floor-channel-8.clearfix
+                           .hdtj-logo
+                              img(src="static/img/demo/hdtj_phone.webp")
+                           .hdtj-content
+                              h5.title.line-clamp-1 搞机大咖
+                              h6.des.line-clamp-1 潮机新时尚
+                        .floor-channel-9.clearfix
+                           .hdti-img-big
+                              img(src="static/img/demo/hdtj_1.webp")
+                           .hdti-img-small
+                              img(src="static/img/demo/hdtj_2.webp")
+                           .hdti-img-small
+                              img(src="static/img/demo/hdtj_3.webp")
+            .mightlike.mt-05r
+               .row.mightlike-header
+                  .col.mightlike-header-bg
+                     h4.mightlike-header-title
+                        i.fa.fa-heart-o.mr-02r
+                        span 猜你喜欢
+               .row
+                  - for (var i = 0; i < 7; i++) {
+                     .col.goods-wrap
+                        .goods-box
+                           img(src='static/img/demo/goods.webp')
+                           h3.line-clamp-2  【苏宁自营】可莱丝N.M.F针剂水库保湿面膜（10片装）【CJ】
+                           h4.text-cut ￥63.00
+                  - }
+            .row.mt-05r
+               a.app-down(href='http://es6.ruanyifeng.com/')
+                  img(src='static/img/demo/appdown.webp')
+            .ui-group
+               ul.row
+                  li.col
+                     a.ui-wrap
+                        span.title 登录
+                  li.col
+                     a.ui-wrap
+                        span.title 注册
+                  li.col
+                     a.ui-wrap
+                        span.title 电脑版
+                  li.col
+                     a.ui-wrap
+                        span.title 普通版
+                  li.col
+                     a.ui-wrap
+                        span.title 客户端
+            h5.copyright
+               span.mr-02r 2016-2020
+               i.fa.fa-copyright.mr-02r
+               span MR03 rights reserved.
+         footer.footer-container
+            .btn-circular-fixed.btn-plus#plus
+               i.fa.fa-plus
+            .btn-circular-fixed.btn-up#pageUp
+               i.fa.fa-arrow-up
+            .plus-nav-group#plusNav
+               .col.nav-area
+                  .btn-circular-abs.btn-close#plusNavClose
+                     i.fa.fa-close
+                  .nav-wrap.nav-home
+                     i.fa.fa-home.fa-2x
+                     h6 首页
+                  .nav-wrap.nav-opencart
+                     i.fa.fa-opencart.fa-2x
+                     h6 购物车
+                  .nav-wrap.nav-search
+                     i.fa.fa-search.fa-2x
+                     h6 搜索
+                  .nav-wrap.nav-list
+                     i.fa.fa-list.fa-2x
+                     h6 分类
+                  .nav-wrap.nav-user
+                     i.fa.fa-user.fa-2x
+                     h6 我的易购
+
+
+
+

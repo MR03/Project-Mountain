@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// btn
+
+.btn-circular-fixed {
+  position: fixed;
+  z-index: 1000;
+  width: 1.75rem;
+  line-height: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.btn-circular-abs {
+  position: absolute;
+  z-index: 5000;
+  width: 1.75rem;
+  line-height: 1.6rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  text-align: center;
+}
+

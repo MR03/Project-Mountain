@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// bar
+
+
+
+.bar {
+  width: 16rem;
+  height: 2rem;
+  line-height: 2rem;
+  z-index: 1000;
+}
+
+.bar-header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.bar-footer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+
+// bar的颜色
+.bar-sn {
+  background-color: #fabc09;
+}
+
+
+// bar中间的icon
+// 默认居中,正方形
+
+.bar > .fa {
+  width: 2rem;
+  text-align: center;
+  line-height: inherit;
+}
+

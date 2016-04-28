@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+// grid
+
+// 每一行清除浮动
+.row {
+  width: 16rem;
+  @include clearfix
+}
+
+
+// 无意外,则所有col继承父级的height和line-height
+.col {
+  display: block;
+  position: relative;
+  min-height: 1px;
+  height: inherit;
+  line-height: inherit;
+  float: left; }
+
+

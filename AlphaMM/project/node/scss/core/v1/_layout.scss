@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+// layout
+
+.body-container {
+  min-height: 100%;
+  min-width: 100%;
+  @include clearfix
+}
+
+// 根据根元素的font-size有变化
+.container {
+  width: 16rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix
+}
+
+.header-container {
+  width: 16rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix
+}
+
+.section-container {
+  width: 16rem;
+  min-height: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix
+}
+
+.footer-container {
+  width: 16rem;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  @include clearfix;
+}
