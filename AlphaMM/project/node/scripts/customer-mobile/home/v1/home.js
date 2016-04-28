@@ -1,4 +1,4 @@
-require(['jquery', 'swiper','vue'],function($, swiper, Vue){
+require(['jquery', 'swiper','vue','core'],function($, swiper, Vue, core){
     var mySwiper = new Swiper('.banner', {
         autoplay: 3000,//可选选项，自动滑动
         loop : true,
@@ -25,10 +25,30 @@ require(['jquery', 'swiper','vue'],function($, swiper, Vue){
         $('.overlay-black').css('display', 'none');
     })
 
-    new Vue({
+
+    var $scope = {
+        data : "test"
+    }
+
+    var tes = new Vue({
         el: '#searchText',
         data: {
-            message: '搜索Vue.js!'
+            message: $scope.data
+        }
+    })
+
+
+    var par = {
+        op: 'all'
+    }
+
+
+    $.ajax({
+        url: 'http://localhost:8080/api/mobile/home?jd=' + JSON.stringify(par),
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            core.log(data)
         }
     })
 

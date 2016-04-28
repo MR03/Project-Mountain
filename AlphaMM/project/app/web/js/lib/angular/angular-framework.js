@@ -3889,12 +3889,12 @@ function annotate(fn, strictDi, name) {
  * names.
  * ```js
  *   // Given
- *   function MyController($scope, $route) {
+ *   function MyController($scope, $ViewRoute) {
  *     // ...
  *   }
  *
  *   // Then
- *   expect(injector.annotate(MyController)).toEqual(['$scope', '$route']);
+ *   expect(injector.annotate(MyController)).toEqual(['$scope', '$ViewRoute']);
  * ```
  *
  * You can disallow this method by using strict injection mode.
@@ -3912,10 +3912,10 @@ function annotate(fn, strictDi, name) {
  *     // ...
  *   }
  *   // Define function dependencies
- *   MyController['$inject'] = ['$scope', '$route'];
+ *   MyController['$inject'] = ['$scope', '$ViewRoute'];
  *
  *   // Then
- *   expect(injector.annotate(MyController)).toEqual(['$scope', '$route']);
+ *   expect(injector.annotate(MyController)).toEqual(['$scope', '$ViewRoute']);
  * ```
  *
  * # The array notation
@@ -22995,8 +22995,8 @@ var ngCloakDirective = ngDirective({
  * * Controller — The `ngController` directive specifies a Controller class; the class contains business
  *   logic behind the application to decorate the scope with functions and values
  *
- * Note that you can also attach controllers to the DOM by declaring it in a route definition
- * via the {@link ngRoute.$route $route} service. A common mistake is to declare the controller
+ * Note that you can also attach controllers to the DOM by declaring it in a ViewRoute definition
+ * via the {@link ngRoute.$ViewRoute $ViewRoute} service. A common mistake is to declare the controller
  * again using `ng-controller` in the template itself.  This will cause the controller to be attached
  * and executed twice.
  *
@@ -28841,7 +28841,7 @@ $provide.value("$locale", {
  * The `ngRoute` module provides routing and deeplinking services and directives for angular apps.
  *
  * ## Example
- * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
+ * See {@link ngRoute.$ViewRoute#example $ViewRoute} for an example of configuring and using `ngRoute`.
  *
  *
  * <div doc-module-components="ngRoute"></div>
@@ -28860,7 +28860,7 @@ var ngRouteModule = angular.module('ngRoute', ['ng']).
  * Used for configuring routes.
  *
  * ## Example
- * See {@link ngRoute.$route#example $route} for an example of configuring and using `ngRoute`.
+ * See {@link ngRoute.$ViewRoute#example $ViewRoute} for an example of configuring and using `ngRoute`.
  *
  * ## Dependencies
  * Requires the {@link ngRoute `ngRoute`} module to be installed.
@@ -28877,16 +28877,16 @@ function $RouteProvider() {
    * @name $routeProvider#when
    *
    * @param {string} path Route path (matched against `$location.path`). If `$location.path`
-   *    contains redundant trailing slash or is missing one, the route will still match and the
+   *    contains redundant trailing slash or is missing one, the ViewRoute will still match and the
    *    `$location.path` will be updated to add or drop the trailing slash to exactly match the
-   *    route definition.
+   *    ViewRoute definition.
    *
    *    * `path` can contain named groups starting with a colon: e.g. `:name`. All characters up
    *        to the next slash are matched and stored in `$routeParams` under the given `name`
-   *        when the route matches.
+   *        when the ViewRoute matches.
    *    * `path` can contain named groups starting with a colon and ending with a star:
    *        e.g.`:name*`. All characters are eagerly stored in `$routeParams` under the given `name`
-   *        when the route matches.
+   *        when the ViewRoute matches.
    *    * `path` can contain optional named groups with a question mark: e.g.`:name?`.
    *
    *    For example, routes like `/color/:color/largecode/:largecode*\/edit` will match
@@ -28896,7 +28896,7 @@ function $RouteProvider() {
    *    * `largecode: code/with/slashes`.
    *
    *
-   * @param {Object} route Mapping information to be assigned to `$route.current` on route
+   * @param {Object} route Mapping information to be assigned to `$ViewRoute.current` on ViewRoute
    *    match.
    *
    *    Object properties:
@@ -28913,25 +28913,25 @@ function $RouteProvider() {
    *
    *      If `template` is a function, it will be called with the following parameters:
    *
-   *      - `{Array.<Object>}` - route parameters extracted from the current
-   *        `$location.path()` by applying the current route
+   *      - `{Array.<Object>}` - ViewRoute parameters extracted from the current
+   *        `$location.path()` by applying the current ViewRoute
    *
    *    - `templateUrl` – `{string=|function()=}` – path or function that returns a path to an html
    *      template that should be used by {@link ngRoute.directive:ngView ngView}.
    *
    *      If `templateUrl` is a function, it will be called with the following parameters:
    *
-   *      - `{Array.<Object>}` - route parameters extracted from the current
-   *        `$location.path()` by applying the current route
+   *      - `{Array.<Object>}` - ViewRoute parameters extracted from the current
+   *        `$location.path()` by applying the current ViewRoute
    *
    *    - `resolve` - `{Object.<string, function>=}` - An optional map of dependencies which should
    *      be injected into the controller. If any of these dependencies are promises, the router
    *      will wait for them all to be resolved or one to be rejected before the controller is
    *      instantiated.
    *      If all the promises are resolved successfully, the values of the resolved promises are
-   *      injected and {@link ngRoute.$route#$routeChangeSuccess $routeChangeSuccess} event is
+   *      injected and {@link ngRoute.$ViewRoute#$routeChangeSuccess $routeChangeSuccess} event is
    *      fired. If any of the promises are rejected the
-   *      {@link ngRoute.$route#$routeChangeError $routeChangeError} event is fired. The map object
+   *      {@link ngRoute.$ViewRoute#$routeChangeError $routeChangeError} event is fired. The map object
    *      is:
    *
    *      - `key` – `{string}`: a name of a dependency to be injected into the controller.
@@ -28939,23 +28939,23 @@ function $RouteProvider() {
    *        Otherwise if function, then it is {@link auto.$injector#invoke injected}
    *        and the return value is treated as the dependency. If the result is a promise, it is
    *        resolved before its value is injected into the controller. Be aware that
-   *        `ngRoute.$routeParams` will still refer to the previous route within these resolve
-   *        functions.  Use `$route.current.params` to access the new route parameters, instead.
+   *        `ngRoute.$routeParams` will still refer to the previous ViewRoute within these resolve
+   *        functions.  Use `$ViewRoute.current.params` to access the new ViewRoute parameters, instead.
    *
    *    - `redirectTo` – {(string|function())=} – value to update
-   *      {@link ng.$location $location} path with and trigger route redirection.
+   *      {@link ng.$location $location} path with and trigger ViewRoute redirection.
    *
    *      If `redirectTo` is a function, it will be called with the following parameters:
    *
-   *      - `{Object.<string>}` - route parameters extracted from the current
-   *        `$location.path()` by applying the current route templateUrl.
+   *      - `{Object.<string>}` - ViewRoute parameters extracted from the current
+   *        `$location.path()` by applying the current ViewRoute templateUrl.
    *      - `{string}` - current `$location.path()`
    *      - `{Object}` - current `$location.search()`
    *
    *      The custom `redirectTo` function is expected to return a string which will be used
    *      to update `$location.path()` and `$location.search()`.
    *
-   *    - `[reloadOnSearch=true]` - {boolean=} - reload route when only `$location.search()`
+   *    - `[reloadOnSearch=true]` - {boolean=} - reload ViewRoute when only `$location.search()`
    *      or `$location.hash()` changes.
    *
    *      If the option is set to `false` and url in the browser changes, then
@@ -28963,16 +28963,16 @@ function $RouteProvider() {
    *
    *    - `[caseInsensitiveMatch=false]` - {boolean=} - match routes without being case sensitive
    *
-   *      If the option is set to `true`, then the particular route can be matched without being
+   *      If the option is set to `true`, then the particular ViewRoute can be matched without being
    *      case sensitive
    *
    * @returns {Object} self
    *
    * @description
-   * Adds a new route definition to the `$route` service.
+   * Adds a new ViewRoute definition to the `$ViewRoute` service.
    */
   this.when = function(path, route) {
-    //copy original route object to preserve params inherited from proto chain
+    //copy original ViewRoute object to preserve params inherited from proto chain
     var routeCopy = angular.copy(route);
     if (angular.isUndefined(routeCopy.reloadOnSearch)) {
       routeCopy.reloadOnSearch = true;
@@ -29057,10 +29057,10 @@ function $RouteProvider() {
    * @name $routeProvider#otherwise
    *
    * @description
-   * Sets route definition that will be used on route change when no other route definition
+   * Sets ViewRoute definition that will be used on ViewRoute change when no other ViewRoute definition
    * is matched.
    *
-   * @param {Object|string} params Mapping information to be assigned to `$route.current`.
+   * @param {Object|string} params Mapping information to be assigned to `$ViewRoute.current`.
    * If called with a string, the value maps to `redirectTo`.
    * @returns {Object} self
    */
@@ -29084,41 +29084,41 @@ function $RouteProvider() {
 
     /**
      * @ngdoc service
-     * @name $route
+     * @name $ViewRoute
      * @requires $location
      * @requires $routeParams
      *
-     * @property {Object} current Reference to the current route definition.
-     * The route definition contains:
+     * @property {Object} current Reference to the current ViewRoute definition.
+     * The ViewRoute definition contains:
      *
-     *   - `controller`: The controller constructor as define in route definition.
+     *   - `controller`: The controller constructor as define in ViewRoute definition.
      *   - `locals`: A map of locals which is used by {@link ng.$controller $controller} service for
      *     controller instantiation. The `locals` contain
      *     the resolved values of the `resolve` map. Additionally the `locals` also contain:
      *
-     *     - `$scope` - The current route scope.
-     *     - `$template` - The current route template HTML.
+     *     - `$scope` - The current ViewRoute scope.
+     *     - `$template` - The current ViewRoute template HTML.
      *
-     * @property {Object} routes Object with all route configuration Objects as its properties.
+     * @property {Object} routes Object with all ViewRoute configuration Objects as its properties.
      *
      * @description
-     * `$route` is used for deep-linking URLs to controllers and views (HTML partials).
-     * It watches `$location.url()` and tries to map the path to an existing route definition.
+     * `$ViewRoute` is used for deep-linking URLs to controllers and views (HTML partials).
+     * It watches `$location.url()` and tries to map the path to an existing ViewRoute definition.
      *
      * Requires the {@link ngRoute `ngRoute`} module to be installed.
      *
      * You can define routes through {@link ngRoute.$routeProvider $routeProvider}'s API.
      *
-     * The `$route` service is typically used in conjunction with the
+     * The `$ViewRoute` service is typically used in conjunction with the
      * {@link ngRoute.directive:ngView `ngView`} directive and the
      * {@link ngRoute.$routeParams `$routeParams`} service.
      *
      * @example
-     * This example shows how changing the URL hash causes the `$route` to match a route against the
+     * This example shows how changing the URL hash causes the `$ViewRoute` to match a ViewRoute against the
      * URL, and the `ngView` pulls in the partial.
      *
-     * <example name="$route-service" module="ngRouteExample"
-     *          deps="angular-route.js" fixBase="true">
+     * <example name="$ViewRoute-service" module="ngRouteExample"
+     *          deps="angular-ViewRoute.js" fixBase="true">
      *   <file name="index.html">
      *     <div ng-controller="MainController">
      *       Choose:
@@ -29133,9 +29133,9 @@ function $RouteProvider() {
      *       <hr />
      *
      *       <pre>$location.path() = {{$location.path()}}</pre>
-     *       <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
-     *       <pre>$route.current.params = {{$route.current.params}}</pre>
-     *       <pre>$route.current.scope.name = {{$route.current.scope.name}}</pre>
+     *       <pre>$ViewRoute.current.templateUrl = {{$ViewRoute.current.templateUrl}}</pre>
+     *       <pre>$ViewRoute.current.params = {{$ViewRoute.current.params}}</pre>
+     *       <pre>$ViewRoute.current.scope.name = {{$ViewRoute.current.scope.name}}</pre>
      *       <pre>$routeParams = {{$routeParams}}</pre>
      *     </div>
      *   </file>
@@ -29154,8 +29154,8 @@ function $RouteProvider() {
      *   <file name="script.js">
      *     angular.module('ngRouteExample', ['ngRoute'])
      *
-     *      .controller('MainController', function($scope, $route, $routeParams, $location) {
-     *          $scope.$route = $route;
+     *      .controller('MainController', function($scope, $ViewRoute, $routeParams, $location) {
+     *          $scope.$ViewRoute = $ViewRoute;
      *          $scope.$location = $location;
      *          $scope.$routeParams = $routeParams;
      *      })
@@ -29215,64 +29215,64 @@ function $RouteProvider() {
 
     /**
      * @ngdoc event
-     * @name $route#$routeChangeStart
+     * @name $ViewRoute#$routeChangeStart
      * @eventType broadcast on root scope
      * @description
-     * Broadcasted before a route change. At this  point the route services starts
-     * resolving all of the dependencies needed for the route change to occur.
+     * Broadcasted before a ViewRoute change. At this  point the ViewRoute services starts
+     * resolving all of the dependencies needed for the ViewRoute change to occur.
      * Typically this involves fetching the view template as well as any dependencies
-     * defined in `resolve` route property. Once  all of the dependencies are resolved
+     * defined in `resolve` ViewRoute property. Once  all of the dependencies are resolved
      * `$routeChangeSuccess` is fired.
      *
-     * The route change (and the `$location` change that triggered it) can be prevented
+     * The ViewRoute change (and the `$location` change that triggered it) can be prevented
      * by calling `preventDefault` method of the event. See {@link ng.$rootScope.Scope#$on}
      * for more details about event object.
      *
      * @param {Object} angularEvent Synthetic event object.
-     * @param {Route} next Future route information.
-     * @param {Route} current Current route information.
+     * @param {Route} next Future ViewRoute information.
+     * @param {Route} current Current ViewRoute information.
      */
 
     /**
      * @ngdoc event
-     * @name $route#$routeChangeSuccess
+     * @name $ViewRoute#$routeChangeSuccess
      * @eventType broadcast on root scope
      * @description
-     * Broadcasted after a route change has happened successfully.
+     * Broadcasted after a ViewRoute change has happened successfully.
      * The `resolve` dependencies are now available in the `current.locals` property.
      *
      * {@link ngRoute.directive:ngView ngView} listens for the directive
      * to instantiate the controller and render the view.
      *
      * @param {Object} angularEvent Synthetic event object.
-     * @param {Route} current Current route information.
-     * @param {Route|Undefined} previous Previous route information, or undefined if current is
-     * first route entered.
+     * @param {Route} current Current ViewRoute information.
+     * @param {Route|Undefined} previous Previous ViewRoute information, or undefined if current is
+     * first ViewRoute entered.
      */
 
     /**
      * @ngdoc event
-     * @name $route#$routeChangeError
+     * @name $ViewRoute#$routeChangeError
      * @eventType broadcast on root scope
      * @description
      * Broadcasted if any of the resolve promises are rejected.
      *
      * @param {Object} angularEvent Synthetic event object
-     * @param {Route} current Current route information.
-     * @param {Route} previous Previous route information.
+     * @param {Route} current Current ViewRoute information.
+     * @param {Route} previous Previous ViewRoute information.
      * @param {Route} rejection Rejection of the promise. Usually the error of the failed promise.
      */
 
     /**
      * @ngdoc event
-     * @name $route#$routeUpdate
+     * @name $ViewRoute#$routeUpdate
      * @eventType broadcast on root scope
      * @description
      * The `reloadOnSearch` property has been set to false, and we are reusing the same
      * instance of the Controller.
      *
      * @param {Object} angularEvent Synthetic event object
-     * @param {Route} current Current/previous route information.
+     * @param {Route} current Current/previous ViewRoute information.
      */
 
     var forceReload = false,
@@ -29283,10 +29283,10 @@ function $RouteProvider() {
 
           /**
            * @ngdoc method
-           * @name $route#reload
+           * @name $ViewRoute#reload
            *
            * @description
-           * Causes `$route` service to reload the current route even if
+           * Causes `$ViewRoute` service to reload the current ViewRoute even if
            * {@link ng.$location $location} hasn't changed.
            *
            * As a result of that, {@link ngRoute.directive:ngView ngView}
@@ -29303,12 +29303,12 @@ function $RouteProvider() {
 
           /**
            * @ngdoc method
-           * @name $route#updateParams
+           * @name $ViewRoute#updateParams
            *
            * @description
-           * Causes `$route` service to update the current URL, replacing
-           * current route parameters with those specified in `newParams`.
-           * Provided property names that match the route's path segment
+           * Causes `$ViewRoute` service to update the current URL, replacing
+           * current ViewRoute parameters with those specified in `newParams`.
+           * Provided property names that match the ViewRoute's path segment
            * definitions will be interpolated into the location's path, while
            * remaining properties will be treated as query params.
            *
@@ -29321,7 +29321,7 @@ function $RouteProvider() {
               // interpolate modifies newParams, only query params are left
               $location.search(newParams);
             } else {
-              throw $routeMinErr('norout', 'Tried updating route when with no current route');
+              throw $routeMinErr('norout', 'Tried updating ViewRoute when with no current ViewRoute');
             }
           }
         };
@@ -29335,11 +29335,11 @@ function $RouteProvider() {
 
     /**
      * @param on {string} current url
-     * @param route {Object} route regexp to match the url against
+     * @param route {Object} ViewRoute regexp to match the url against
      * @return {?Object}
      *
      * @description
-     * Check if the route matches the current url.
+     * Check if the ViewRoute matches the current url.
      *
      * Inspired by match in
      * visionmedia/express/lib/router/router.js.
@@ -29436,7 +29436,7 @@ function $RouteProvider() {
             }
           }).
           then(function(locals) {
-            // after route change
+            // after ViewRoute change
             if (nextRoute == $route.current) {
               if (nextRoute) {
                 nextRoute.locals = locals;
@@ -29454,10 +29454,10 @@ function $RouteProvider() {
 
 
     /**
-     * @returns {Object} the current active route, by matching it against the URL
+     * @returns {Object} the current active ViewRoute, by matching it against the URL
      */
     function parseRoute() {
-      // Match a route
+      // Match a ViewRoute
       var params, match;
       angular.forEach(routes, function(route, path) {
         if (!match && (params = switchRouteMatcher($location.path(), route))) {
@@ -29467,7 +29467,7 @@ function $RouteProvider() {
           match.$$route = route;
         }
       });
-      // No route matched; fallback to "otherwise" route
+      // No ViewRoute matched; fallback to "otherwise" ViewRoute
       return match || routes[null] && inherit(routes[null], {params: {}, pathParams:{}});
     }
 
@@ -29501,22 +29501,22 @@ ngRouteModule.provider('$routeParams', $RouteParamsProvider);
  * @requires $route
  *
  * @description
- * The `$routeParams` service allows you to retrieve the current set of route parameters.
+ * The `$routeParams` service allows you to retrieve the current set of ViewRoute parameters.
  *
  * Requires the {@link ngRoute `ngRoute`} module to be installed.
  *
- * The route parameters are a combination of {@link ng.$location `$location`}'s
+ * The ViewRoute parameters are a combination of {@link ng.$location `$location`}'s
  * {@link ng.$location#search `search()`} and {@link ng.$location#path `path()`}.
- * The `path` parameters are extracted when the {@link ngRoute.$route `$route`} path is matched.
+ * The `path` parameters are extracted when the {@link ngRoute.$ViewRoute `$ViewRoute`} path is matched.
  *
  * In case of parameter name collision, `path` params take precedence over `search` params.
  *
  * The service guarantees that the identity of the `$routeParams` object will remain unchanged
- * (but its properties will likely change) even when a route change occurs.
+ * (but its properties will likely change) even when a ViewRoute change occurs.
  *
- * Note that the `$routeParams` are only updated *after* a route change completes successfully.
- * This means that you cannot rely on `$routeParams` being correct in route resolve functions.
- * Instead you can use `$route.current.params` to access the new route's parameters.
+ * Note that the `$routeParams` are only updated *after* a ViewRoute change completes successfully.
+ * This means that you cannot rely on `$routeParams` being correct in ViewRoute resolve functions.
+ * Instead you can use `$ViewRoute.current.params` to access the new ViewRoute's parameters.
  *
  * @example
  * ```js
@@ -29543,10 +29543,10 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
  *
  * @description
  * # Overview
- * `ngView` is a directive that complements the {@link ngRoute.$route $route} service by
- * including the rendered template of the current route into the main layout (`index.html`) file.
- * Every time the current route changes, the included view changes with it according to the
- * configuration of the `$route` service.
+ * `ngView` is a directive that complements the {@link ngRoute.$ViewRoute $ViewRoute} service by
+ * including the rendered template of the current ViewRoute into the main layout (`index.html`) file.
+ * Every time the current ViewRoute changes, the included view changes with it according to the
+ * configuration of the `$ViewRoute` service.
  *
  * Requires the {@link ngRoute `ngRoute`} module to be installed.
  *
@@ -29569,7 +29569,7 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
  *                    as an expression yields a truthy value.
  * @example
     <example name="ngView-directive" module="ngViewExample"
-             deps="angular-route.js;angular-animate.js"
+             deps="angular-ViewRoute.js;angular-animate.js"
              animations="true" fixBase="true">
       <file name="index.html">
         <div ng-controller="MainCtrl as main">
@@ -29586,8 +29586,8 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
           <hr />
 
           <pre>$location.path() = {{main.$location.path()}}</pre>
-          <pre>$route.current.templateUrl = {{main.$route.current.templateUrl}}</pre>
-          <pre>$route.current.params = {{main.$route.current.params}}</pre>
+          <pre>$ViewRoute.current.templateUrl = {{main.$ViewRoute.current.templateUrl}}</pre>
+          <pre>$ViewRoute.current.params = {{main.$ViewRoute.current.params}}</pre>
           <pre>$routeParams = {{main.$routeParams}}</pre>
         </div>
       </file>
@@ -29665,9 +29665,9 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
 
               $locationProvider.html5Mode(true);
           }])
-          .controller('MainCtrl', ['$route', '$routeParams', '$location',
-            function($route, $routeParams, $location) {
-              this.$route = $route;
+          .controller('MainCtrl', ['$ViewRoute', '$routeParams', '$location',
+            function($ViewRoute, $routeParams, $location) {
+              this.$ViewRoute = $ViewRoute;
               this.$location = $location;
               this.$routeParams = $routeParams;
           }])

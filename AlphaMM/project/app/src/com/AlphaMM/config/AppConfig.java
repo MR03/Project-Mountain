@@ -1,14 +1,17 @@
 package com.AlphaMM.config;
 
-import com.AlphaMM.route.AWroute;
-import com.AlphaMM.route.CMroute;
-import com.AlphaMM.route.MAINroute;
+import com.AlphaMM.CustomerMobile.api.cmHomeController;
+import com.AlphaMM.ViewRoute.AWroute;
+import com.AlphaMM.ViewRoute.CMroute;
+import com.AlphaMM.ViewRoute.MAINroute;
 import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 
 public class AppConfig extends JFinalConfig {
+    public static final String jsonFlag = "jd";
+
     @Override
     public void configConstant(Constants me) {
         PropKit.use("com/AlphaMM/config/Jdbc.properties", "UTF-8");
@@ -23,6 +26,9 @@ public class AppConfig extends JFinalConfig {
         me.add("/admin", AWroute.class, "/");
         // CustomerMobile端路由
         me.add("/mobile", CMroute.class, "/");
+
+        //API
+        me.add("/api/mobile/home", cmHomeController.class, "/");
     }
 
     public static C3p0Plugin createC3p0Plugin() {

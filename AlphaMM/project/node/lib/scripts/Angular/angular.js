@@ -3889,12 +3889,12 @@ function annotate(fn, strictDi, name) {
  * names.
  * ```js
  *   // Given
- *   function MyController($scope, $route) {
+ *   function MyController($scope, $ViewRoute) {
  *     // ...
  *   }
  *
  *   // Then
- *   expect(injector.annotate(MyController)).toEqual(['$scope', '$route']);
+ *   expect(injector.annotate(MyController)).toEqual(['$scope', '$ViewRoute']);
  * ```
  *
  * You can disallow this method by using strict injection mode.
@@ -3912,10 +3912,10 @@ function annotate(fn, strictDi, name) {
  *     // ...
  *   }
  *   // Define function dependencies
- *   MyController['$inject'] = ['$scope', '$route'];
+ *   MyController['$inject'] = ['$scope', '$ViewRoute'];
  *
  *   // Then
- *   expect(injector.annotate(MyController)).toEqual(['$scope', '$route']);
+ *   expect(injector.annotate(MyController)).toEqual(['$scope', '$ViewRoute']);
  * ```
  *
  * # The array notation
@@ -22995,8 +22995,8 @@ var ngCloakDirective = ngDirective({
  * * Controller — The `ngController` directive specifies a Controller class; the class contains business
  *   logic behind the application to decorate the scope with functions and values
  *
- * Note that you can also attach controllers to the DOM by declaring it in a route definition
- * via the {@link ngRoute.$route $route} service. A common mistake is to declare the controller
+ * Note that you can also attach controllers to the DOM by declaring it in a ViewRoute definition
+ * via the {@link ngRoute.$ViewRoute $ViewRoute} service. A common mistake is to declare the controller
  * again using `ng-controller` in the template itself.  This will cause the controller to be attached
  * and executed twice.
  *

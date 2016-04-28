@@ -1,4 +1,4 @@
-package com.AlphaMM.route;
+package com.AlphaMM.ViewRoute;
 
 import com.jfinal.core.Controller;
 
