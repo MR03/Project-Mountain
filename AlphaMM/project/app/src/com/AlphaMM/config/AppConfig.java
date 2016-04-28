@@ -1,6 +1,8 @@
 package com.AlphaMM.config;
 
-import com.AlphaMM.AdminWeb.api.awHomeController;
+import com.AlphaMM.route.AWroute;
+import com.AlphaMM.route.CMroute;
+import com.AlphaMM.route.MAINroute;
 import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -15,8 +17,12 @@ public class AppConfig extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        // 路由
-            me.add("/admin", awHomeController.class, "/");
+        // 入口路由
+        me.add("/", MAINroute.class, "/");
+        // AdminWeb端路由
+        me.add("/admin", AWroute.class, "/");
+        // CustomerMobile端路由
+        me.add("/mobile", CMroute.class, "/");
     }
 
     public static C3p0Plugin createC3p0Plugin() {
