@@ -44,6 +44,7 @@ gulp.task('default',['jade', 'sass', 'scripts'],function() {
 //jade任务
 gulp.task('jade', function() {
     return gulp.src(BP.jade.src)
+        .pipe(plumber())
         .pipe(jade({
             pretty: true
         }))

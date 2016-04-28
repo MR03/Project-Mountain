@@ -6,7 +6,6 @@
     <meta name="keywords" content="模版,苏宁首页模版">
     <meta name="description" content="苏宁首页模版">
     <meta name="author" content="mr03">
-    <base href="./">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
@@ -23,7 +22,6 @@
     <script src="js/lib/rem/rem.js"></script>
     <script src="js/require.js"></script>
     <script src="js/config.js"></script>
-    <script src="js/core/v1/core.js"></script>
     <script src="js/customer-mobile/home/v1/home.js"></script>
   </head>
   <body>
@@ -32,7 +30,7 @@
     <div class="body-container">
       <header class="header-container">
         <div class="bar bar-header-fixed bar-sn"><i class="col fa fa-list fa-2x"></i><a class="col bar-search">
-            <div class="bar-search-input"><i class="fa fa-search ml-02r"></i><span class="ml-02r">搜索</span><span class="ml-02r">巴拉巴拉小魔仙</span></div></a><i class="col fa fa-opencart fa-2x"></i></div>
+            <div class="bar-search-input"><i class="fa fa-search ml-02r"></i><span class="ml-02r">搜索</span><span id="searchText" v-cloak class="ml-02r">{{ message }}</span></div></a><i class="col fa fa-opencart fa-2x"></i></div>
       </header>
       <section class="section-container">
         <div class="banner swiper-container">

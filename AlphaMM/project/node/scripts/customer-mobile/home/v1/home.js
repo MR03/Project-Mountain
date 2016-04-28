@@ -1,4 +1,4 @@
-require(['jquery', 'swiper'],function($, swiper){
+require(['jquery', 'swiper','vue'],function($, swiper, Vue){
     var mySwiper = new Swiper('.banner', {
         autoplay: 3000,//可选选项，自动滑动
         loop : true,
@@ -24,4 +24,13 @@ require(['jquery', 'swiper'],function($, swiper){
         $('#plus').css('display', 'block');
         $('.overlay-black').css('display', 'none');
     })
+
+    new Vue({
+        el: '#searchText',
+        data: {
+            message: '搜索Vue.js!'
+        }
+    })
+
+
 });

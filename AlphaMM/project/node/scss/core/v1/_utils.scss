@@ -36,3 +36,8 @@
 .hidden {
   visibility: hidden;
 }
+
+// 非常重要!
+[v-cloak] {
+  display: none;
+}

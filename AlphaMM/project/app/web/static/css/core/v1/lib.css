@@ -604,6 +604,9 @@ html {
 .hidden {
   visibility: hidden; }
 
+[v-cloak] {
+  display: none; }
+
 .btn-circular-fixed {
   position: fixed;
   z-index: 1000;

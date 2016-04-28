@@ -2,9 +2,9 @@
 数据交换: JSON
 数据渲染: 前端渲染
 路由方案: 混合路由
-阶段性前端基础框架: angluarJS
+阶段性前端基础框架: angluarJS(管理)，vue(移动),jquery
 模块管理: requireJS
 javascript版本: ES5
 B端支持: IE9+
-admin采用模板: 
+
 

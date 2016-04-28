@@ -8,8 +8,6 @@ html(lang='zh-CN')
       meta(name='keywords' content='模版,苏宁首页模版')
       meta(name='description' content='苏宁首页模版')
       meta(name='author' content='mr03')
-      //- 临时地址
-      base(href='./')
       //- viewport
       meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
       //- 编码和渲染
@@ -31,7 +29,6 @@ html(lang='zh-CN')
       script(src='js/lib/rem/rem.js')
       script(src='js/require.js')
       script(src='js/config.js')
-      script(src='js/core/v1/core.js')
       script(src='js/customer-mobile/home/v1/home.js')
    body
       .overlay-black.none
@@ -44,7 +41,7 @@ html(lang='zh-CN')
                  .bar-search-input
                     i.fa.fa-search.ml-02r
                     span.ml-02r 搜索
-                    span.ml-02r 巴拉巴拉小魔仙
+                    span.ml-02r#searchText(v-cloak) {{ message }}
               i.col.fa.fa-opencart.fa-2x
          section.section-container
             .banner.swiper-container
