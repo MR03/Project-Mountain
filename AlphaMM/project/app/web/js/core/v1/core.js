@@ -1,18 +1,48 @@
 define(function(){
+
+
+
+    // 项目注册信息
     var configOptions = {
         jsonFlag: 'jd',
         apiPath: 'http://localhost:8080/api/'
     }
 
-    return {
-        // 打印信息
-        log: function(msg) {
-            console.log(msg);
-        },
-        // ajax的JSON封装
-        json: function(route, args, callback,type, hasloading) {
+    // 打印信息
+    var log = function(msg) {
+        console.log(msg);
+    };
 
+    // 获得Url
+    var getUrl = function(route, args) {
+        var argsJson = JSON.stringify(args);
+        var url = configOptions.apiPath + route + '?' + configOptions.jsonFlag + '=' + argsJson;
+        return url;
+    }
+
+    // ajax的JSON封装
+    var json = function(route, args, callback, type, hasloading) {
+        var url = type? getUrl(route): getUrl(route,args);
+        var flow = {
+            url: url,
+            type: type?'post':'get',
+            dataType: 'json'
         }
+
+        if(callback) {
+            flow.success = function(data) {
+                callback(data);
+            }
+        }
+
+        $.ajax(flow);
+    };
+
+
+    // 对外暴露接口
+    return {
+        log: log,
+        json: json
     }
 })
 

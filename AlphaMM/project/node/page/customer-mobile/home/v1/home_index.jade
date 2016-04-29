@@ -29,7 +29,8 @@ html(lang='zh-CN')
       script(src='js/lib/rem/rem.js')
       script(src='js/require.js')
       script(src='js/config.js')
-      script(src='js/customer-mobile/home/v1/home.js')
+      script
+         | require(['cmHome']);
    body
       .overlay-black.none
       //content
