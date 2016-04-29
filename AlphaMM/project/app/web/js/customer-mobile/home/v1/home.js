@@ -1,6 +1,4 @@
-
-
-require(['jquery', 'swiper','Vue', 'core'],function($, swiper, Vue, core){
+require(['jquery', 'swiper','avalon', 'core'],function($, swiper, avalon, core){
     var homeModel = {
         all: function(callback) {
             var par = {
@@ -22,7 +20,7 @@ require(['jquery', 'swiper','Vue', 'core'],function($, swiper, Vue, core){
                 }
             })
         }(),
-        menu: function(){
+        fixedMenu: function(){
             $('#pageUp').click(function(){
                 $('body').scrollTop(0);
             });
@@ -38,18 +36,18 @@ require(['jquery', 'swiper','Vue', 'core'],function($, swiper, Vue, core){
                 $('#plus').css('display', 'block');
                 $('.overlay-black').css('display', 'none');
             });
-        },
-        data: homeModel.all(function(res){
-                var $scope = res.data;
-                core.log($scope.pageSize)
-                // 直接覆盖前端已部署文件
-                new Vue({
-                    el: '#searchText',
-                    data: {
-                        message: 'dfsfs1111'
-                    }
-                });
+        }(),
+        render: homeModel.all(function(res){
+                var $scope = res;
+
+                var vm = avalon.define({
+                    $id: "banner",
+                    list: $scope.banner
+                })
+                avalon.scan();
         })
     };
+
+
 
 });

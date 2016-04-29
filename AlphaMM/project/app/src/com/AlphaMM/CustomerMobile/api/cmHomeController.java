@@ -1,5 +1,6 @@
 package com.AlphaMM.CustomerMobile.api;
 
+import com.AlphaMM.CustomerMobile.model.cmAdvs;
 import com.AlphaMM.CustomerMobile.model.cmGoods;
 import com.AlphaMM.config.AppConfig;
 import com.alibaba.fastjson.JSONObject;
@@ -24,7 +25,8 @@ public class cmHomeController extends Controller {
     }
 
     private void getAll() {
-        setAttr("data", cmGoods.dao.paginate(getParaToInt(0, 1), 10));
-        renderJson(new String[]{"data"});
+        setAttr("banner", cmAdvs.dao.homeBanner());
+        renderJson(new String[]{"banner"});
     }
+
 }

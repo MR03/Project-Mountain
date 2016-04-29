@@ -42,17 +42,13 @@ html(lang='zh-CN')
                  .bar-search-input
                     i.fa.fa-search.ml-02r
                     span.ml-02r 搜索
-                    span.ml-02r#searchText(v-cloak) {{ message }}
+                    span.ml-02r 巴拉巴拉小魔仙
               i.col.fa.fa-opencart.fa-2x
          section.section-container
-            .banner.swiper-container
+            .banner.swiper-container(ms-controller='banner')
                .swiper-wrapper
-                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
-                     img(src='static/img/demo/banner01.jpg')
-                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
-                     img(src='static/img/demo/banner02.jpg')
-                  a.swiper-slide(href='http://es6.ruanyifeng.com/')
-                     img(src='static/img/demo/banner03.jpg')
+                  a.swiper-slide(ms-attr-href='{{el.link}}' ms-each='list')
+                     img(ms-attr-src='{{el.link}}')
                .swiper-pagination
             a.banner-small(href='http://es6.ruanyifeng.com/')
                img(src='static/img/demo/banner-son.webp')

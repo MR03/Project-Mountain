@@ -30,11 +30,11 @@
     <div class="body-container">
       <header class="header-container">
         <div class="bar bar-header-fixed bar-sn"><i class="col fa fa-list fa-2x"></i><a class="col bar-search">
-            <div class="bar-search-input"><i class="fa fa-search ml-02r"></i><span class="ml-02r">搜索</span><span id="searchText" v-cloak class="ml-02r">{{ message }}</span></div></a><i class="col fa fa-opencart fa-2x"></i></div>
+            <div class="bar-search-input"><i class="fa fa-search ml-02r"></i><span class="ml-02r">搜索</span><span class="ml-02r">巴拉巴拉小魔仙</span></div></a><i class="col fa fa-opencart fa-2x"></i></div>
       </header>
       <section class="section-container">
-        <div class="banner swiper-container">
-          <div class="swiper-wrapper"><a href="http://es6.ruanyifeng.com/" class="swiper-slide"><img src="static/img/demo/banner01.jpg"></a><a href="http://es6.ruanyifeng.com/" class="swiper-slide"><img src="static/img/demo/banner02.jpg"></a><a href="http://es6.ruanyifeng.com/" class="swiper-slide"><img src="static/img/demo/banner03.jpg"></a></div>
+        <div ms-controller="banner" class="banner swiper-container">
+          <div class="swiper-wrapper"><a ms-attr-href="{{el.link}}" ms-each="list" class="swiper-slide"><img ms-attr-src="{{el.link}}"></a></div>
           <div class="swiper-pagination"></div>
         </div><a href="http://es6.ruanyifeng.com/" class="banner-small"><img src="static/img/demo/banner-son.webp"></a>
         <ul class="row nav">

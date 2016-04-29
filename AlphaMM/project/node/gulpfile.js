@@ -39,13 +39,14 @@ var BP = {
 };
 // 默认任务,开发监听
 gulp.task('default',['jade', 'sass', 'scripts'],function() {
-    livereload.listen();
     // jade
     gulp.watch(BP.jade.src,['jade']);
     // sass
     gulp.watch(BP.sass.src,['sass']);
     // script
     gulp.watch(BP.scripts.src,['scripts']);
+
+    livereload.listen();
 });
 //jade任务
 gulp.task('jade', function() {
@@ -83,11 +84,11 @@ gulp.task('angular', function() {
         .pipe(livereload());
 });
 // vue打包
-gulp.task('vue', function() {
-    return gulp.src(['./lib/scripts/vue/vue.js','./lib/scripts/vue/vue-resource.js'])
-        .pipe(concat('vue-framework.js'))//合并后的文件名
-        .pipe(gulp.dest('../app/web/js/lib/vue'))
-        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/vue'))
+gulp.task('avalon', function() {
+    return gulp.src(['./lib/scripts/avalon/avalon.mobile.shim.js'])
+        .pipe(concat('avalon-framework.js'))//合并后的文件名
+        .pipe(gulp.dest('../app/web/js/lib/avalon'))
+        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/avalon'))
         .pipe(livereload())
 });
 // lib打包

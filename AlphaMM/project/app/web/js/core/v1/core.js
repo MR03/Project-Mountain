@@ -4,6 +4,7 @@ define(function(){
 
     // 项目注册信息
     var configOptions = {
+        devMode: 'true',
         jsonFlag: 'jd',
         apiPath: 'http://localhost:8080/api/'
     }
@@ -26,7 +27,10 @@ define(function(){
         var flow = {
             url: url,
             type: type?'post':'get',
-            dataType: 'json'
+            dataType: 'json',
+            error:function(){
+                log('数据异常,异常点:' + url);
+            }
         }
 
         if(callback) {
