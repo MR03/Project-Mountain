@@ -12,12 +12,12 @@ require(['jquery', 'swiper','avalon', 'core'],function($, swiper, avalon, core){
         banner: function(){
             var mySwiper = new Swiper('.banner', {
                 autoplay: 3000,//可选选项，自动滑动
-                loop : true,
-                loopAdditionalSlides : 1,
+                autoplayDisableOnInteraction: false,
                 pagination : '.swiper-pagination',
                 paginationBulletRender: function (index, className) {
                     return '<span class="banner-pagination ' + className + '">' + '</span>';
-                }
+                },
+                observer: true   //修改swiper自己或子元素时，自动初始化swiper
             })
         }(),
         fixedMenu: function(){

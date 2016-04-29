@@ -1,6 +1,8 @@
+var log = function(msg) {
+    console.log(msg);
+};
+
 define(function(){
-
-
 
     // 项目注册信息
     var configOptions = {

@@ -46,9 +46,9 @@ html(lang='zh-CN')
               i.col.fa.fa-opencart.fa-2x
          section.section-container
             .banner.swiper-container(ms-controller='banner')
-               .swiper-wrapper
-                  a.swiper-slide(ms-attr-href='{{el.link}}' ms-each='list')
-                     img(ms-attr-src='{{el.link}}')
+               .swiper-wrapper(ms-each='list')
+                     a.swiper-slide(ms-attr-href='{{el.link}}')
+                        img(ms-attr-src='{{el.img_src}}' ms-attr-alt='{{el.advs_name}}')
                .swiper-pagination
             a.banner-small(href='http://es6.ruanyifeng.com/')
                img(src='static/img/demo/banner-son.webp')
