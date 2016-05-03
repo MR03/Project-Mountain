@@ -1,5 +1,6 @@
 package com.AlphaMM.config;
 
+import com.AlphaMM.AdminWeb.api.awAdvsController;
 import com.AlphaMM.CustomerMobile.api.cmHomeController;
 import com.AlphaMM.ViewRoute.AWroute;
 import com.AlphaMM.ViewRoute.CMroute;
@@ -27,7 +28,9 @@ public class AppConfig extends JFinalConfig {
         // CustomerMobile端路由
         me.add("/mobile", CMroute.class, "/");
 
-        //API
+        // AdminWeb端API
+        me.add("/api/admin/advs", awAdvsController.class, "/");
+        // CustomerMobile端API
         me.add("/api/mobile/home", cmHomeController.class, "/");
     }
 

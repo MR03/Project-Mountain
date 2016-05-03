@@ -21,6 +21,11 @@ var gulp = require('gulp'),
 
     // 基础参数, BP = Basic Params
 var BP = {
+    html: {
+        src: './page/****/***/**/*.html',
+        dist: '../app/web/page/',
+        appDist: '../out/artifacts/app_war_exploded/page/'
+    },
     jade: {
         src: './page/****/***/**/*.jade',
         dist: '../app/web/page/',
@@ -38,7 +43,10 @@ var BP = {
     }
 };
 // 默认任务,开发监听
-gulp.task('default',['jade', 'sass', 'scripts'],function() {
+gulp.task('default',['html', 'jade', 'sass', 'scripts'],function() {
+
+    // html
+    gulp.watch(BP.html.src,['html']);
     // jade
     gulp.watch(BP.jade.src,['jade']);
     // sass
@@ -47,6 +55,14 @@ gulp.task('default',['jade', 'sass', 'scripts'],function() {
     gulp.watch(BP.scripts.src,['scripts']);
 
     livereload.listen();
+});
+// html
+gulp.task('html', function() {
+    return gulp.src(BP.html.src)
+        .pipe(plumber())
+        .pipe(gulp.dest(BP.html.dist))
+        .pipe(gulp.dest(BP.html.appDist))
+        .pipe(livereload());
 });
 //jade任务
 gulp.task('jade', function() {

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IntroductionToJavaProgramming.iml" filepath="$PROJECT_DIR$/IntroductionToJavaProgramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter01/chapter01.iml" filepath="$PROJECT_DIR$/chapter01/chapter01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter07/chapter07.iml" filepath="$PROJECT_DIR$/chapter07/chapter07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter08/chapter08.iml" filepath="$PROJECT_DIR$/chapter08/chapter08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter12/chapter12.iml" filepath="$PROJECT_DIR$/chapter12/chapter12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter15/chapter15.iml" filepath="$PROJECT_DIR$/chapter15/chapter15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter16/chapter16.iml" filepath="$PROJECT_DIR$/chapter16/chapter16.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter17/chapter17.iml" filepath="$PROJECT_DIR$/chapter17/chapter17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter18/chapter18.iml" filepath="$PROJECT_DIR$/chapter18/chapter18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter19/chapter19.iml" filepath="$PROJECT_DIR$/chapter19/chapter19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter21/chapter21.iml" filepath="$PROJECT_DIR$/chapter21/chapter21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter22/chapter22.iml" filepath="$PROJECT_DIR$/chapter22/chapter22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter29/chapter29.iml" filepath="$PROJECT_DIR$/chapter29/chapter29.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chapter30/chapter30.iml" filepath="$PROJECT_DIR$/chapter30/chapter30.iml" />
+    </modules>
+  </component>
+</project>

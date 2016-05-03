@@ -1,12 +1,13 @@
 require.config({
-    baseUrl: './js',
+    baseUrl: '/js',
     paths: {
         'isMobile': 'lib/isMobile/isMobile',
         'jquery': 'lib/jquery/jquery-2.0.3',
         'swiper': 'lib/swiper/swiper-3.3.1.min',
         'avalon': 'lib/avalon/avalon-framework',
         'core': 'core/v1/core',
-        'cmHome': 'customer-mobile/home/v1/home'
+        'cmHome': 'customer-mobile/home/v1/home',
+        'awAdvs': 'admin-web/advs/v1/advs'
     },
     shim: {
         'core': {
@@ -14,6 +15,10 @@ require.config({
             deps: ['jquery']
         },
         'cmHome': {
+            exports: 'avalon',
+            deps: ['avalon']
+        },
+        'awAdvs': {
             exports: 'avalon',
             deps: ['avalon']
         }

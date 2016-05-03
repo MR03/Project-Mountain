@@ -1,5 +1,6 @@
 package com.AlphaMM.config;
 
+import com.AlphaMM.AdminWeb.model.awAdvs;
 import com.AlphaMM.AdminWeb.model.awUsers;
 import com.AlphaMM.CustomerMobile.model.cmAdvs;
 import com.AlphaMM.CustomerMobile.model.cmGoods;
@@ -21,6 +22,7 @@ public class _MappingKit {
 	public static void mapping(ActiveRecordPlugin arp) {
 		// AdminWeb
 		arp.addMapping("users", "users_id", awUsers.class);
+		arp.addMapping("advs", "advs_id", awAdvs.class);
 
 		// CustomerMobile
 		arp.addMapping("goods","goods_id", cmGoods.class);

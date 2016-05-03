@@ -1,7 +1,6 @@
 package com.AlphaMM.CustomerMobile.api;
 
 import com.AlphaMM.CustomerMobile.model.cmAdvs;
-import com.AlphaMM.CustomerMobile.model.cmGoods;
 import com.AlphaMM.config.AppConfig;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.Controller;

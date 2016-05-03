@@ -31,7 +31,7 @@ define(function(){
             type: type?'post':'get',
             dataType: 'json',
             error:function(){
-                log('数据异常,异常点:' + url);
+                log('数据异常,异常接口:' + url);
             }
         }
 

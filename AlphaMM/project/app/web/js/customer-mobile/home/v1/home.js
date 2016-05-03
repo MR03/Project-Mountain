@@ -37,9 +37,11 @@ require(['jquery', 'swiper','avalon', 'core'],function($, swiper, avalon, core){
                 $('.overlay-black').css('display', 'none');
             });
         }(),
-        render: homeModel.all(function(res){
-                var $scope = res;
+        render: homeModel.all(function(data){
+                // 获得数据
+                var $scope = data;
 
+                // 渲染
                 var vm = avalon.define({
                     $id: "banner",
                     list: $scope.banner
@@ -47,7 +49,5 @@ require(['jquery', 'swiper','avalon', 'core'],function($, swiper, avalon, core){
                 avalon.scan();
         })
     };
-
-
 
 });
