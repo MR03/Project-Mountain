@@ -68,10 +68,12 @@ CREATE TABLE `advs` (
   `img_src` VARCHAR(100) COMMENT '广告图片',
   `link` VARCHAR(200) COMMENT '广告链接',
   `advs_status` TINYINT(1) NOT NULL COMMENT '广告状态',
-  `advs_type` TINYINT(1) COMMENT '广告类型'
+  `advs_type` TINYINT(2) COMMENT '广告类型'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '广告表';
 
 ALTER table advs add `link` VARCHAR(200) COMMENT '广告链接'
+
+alter table advs modify column advs_status TINYINT(2)
 
 INSERT INTO advs (advs_id, advs_name, img_src, link, advs_status, advs_type) 
 VALUES (DEFAULT, '推广广告', 'static/img/admin_users/blog_1.jpg', 'https://www.baidu.com/',  1, 2)

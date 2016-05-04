@@ -1,6 +1,13 @@
 @charset "UTF-8";
 
-th,td, body {
+// 后台样式补充
+
+// 重要,避免未渲染闪烁
+.ms-controller,.ms-important,[ms-controller],[ms-important]{
+  visibility: hidden;
+}
+
+th, td, body {
   font-family: "Microsoft YaHei", "simsun", Helvetica, Arial !important;
 }
 
@@ -11,4 +18,8 @@ th, td {
 
 .table-col-img {
   width: 80px;
+}
+.table-edit tr:hover {
+  background: #eee;
+  cursor: pointer;
 }

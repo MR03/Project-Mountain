@@ -1,5 +1,6 @@
 package com.AlphaMM.AdminWeb.model;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jfinal.plugin.activerecord.Model;
 
 import java.util.List;
@@ -16,4 +17,11 @@ public class awAdvs extends Model<awAdvs> {
         List<awAdvs> list = awAdvs.dao.find(sql);
         return list;
     }
+
+    public static boolean createAdvs(JSONObject obj) {
+        // 创建新用户
+        boolean save = new awAdvs().set("advs_name", obj.getString("name")).set("link", obj.getString("url")).set("advs_type", 1).save();
+        return save;
+    }
+
 }

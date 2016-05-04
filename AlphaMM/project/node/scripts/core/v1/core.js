@@ -25,18 +25,22 @@ define(function(){
 
     // ajax的JSON封装
     var json = function(route, args, callback, type, hasloading) {
+
         var url = type? getUrl(route): getUrl(route,args);
         var flow = {
             url: url,
             type: type?'post':'get',
             dataType: 'json',
             error:function(){
-                log('数据异常,异常接口:' + url);
+                // 开发模式下打印数据接口
+                if(configOptions.devMode){ log('数据异常,异常接口:' + url)};
             }
         }
 
         if(callback) {
             flow.success = function(data) {
+                // 开发模式下打印数据接口
+                if(configOptions.devMode){log('后台接口:' + url)};
                 callback(data);
             }
         }
