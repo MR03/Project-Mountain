@@ -1,5 +1,11 @@
 require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon, core, bootstrap, gritter){
 
+    var stateMap1 = {
+        Advs_Delete: {
+            id: ''
+        }
+    }
+
     var Model;
     var stateMap;
     var VM;
@@ -19,10 +25,10 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon,
             core.json('admin/advs', par, callback);
         },
         AdvsDelete: function(par, callback) {
-            var par = par;
+            var par = par || stateMap1.Advs_Delete;
             par.op = 'delete';
             core.json('admin/advs', par, callback);
-        }
+        }()
     }
 
     // 数据map
