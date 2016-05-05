@@ -8,10 +8,10 @@ import com.jfinal.core.Controller;
 public class AWroute extends Controller {
 
     public void index() {
-        render("page/admin-web/dashboard/v1/home_index.html");
+        render("html/admin-web/dashboard/home_index.v1.html");
     }
 
     public void advs() {
-        render("page/admin-web/advs/v1/advs_index.html");
+        render("html/admin-web/advs/advs_index.v1.html");
     }
 }

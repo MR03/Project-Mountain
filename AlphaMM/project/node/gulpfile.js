@@ -22,22 +22,22 @@ var gulp = require('gulp'),
     // 基础参数, BP = Basic Params
 var BP = {
     html: {
-        src: './page/****/***/**/*.html',
-        dist: '../app/web/page/',
-        appDist: '../out/artifacts/app_war_exploded/page/'
+        src: './page/***/**/*.html',
+        dist: '../app/web/html/',
+        appDist: '../out/artifacts/app_war_exploded/html/'
     },
     jade: {
-        src: './page/****/***/**/*.jade',
-        dist: '../app/web/page/',
-        appDist: '../out/artifacts/app_war_exploded/page/'
+        src: './page/***/**/*.jade',
+        dist: '../app/web/html/',
+        appDist: '../out/artifacts/app_war_exploded/html/'
     },
     sass: {
-        src: './scss/****/***/**/*.scss',
+        src: './scss/**/*.scss',
         dist: '../app/web/static/css/',
         appDist: '../out/artifacts/app_war_exploded/static/css/'
     },
     scripts: {
-        src: './scripts/****/***/**/*.js',
+        src: './scripts/**/*.js',
         dist:'../app/web/js',
         appDist: '../out/artifacts/app_war_exploded/js/'
     }
@@ -95,16 +95,16 @@ gulp.task('scripts', function() {
 gulp.task('angular', function() {
     return gulp.src(['./lib/scripts/angular/angular.js','./lib/scripts/angular/angular-route.js'])
         .pipe(concat('angular-framework.js'))//合并后的文件名
-        .pipe(gulp.dest('../app/web/js/lib/angular'))
-        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/angular'))
+        .pipe(gulp.dest('../app/web/js/lib/framework'))
+        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/framework'))
         .pipe(livereload());
 });
-// vue打包
+// avalon打包
 gulp.task('avalon', function() {
     return gulp.src(['./lib/scripts/avalon/avalon.mobile.shim.js'])
         .pipe(concat('avalon-framework.js'))//合并后的文件名
-        .pipe(gulp.dest('../app/web/js/lib/avalon'))
-        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/avalon'))
+        .pipe(gulp.dest('../app/web/js/lib/framework'))
+        .pipe(gulp.dest('../out/artifacts/app_war_exploded/js/lib/framework'))
         .pipe(livereload())
 });
 // lib打包

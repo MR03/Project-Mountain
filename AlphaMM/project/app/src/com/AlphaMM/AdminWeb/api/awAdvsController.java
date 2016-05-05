@@ -27,6 +27,9 @@ public class awAdvsController extends Controller {
         if( send.equals("create")) {
             advsCreate();
         }
+        if( send.equals("delete")) {
+            advsDelete();
+        }
     }
 
     // 返回全部广告
@@ -39,6 +42,16 @@ public class awAdvsController extends Controller {
     private void advsCreate() {
         boolean advs = awAdvs.createAdvs(jp);
         if(advs) {
+            setAttr("status", 1);
+        } else {
+            setAttr("status", 0);
+        }
+        renderJson(new String[]{"status"});
+    }
+
+    private void advsDelete() {
+        boolean advsDelete = awAdvs.advsDelete(jp);
+        if(advsDelete) {
             setAttr("status", 1);
         } else {
             setAttr("status", 0);

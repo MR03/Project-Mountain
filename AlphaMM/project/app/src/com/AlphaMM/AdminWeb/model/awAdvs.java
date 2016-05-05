@@ -14,14 +14,19 @@ public class awAdvs extends Model<awAdvs> {
     // 首页广告
     public List<awAdvs> homeBanner() {
         String sql = "select * from advs where advs_type=1";
-        List<awAdvs> list = awAdvs.dao.find(sql);
+        List<awAdvs> list = dao.find(sql);
         return list;
     }
 
+    // 创建新广告
     public static boolean createAdvs(JSONObject obj) {
-        // 创建新用户
         boolean save = new awAdvs().set("advs_name", obj.getString("name")).set("link", obj.getString("url")).set("advs_type", 1).save();
         return save;
     }
 
+    // 删除一个广告
+    public static boolean advsDelete(JSONObject obj) {
+        boolean deleteById = dao.deleteById(obj.getString("id"));
+        return deleteById;
+    }
 }

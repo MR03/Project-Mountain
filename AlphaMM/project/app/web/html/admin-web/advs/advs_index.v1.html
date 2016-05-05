@@ -8,78 +8,16 @@
   <title>AlphaMM管理</title>
   <link href="/static/Bracket1.5/css/style.default.css" rel="stylesheet">
   <link href="/static/Bracket1.5/css/jquery.gritter.css" rel="stylesheet">
-  <link href="/static/css/core/v1/aw-renew.css" rel="stylesheet">
+  <link href="/static/css/app-core/aw-renew.v1.css" rel="stylesheet">
   <script src="/js/require.js"></script>
   <script src="/js/config.js"></script>
   <script>require(['awAdvs']);</script>
 </head>
 
 <body>
-
-<!--广告管理modal-->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" ms-controller="AdvsEdit">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
-        <h4 class="modal-title">编辑广告信息</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-md-12">
-            <form id="form1" class="form-horizontal">
-              <div class="panel panel-default">
-                <!--<div class="panel-heading">-->
-                  <!--<h6 class="panel-title">Horizontal Form</h6>-->
-                <!--</div>-->
-                <div class="panel-body">
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">广告名称</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="请输入广告名称" ms-duplex="advsParam.name">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">上传图片</label>
-                    <div class="col-sm-10">
-                      <input type="email" name="email" class="form-control">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">广告链接</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="请输入广告链接" ms-duplex="advsParam.url">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">广告状态</label>
-                    <div class="col-sm-10">
-                      <input type="email" name="email" class="form-control">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label">广告类型</label>
-                    <div class="col-sm-10">
-                      <input type="email" name="email" class="form-control">
-                    </div>
-                  </div>
-                </div><!-- panel-body -->
-                <div class="panel-footer">
-                  <button type="button" class="btn btn-primary" ms-click="FormSend" data-dismiss="modal">提交</button>
-                  <button type="reset" class="btn btn-default">重置</button>
-                </div><!-- panel-footer -->
-              </div><!-- panel-default -->
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
   <section>
     <!--menu-->
-    <#include "/page/admin-web/common/v1/menu.html" />
+    <#include "/html/admin-web/common/menu.v1.html" />
 
     <div class="mainpanel">
       <div class="headerbar">
@@ -89,17 +27,16 @@
         </form>
 
         <div class="header-right">
-          <#include "/page/admin-web/common/v1/header.html" />
+          <#include "/html/admin-web/common/header.v1.html" />
         </div><!-- header-right -->
-
       </div><!-- headerbar -->
 
       <div class="pageheader">
-        <h2><i class="fa fa-home"></i>首页管理</h2>
+        <h2><i class="fa fa-home"></i>广告管理</h2>
         <div class="breadcrumb-wrapper">
           <span class="label">You are here:</span>
           <ol class="breadcrumb">
-            <li><a href="index.html">首页管理</a></li>
+            <li><a href="index.html">广告管理</a></li>
             <li class="active">后台管理</li>
           </ol>
         </div>
@@ -117,7 +54,7 @@
                 </div>
                 <div class="panel-body" ms-controller="Banner">
                   <div class="btn-demo">
-                      <h6 class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg">添加广告</h6>
+                      <h6 class="btn btn-success" data-toggle="modal" data-target=".bs-example-modal-lg" ms-click="clear">添加广告</h6>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
@@ -133,7 +70,7 @@
                             </tr>
                           </thead>
                           <tbody ms-repeat="list" class="table-edit">
-                            <tr data-toggle="modal" data-target=".bs-example-modal-lg">
+                            <tr data-toggle="modal" data-target=".bs-example-modal-lg" ms-click="edit(el)">
                               <td>1</td>
                               <td>{{el.advs_name}}</td>
                               <td><img ms-attr-src="{{el.img_src}}" class="img-responsive"></td>
@@ -157,9 +94,10 @@
         </div>
       </div><!-- contentpanel -->
     </div><!-- mainpanel -->
-
-
   </section>
+
+  <!--广告管理modal-->
+  <#include "/html/admin-web/advs/advs_c_modal_update.v1.html" />
 
 </body>
 </html>
