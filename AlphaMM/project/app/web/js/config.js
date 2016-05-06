@@ -3,13 +3,14 @@ require.config({
     paths: {
         'isMobile': 'lib/isMobile/isMobile',
         'jquery': 'lib/jquery/jquery-2.0.3',
-        'swiper': 'lib/swiper/swiper-3.3.1.min',
+        'swiper': 'lib/plugin/swiper-3.3.1.min',
         'avalon': 'lib/framework/avalon-framework',
         'core': 'app-core/core.v1',
         'cmHome': 'customer-mobile/home.v1',
         'awAdvs': 'admin-web/advs.v1',
         'bootstrap': 'lib/bootstrap/bootstrap.min',
-        'gritter': 'lib/jquery/jquery.gritter.min'
+        'gritter': 'lib/jquery/jquery.gritter.min',
+        'ajaxfileupload': 'lib/plugin/ajaxfileupload'
     },
     shim: {
         'core': {
@@ -21,6 +22,10 @@ require.config({
             deps: ['jquery']
         },
         'gritter': {
+            exports: '$',
+            deps: ['jquery']
+        },
+        'ajaxfileupload': {
             exports: '$',
             deps: ['jquery']
         },

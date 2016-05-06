@@ -5,18 +5,21 @@ import com.AlphaMM.CustomerMobile.api.cmHomeController;
 import com.AlphaMM.ViewRoute.AWroute;
 import com.AlphaMM.ViewRoute.CMroute;
 import com.AlphaMM.ViewRoute.MAINroute;
+import com.AlphaMM.utils.FileUpload;
 import com.jfinal.config.*;
+import com.jfinal.kit.PathKit;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
 
 public class AppConfig extends JFinalConfig {
-    public static final String jsonFlag = "jd";
+    public static String jsonFlag = "jd";
 
     @Override
     public void configConstant(Constants me) {
         PropKit.use("com/AlphaMM/config/Jdbc.properties", "UTF-8");
         me.setDevMode(PropKit.getBoolean("devMode", true));
+        jsonFlag = PropKit.get("jsonFlag");
     }
 
     @Override
@@ -32,6 +35,9 @@ public class AppConfig extends JFinalConfig {
         me.add("/api/admin/advs", awAdvsController.class, "/");
         // CustomerMobile端API
         me.add("/api/mobile/home", cmHomeController.class, "/");
+
+        // 特殊API
+        me.add("/api/fileUpload", FileUpload.class, "/");
     }
 
     public static C3p0Plugin createC3p0Plugin() {

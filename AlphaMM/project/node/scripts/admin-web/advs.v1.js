@@ -1,15 +1,18 @@
-require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon, core, bootstrap, gritter){
+require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],function($, avalon, core, bootstrap, gritter, ajaxfileupload){
 
-    var stateMap1 = {
-        Advs_Delete: {
-            id: ''
-        }
-    }
-
+    var dataMap;
     var Model;
     var stateMap;
     var VM;
     var init;
+
+
+    // 数据map
+    dataMap = {
+        Advs_Delete: {
+            id: ''
+        }
+    }
 
     // 后台对接数据
     Model = {
@@ -24,11 +27,11 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon,
             par.op = 'create';
             core.json('admin/advs', par, callback);
         },
-        AdvsDelete: function(par, callback) {
-            var par = par || stateMap1.Advs_Delete;
+        AdvsDelete: function(callback) {
+            var par = dataMap.Advs_Delete;
             par.op = 'delete';
             core.json('admin/advs', par, callback);
-        }()
+        }
     }
 
     // 数据map
@@ -88,10 +91,10 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon,
                 })
             },
             DeleteSend: function() {
-                var deleteId = {
+                dataMap.Advs_Delete = {
                     id: AdvsEditVM.advsParam.advs_id
                 }
-                Model.AdvsDelete(deleteId, function(data){
+                Model.AdvsDelete(function(data){
                     if(data) {
                         $.gritter.add({
                             title: '操作提示',
@@ -121,4 +124,28 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter'],function($, avalon,
         // 启动应用
         init();
     }());
+
+    $('#imageFile').change(function() {
+        upload($('#imageFile').val());   //函数参数为上传的文件的本机地址
+    });
+
+    function upload(fileName) {
+        $.ajaxFileUpload({
+            url : '/api/fileUpload',   //提交的路径
+            secureuri : false, // 是否启用安全提交，默认为false
+            fileElementId : 'imageFile', // file控件id
+            dataType : 'JSON',
+            data : {
+                fileName : fileName   //传递参数，用于解析出文件名
+            }, // 键:值，传递文件名
+            success : function(data, status) {
+                log(data)
+
+                $("#test").attr("src", data.src)
+            },
+            error : function(data, status) {
+
+            }
+        });
+    }
 });
