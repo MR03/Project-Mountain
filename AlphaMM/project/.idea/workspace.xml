@@ -25,23 +25,60 @@
     <favorites_list name="AlphaMM" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="advs_c_modal_update.v1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_c_modal_update.v1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.87096775" vertical-offset="378" max-vertical-offset="1647">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.44892648">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="advs_index.v1.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_index.v1.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-27.75" vertical-offset="810" max-vertical-offset="2943">
+                  <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="advs_c_modal_update.v1.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_c_modal_update.v1.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.5354839" vertical-offset="399" max-vertical-offset="1755">
+                  <caret line="24" column="96" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="advs.v1.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/node/scripts/admin-web/advs.v1.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.48502994" vertical-offset="3159" max-vertical-offset="4212">
+                  <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="aw-renew.v1.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node/scss/app-core/aw-renew.v1.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.16666667" vertical-offset="453" max-vertical-offset="1026">
+                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/com/AlphaMM/CustomerMobile/model/cmGoods.java" />
         <option value="$PROJECT_DIR$/app/src/com/AlphaMM/CustomerMobile/model/cmAdvs.java" />
         <option value="$PROJECT_DIR$/out/artifacts/app_war_exploded/page/customer-mobile/home/v1/home_index.html" />
         <option value="$PROJECT_DIR$/app/src/com/AlphaMM/CustomerMobile/api/cmHomeController.java" />
@@ -89,9 +126,10 @@
         <option value="$PROJECT_DIR$/app/src/com/AlphaMM/config/AppConfig.java" />
         <option value="$PROJECT_DIR$/app/src/measurement/MyUtilsTestTest.java" />
         <option value="$PROJECT_DIR$/app/web/js/lib/plugin/ajaxfileupload.js" />
-        <option value="$PROJECT_DIR$/node/page/admin-web/advs/advs_c_modal_update.v1.html" />
         <option value="$PROJECT_DIR$/node/scripts/admin-web/advs.v1.js" />
         <option value="$PROJECT_DIR$/app/src/com/AlphaMM/utils/FileUpload.java" />
+        <option value="$PROJECT_DIR$/node/scss/app-core/aw-renew.v1.scss" />
+        <option value="$PROJECT_DIR$/node/page/admin-web/advs/advs_c_modal_update.v1.html" />
       </list>
     </option>
   </component>
@@ -299,6 +337,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlphaMM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customer-mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AlphaMM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app-core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1210,7 +1292,7 @@
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="972" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1223,9 +1305,9 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34808612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34808612" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15117522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.053952992" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18643162" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1303,14 +1385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2334294" vertical-offset="972" max-vertical-offset="3618">
           <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/scss/app-core/aw-renew.v1.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08206687" vertical-offset="0" max-vertical-offset="810">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,14 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5800781" vertical-offset="405" max-vertical-offset="7614">
           <caret line="26" column="8" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_index.v1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="2943">
-          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -1605,16 +1671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/app_war_exploded/upload/img/20160506/1462525878598181900.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/app_war_exploded/upload/img/20160506/1462525717810751542.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/measurement/MyUtilsTestTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5797665" vertical-offset="107" max-vertical-offset="621">
@@ -1631,11 +1687,6 @@
           <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/out/artifacts/app_war_exploded/upload/img/20160506/1462526095256981963.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/web/js/lib/plugin/ajaxfileupload.js">
@@ -1664,18 +1715,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node/scripts/admin-web/advs.v1.js">
+    <entry file="file://$PROJECT_DIR$/node/scss/customer-mobile/home.v1.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8263473" vertical-offset="3366" max-vertical-offset="4212">
-          <caret line="140" column="19" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="19" />
+        <state vertical-scroll-proportion="-22.027958" vertical-offset="10351" max-vertical-offset="12258">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_index.v1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.75" vertical-offset="810" max-vertical-offset="2943">
+          <caret line="67" column="41" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/scss/app-core/aw-renew.v1.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.16666667" vertical-offset="453" max-vertical-offset="1026">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node/page/admin-web/advs/advs_c_modal_update.v1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.87096775" vertical-offset="378" max-vertical-offset="1647">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.5354839" vertical-offset="399" max-vertical-offset="1755">
+          <caret line="24" column="96" selection-start-line="24" selection-start-column="96" selection-end-line="24" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node/scripts/admin-web/advs.v1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48502994" vertical-offset="3159" max-vertical-offset="4212">
+          <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>

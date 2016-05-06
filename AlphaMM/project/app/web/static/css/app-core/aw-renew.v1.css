@@ -14,3 +14,10 @@ th, td {
 .table-edit tr:hover {
   background: #eee;
   cursor: pointer; }
+
+.visibility-hidden {
+  visibility: hidden; }
+
+.upLoadWarp {
+  width: 100%;
+  height: 100%; }
