@@ -1,4 +1,4 @@
-<div class="modal fade bs-example-modal-lg show in" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" ms-controller="AdvsEdit">
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" ms-controller="AdvsEdit">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -21,8 +21,11 @@
                     <label class="col-sm-2 control-label">上传图片</label>
                     <div class="col-sm-8">
                       <label for="imageFile" class="upLoadWarp">
-                        <img src="" />
-                        <input type="file" name="image" id="imageFile" class="visibility-hidden">
+                        <input type="file" name="image" id="imageFile" class="form-control upLoadInput" ms-change="uploadFile">
+                        <div class="upLoadImg">
+                          <i ms-if="!advsParam.file" class="fa fa-cloud-upload fa-3x"></i>
+                          <img ms-if="advsParam.file" ms-attr-src="advsParam.file" />
+                        </div>
                       </label>
                     </div>
                   </div>
@@ -49,6 +52,7 @@
                   <button type="button" class="btn btn-primary" ms-click="FormSend" data-dismiss="modal">提交</button>
                   <button type="reset" class="btn btn-default">重置</button>
                   <button type="reset" class="btn btn-danger pull-right" data-dismiss="modal" ms-click="DeleteSend" ms-if="advsParam.advs_id">删除</button>
+
                 </div><!-- panel-footer -->
               </div><!-- panel-default -->
             </form>

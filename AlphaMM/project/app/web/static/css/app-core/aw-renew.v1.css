@@ -15,9 +15,26 @@ th, td {
   background: #eee;
   cursor: pointer; }
 
-.visibility-hidden {
-  visibility: hidden; }
+.upLoadInput {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .upLoadWarp {
   width: 100%;
   height: 100%; }
+
+.upLoadImg {
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center; }
+
+.upLoadImg .fa {
+  line-height: inherit; }
+
+.upLoadImg > img {
+  height: 50px; }

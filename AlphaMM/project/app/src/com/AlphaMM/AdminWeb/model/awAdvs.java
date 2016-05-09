@@ -20,7 +20,7 @@ public class awAdvs extends Model<awAdvs> {
 
     // 创建新广告
     public static boolean createAdvs(JSONObject obj) {
-        boolean save = new awAdvs().set("advs_name", obj.getString("name")).set("link", obj.getString("url")).set("advs_type", 1).save();
+        boolean save = new awAdvs().set("advs_name", obj.getString("name")).set("link", obj.getString("url")).set("img_src", obj.getString("file")).set("advs_type", 1).save();
         return save;
     }
 

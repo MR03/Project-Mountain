@@ -16,10 +16,21 @@ define(function(){
         console.log(msg);
     };
 
+
+    var toQueryString = function(obj) {
+        for(var index in obj) {
+            obj[index] = encodeURIComponent(obj[index]);
+        }
+
+        return obj;
+    }
+
     // 获得Url
     var getUrl = function(route, args) {
-        var argsJson = JSON.stringify(args);
+        var argsJson = JSON.stringify(toQueryString(args));
+
         var url = configOptions.apiPath + route + '?' + configOptions.jsonFlag + '=' + argsJson;
+        url = encodeURI(url);
         return url;
     }
 
@@ -30,7 +41,7 @@ define(function(){
         var flow = {
             url: url,
             type: type?'post':'get',
-            dataType: 'json',
+            dataType: 'JSON',
             error:function(){
                 // 开发模式下打印数据接口
                 if(configOptions.devMode){ log('数据异常,异常接口:' + url)};

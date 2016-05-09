@@ -11,6 +11,11 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
     dataMap = {
         Advs_Delete: {
             id: ''
+        },
+        Advs_Update: {
+            id: '',
+            name: '哈哈哈',
+            url: '11111'
         }
     }
 
@@ -31,7 +36,12 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
             var par = dataMap.Advs_Delete;
             par.op = 'delete';
             core.json('admin/advs', par, callback);
-        }
+        },
+        AdvsUpdate: function(callback) {
+            var par = dataMap.Advs_Update;
+            par.op = 'update';
+            core.json('admin/advs', par, callback);
+        }()
     }
 
     // 数据map
@@ -68,27 +78,34 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
             advsParam: {
                 advs_id: '',
                 name: '',
-                url: ''
+                url: '',
+                file: ''
             },
             FormSend: function(){
-                Model.AdvsCreate(AdvsEditVM.advsParam, function(data){
-                    if(data) {
-                        $.gritter.add({
-                            title: '操作提示',
-                            text: '您新建了广告：' + AdvsEditVM.advsParam.name,
-                            sticky: false,
-                            class_name: 'growl-primary'
-                        });
-                        stateMap.TableVMrender(TableVM);
-                    } else {
-                        $.gritter.add({
-                            title: '操作提示',
-                            text: '操作失败,可能是网络原因!',
-                            sticky: false,
-                            class_name: 'growl-warning'
-                        });
-                    }
-                })
+                if(AdvsEditVM.advsParam.advs_id) {
+                    Model.AdvsUpdate(function(data){
+
+                    })
+                } else {
+                    Model.AdvsCreate(AdvsEditVM.advsParam, function(data){
+                        if(data) {
+                            $.gritter.add({
+                                title: '操作提示',
+                                text: '您新建了广告：' + AdvsEditVM.advsParam.name,
+                                sticky: false,
+                                class_name: 'growl-primary'
+                            });
+                            stateMap.TableVMrender(TableVM);
+                        } else {
+                            $.gritter.add({
+                                title: '操作提示',
+                                text: '操作失败,可能是网络原因!',
+                                sticky: false,
+                                class_name: 'growl-warning'
+                            });
+                        }
+                    })
+                }
             },
             DeleteSend: function() {
                 dataMap.Advs_Delete = {
@@ -112,6 +129,27 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
                         });
                     }
                 });
+            },
+            uploadFile: function() {
+                $.ajaxFileUpload({
+                    url : '/api/fileUpload',   //提交的路径
+                    secureuri : false, // 是否启用安全提交，默认为false
+                    fileElementId : 'imageFile', // file控件id
+                    dataType : 'JSON',
+                    data : {
+                        fileName : $('#imageFile').val()   //传递参数，用于解析出文件名
+                    }, // 键:值，传递文件名
+                    success : function(data, status) {
+                        log(data)
+
+                        if(!data.error) {
+                            AdvsEditVM.advsParam.file = data.src
+                        }
+                    },
+                    error : function(data, status) {
+
+                    }
+                });
             }
         });
 
@@ -124,28 +162,4 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
         // 启动应用
         init();
     }());
-
-    $('#imageFile').change(function() {
-        upload($('#imageFile').val());   //函数参数为上传的文件的本机地址
-    });
-
-    function upload(fileName) {
-        $.ajaxFileUpload({
-            url : '/api/fileUpload',   //提交的路径
-            secureuri : false, // 是否启用安全提交，默认为false
-            fileElementId : 'imageFile', // file控件id
-            dataType : 'JSON',
-            data : {
-                fileName : fileName   //传递参数，用于解析出文件名
-            }, // 键:值，传递文件名
-            success : function(data, status) {
-                log(data)
-
-                $("#test").attr("src", data.src)
-            },
-            error : function(data, status) {
-
-            }
-        });
-    }
 });
