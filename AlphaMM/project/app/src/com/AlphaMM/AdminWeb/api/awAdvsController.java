@@ -72,7 +72,14 @@ public class awAdvsController extends Controller {
     }
 
     private void advsUpdate() {
-        System.out.println(jp);
+//        System.out.println(jp.getString("name"));
+        boolean advsUpdate = awAdvs.advsUpdate(jp);
+        if(advsUpdate) {
+            setAttr("status", 1);
+        } else {
+            setAttr("status", 0);
+        }
+        renderJson(new String[]{"status"});
     }
 
 }

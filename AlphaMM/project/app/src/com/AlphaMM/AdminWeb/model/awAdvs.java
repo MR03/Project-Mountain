@@ -11,7 +11,7 @@ import java.util.List;
 public class awAdvs extends Model<awAdvs> {
     public static final awAdvs dao = new awAdvs();
 
-    // 首页广告
+    // 查询首页banner
     public List<awAdvs> homeBanner() {
         String sql = "select * from advs where advs_type=1";
         List<awAdvs> list = dao.find(sql);
@@ -28,5 +28,11 @@ public class awAdvs extends Model<awAdvs> {
     public static boolean advsDelete(JSONObject obj) {
         boolean deleteById = dao.deleteById(obj.getString("id"));
         return deleteById;
+    }
+
+    // 编辑
+    public static boolean advsUpdate(JSONObject obj){
+        boolean update = dao.findByIdLoadColumns(obj.getString("id"), "*").set("advs_name", obj.getString("name")).update();
+        return update;
     }
 }

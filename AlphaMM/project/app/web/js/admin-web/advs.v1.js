@@ -13,7 +13,7 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
             id: ''
         },
         Advs_Update: {
-            id: '',
+            id: '3',
             name: '哈哈哈',
             url: '11111'
         }
