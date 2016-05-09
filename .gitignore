@@ -38,3 +38,6 @@ node_modules
 
 /AlphaMM/project/out/*
 /AlphaMM/project/node/node_modules/*
+
+/ReactDevelop/out/*
+/ReactDevelop/node/node_modules/*
