@@ -6,16 +6,15 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
     var VM;
     var init;
 
-
     // 数据map
     dataMap = {
         Advs_Delete: {
             id: ''
         },
         Advs_Update: {
-            id: '3',
-            name: '哈哈哈',
-            url: '11111'
+            id: '',
+            name: '',
+            url: ''
         }
     }
 
@@ -41,7 +40,7 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
             var par = dataMap.Advs_Update;
             par.op = 'update';
             core.json('admin/advs', par, callback);
-        }()
+        }
     }
 
     // 数据map
@@ -83,15 +82,17 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
             },
             FormSend: function(){
                 if(AdvsEditVM.advsParam.advs_id) {
+                    dataMap.Advs_Update.id = AdvsEditVM.advsParam.advs_id;
+                    dataMap.Advs_Update.name = AdvsEditVM.advsParam.name;
                     Model.AdvsUpdate(function(data){
-
+                        stateMap.TableVMrender(TableVM);
                     })
                 } else {
                     Model.AdvsCreate(AdvsEditVM.advsParam, function(data){
                         if(data) {
                             $.gritter.add({
                                 title: '操作提示',
-                                text: '您新建了广告：' + AdvsEditVM.advsParam.name,
+                                text: '您新建了广告：' + decodeURIComponent(AdvsEditVM.advsParam.name),
                                 sticky: false,
                                 class_name: 'growl-primary'
                             });
@@ -140,8 +141,6 @@ require(['jquery', 'avalon', 'core', 'bootstrap', 'gritter', 'ajaxfileupload'],f
                         fileName : $('#imageFile').val()   //传递参数，用于解析出文件名
                     }, // 键:值，传递文件名
                     success : function(data, status) {
-                        log(data)
-
                         if(!data.error) {
                             AdvsEditVM.advsParam.file = data.src
                         }

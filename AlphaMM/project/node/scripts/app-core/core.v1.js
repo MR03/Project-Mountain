@@ -6,7 +6,7 @@ define(function(){
 
     // 项目注册信息
     var configOptions = {
-        devMode: 'true',
+        devMode: false,
         jsonFlag: 'jd',
         apiPath: 'http://localhost:8080/api/'
     }
@@ -17,6 +17,7 @@ define(function(){
     };
 
 
+    // url参数处理
     var toQueryString = function(obj) {
         for(var index in obj) {
             obj[index] = encodeURIComponent(obj[index]);

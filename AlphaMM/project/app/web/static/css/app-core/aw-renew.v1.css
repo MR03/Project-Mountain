@@ -31,7 +31,8 @@ th, td {
   width: 100%;
   height: 55px;
   line-height: 55px;
-  text-align: center; }
+  text-align: center;
+  cursor: pointer; }
 
 .upLoadImg .fa {
   line-height: inherit; }

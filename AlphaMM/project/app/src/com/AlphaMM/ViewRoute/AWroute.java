@@ -14,4 +14,8 @@ public class AWroute extends Controller {
     public void advs() {
         render("html/admin-web/advs/advs_index.v1.html");
     }
+
+    public void react(){
+        render("html/admin-web/reactdemo/react_demo_index.v1.html");
+    }
 }

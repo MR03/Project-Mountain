@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>AlphaMM管理</title>
+  <link href="/static/Bracket1.5/css/style.default.css" rel="stylesheet">
+  <link href="/static/Bracket1.5/css/jquery.gritter.css" rel="stylesheet">
+  <link href="/static/css/app-core/aw-renew.v1.css" rel="stylesheet">
+  <script src="js/lib/react/react.min.js"></script>
+  <script src="js/lib/react/react-dom.min.js"></script>
+</head>
+
+<body>
+  <section>
+    <!--menu-->
+    <#include "/html/admin-web/common/menu.v1.html" />
+
+    <div class="mainpanel">
+      <div class="headerbar">
+        <a class="menutoggle"><i class="fa fa-bars"></i></a>
+        <form class="searchform" action="index.html" method="post">
+          <input type="text" class="form-control" name="keyword" placeholder="Search here..." />
+        </form>
+
+        <div class="header-right">
+          <#include "/html/admin-web/common/header.v1.html" />
+        </div><!-- header-right -->
+      </div><!-- headerbar -->
+
+      <div class="pageheader">
+        <h2><i class="fa fa-home"></i>广告管理</h2>
+        <div class="breadcrumb-wrapper">
+          <span class="label">You are here:</span>
+          <ol class="breadcrumb">
+            <li><a href="index.html">reactdemo</a></li>
+            <li class="active">后台管理</li>
+          </ol>
+        </div>
+      </div>
+      <div class="contentpanel">
+
+      </div><!-- contentpanel -->
+    </div><!-- mainpanel -->
+  </section>
+
+  <!--广告管理modal-->
+  <#include "/html/admin-web/advs/advs_c_modal_update.v1.html" />
+
+</body>
+</html>

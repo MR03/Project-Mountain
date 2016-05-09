@@ -18,7 +18,6 @@ public class awAdvsController extends Controller {
 
     // 接收分发
     public void index(){
-
         // 解决字符串乱码
         try {
             para = URLDecoder.decode(getPara(AppConfig.jsonFlag), "UTF8");
@@ -72,7 +71,6 @@ public class awAdvsController extends Controller {
     }
 
     private void advsUpdate() {
-//        System.out.println(jp.getString("name"));
         boolean advsUpdate = awAdvs.advsUpdate(jp);
         if(advsUpdate) {
             setAttr("status", 1);
