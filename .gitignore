@@ -41,3 +41,7 @@ node_modules
 
 /ReactDevelop/out/*
 /ReactDevelop/node/node_modules/*
+
+/SSH/lib/*
+/SSH/project/out/*
+/SSH/project/node/node_modules/*

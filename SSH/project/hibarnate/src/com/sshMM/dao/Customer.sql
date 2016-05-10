@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE `customer` (
+  `id` SERIAL PRIMARY KEY COMMENT '用户ID',
+  `name` VARCHAR(20) COMMENT '用户名称',
+  `tel` VARCHAR(20) COMMENT '注册电话'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

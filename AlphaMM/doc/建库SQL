@@ -18,6 +18,13 @@ CREATE TABLE `users` (
   `portrait_image` VARCHAR(200) COMMENT '用户头像'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '管理员账号表';
 
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE `test` (
+  `id` SERIAL PRIMARY KEY COMMENT '用户ID',
+  `name` VARCHAR(20) COMMENT '用户名称',
+  `tel` VARCHAR(20) COMMENT '注册电话'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 INSERT INTO users (users_id, users_name, email, tel, password_hash, salt, users_status, portrait_image) 
 VALUES (DEFAULT, 'admin', 'admin@mao.com', '13012345678', 'admin','admin', 1 , 'static/img/admin_users/blog_1.jpg')
