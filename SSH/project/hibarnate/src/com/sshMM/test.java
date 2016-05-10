@@ -27,10 +27,11 @@ public class test {
         Transaction transaction = session.beginTransaction();
 
         Customer customer1 = new Customer();
-        customer1.setName("哈哈哈");
+        customer1.setName("掌声");
         Serializable save = session.save(customer1);
 
         // 操作
+        // .......................
 
         // 提交
         // 关闭释放资源
