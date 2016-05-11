@@ -45,3 +45,5 @@ node_modules
 /SSH/lib/*
 /SSH/project/out/*
 /SSH/project/node/node_modules/*
+
+/PictureTalk/node_modules/*

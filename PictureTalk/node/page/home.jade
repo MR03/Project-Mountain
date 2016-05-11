@@ -1,0 +1,82 @@
+doctype html
+html(lang='zh-CN')
+   head
+      //- 编码和渲染
+      meta(charset='utf-8')
+      //- SEO
+      meta(name="keywords" content="app,学习")
+      meta(name="description" content="学习用作品")
+      meta(name="author" content="MR03")
+      //- 编码和渲染
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='renderer' content='webkit')
+      meta(name='apple-mobile-web-app-capable' content='yes')
+      meta(name='apple-mobile-web-app-status-bar-style' content='black')
+      meta(name='format-detection' content='telephone=no')
+      meta(name='wap-font-scale' content='no')
+      //- viewport
+      meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
+      //- 网页title
+      title PictureTalk-图客
+      //- 自行确定normalize or reset
+      link(rel='styleSheet' href='//cdn.bootcss.com/normalize/4.1.1/normalize.min.css')
+      link(rel='styleSheet' href='//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css')
+      link(rel='stylesheet' href='/css/common.css')
+      link(rel='stylesheet' href='/css/home.css')
+      //前置js
+      //- prefix-free用于自动添加css前缀
+      script(src='/js/remSetting.js')
+   body
+      //content
+      .body-container
+         header.header-container
+            .row.bar
+               i.col.fa.fa-bars.fa-2x
+               h1.col.bar-title.text-center 他的图客
+               i.col.fa.fa-envelope-o.fa-2x
+         section.section-container
+            .row.avatar
+               .row.avatar-image
+                  .col.avatar-image-wrap
+                     img(src="/img/userprofile.png")
+                  .btn-avatar
+                     i.fa.fa-plus
+               .row.avatar-text
+                  h3.avatar-title-big.text-center 大师设计
+                  h4.avatar-title-small.text-center www.masterdesign.com
+            .row.nav
+               .col.nav-group
+                  i.fa.fa-image
+                  span.nav-title 20
+               .col.nav-group
+                  i.fa.fa-briefcase
+                  span.nav-title 2
+               .col.nav-group
+                  i.fa.fa-heart
+                  span.nav-title 257
+               .col.nav-group
+                  i.fa.fa-tag
+                  span.nav-title 20
+            .row.show
+               .col.show-group
+                  .show-image-wrap
+                     img(src="/img/media1.jpg")
+               .col.show-group
+                  .show-image-wrap
+                     img(src="/img/media3.png")
+               .col.show-group
+                  .show-image-wrap
+                     img(src="/img/media4.png")
+               .col.show-group
+                  .show-image-wrap
+                     img(src="/img/media7.png")
+
+
+
+
+
+      // js
+      //- react
+      script(src='/js/home.react.js')
+      //- CDN服务:cdn.bootcss.com
+      script(src='//cdn.bootcss.com/jquery/1.12.0/jquery.min.js')

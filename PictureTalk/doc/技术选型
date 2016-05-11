@@ -1,0 +1,7 @@
+前端选型:
+IDE: WebStorm
+page:jade
+css:sass
+js:react
+自动化:gulp
+模块化:webpack

@@ -1,0 +1,194 @@
+@charset "UTF-8";
+body {
+  font-size: .6rem;
+  font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #373737; }
+
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  background: transparent; }
+
+a, img, article, aside, figure, footer, header, nav, section, details, summary {
+  display: block; }
+
+img,
+object,
+embed {
+  max-width: 100%; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none; }
+
+h1, h2 {
+  font-size: .8rem; }
+
+h3, h4 {
+  font-size: .7rem; }
+
+h5, h6 {
+  font-size: .6rem; }
+
+input, button {
+  outline: none !important; }
+
+ul {
+  list-style: none; }
+
+/*内边距和边框不再会增加它的宽度*/
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+img {
+  width: inherit;
+  height: inherit; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0; }
+
+/* make buttons play nice in IE */
+button,
+input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+label,
+input[type=button],
+input[type=submit],
+input[type=file],
+button {
+  cursor: pointer; }
+
+html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+.mb-01r {
+  margin-bottom: .1rem; }
+
+.mb-02r {
+  margin-bottom: .2rem; }
+
+.mb-03r {
+  margin-bottom: .3rem; }
+
+.mb-04r {
+  margin-bottom: .4rem; }
+
+.mb-05r {
+  margin-bottom: .5rem; }
+
+.mt-01r {
+  margin-top: .1rem; }
+
+.mt-02r {
+  margin-top: .2rem; }
+
+.mt-03r {
+  margin-top: .3rem; }
+
+.mt-04r {
+  margin-top: .4rem; }
+
+.mt-05r {
+  margin-top: .5rem; }
+
+.ml-01r {
+  margin-left: .1rem; }
+
+.ml-02r {
+  margin-left: .2rem; }
+
+.ml-03r {
+  margin-left: .3rem; }
+
+.ml-04r {
+  margin-left: .4rem; }
+
+.ml-05r {
+  margin-left: .5rem; }
+
+.mr-01r {
+  margin-right: .1rem; }
+
+.mr-02r {
+  margin-right: .2rem; }
+
+.mr-03r {
+  margin-right: .3rem; }
+
+.mr-04r {
+  margin-right: .4rem; }
+
+.mr-05r {
+  margin-right: .5rem; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.text-center {
+  text-align: center; }
+
+.body-container {
+  width: 16rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .body-container:before, .body-container:after {
+    content: " ";
+    display: table; }
+  .body-container:after {
+    clear: both; }
+
+.header-container {
+  width: 16rem;
+  height: 2.2rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .header-container:before, .header-container:after {
+    content: " ";
+    display: table; }
+  .header-container:after {
+    clear: both; }
+
+.section-container {
+  width: 16rem;
+  min-height: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff; }
+  .section-container:before, .section-container:after {
+    content: " ";
+    display: table; }
+  .section-container:after {
+    clear: both; }
+
+.row {
+  width: 16rem; }
+  .row:before, .row:after {
+    content: " ";
+    display: table; }
+  .row:after {
+    clear: both; }
+
+.col {
+  height: inherit;
+  line-height: inherit;
+  display: block;
+  position: relative;
+  min-height: 1px;
+  float: left; }
