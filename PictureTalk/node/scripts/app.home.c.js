@@ -5,7 +5,10 @@ let ReactDOM = require('react-dom');
 let header = React.createClass({
     render: function () {
         return (
-            <header className="header-container">
+            <header className=".
+
+
+            header-container">
                 <div className="row bar">
                     <i className="col fa fa-bars fa-2x"></i>
                     <h1 className="col bar-title text-center">他的图客</h1>
@@ -25,7 +28,7 @@ let avatar = React.createClass({
                     <div className="col avatar-image-wrap">
                         <img src="/img/userprofile.png" />
                     </div>
-                    <div className="btn-avatar">
+                    <div className="btn-avatar" onClick={this.handleClick}>
                         <i className="fa fa-plus"></i>
                     </div>
                 </div>
@@ -35,6 +38,9 @@ let avatar = React.createClass({
                 </div>
             </div>
         );
+    },
+    handleClick: function() {
+        alert("点击")
     }
 });
 

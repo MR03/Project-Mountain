@@ -64,7 +64,7 @@
 	    render: function render() {
 	        return React.createElement(
 	            'header',
-	            { className: 'header-container' },
+	            { className: '.\r header-container' },
 	            React.createElement(
 	                'div',
 	                { className: 'row bar' },
@@ -98,7 +98,7 @@
 	                ),
 	                React.createElement(
 	                    'div',
-	                    { className: 'btn-avatar' },
+	                    { className: 'btn-avatar', onClick: this.handleClick },
 	                    React.createElement('i', { className: 'fa fa-plus' })
 	                )
 	            ),
@@ -117,6 +117,9 @@
 	                )
 	            )
 	        );
+	    },
+	    handleClick: function handleClick() {
+	        alert("点击");
 	    }
 	});
 
