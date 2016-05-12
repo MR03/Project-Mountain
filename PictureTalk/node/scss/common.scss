@@ -154,10 +154,14 @@ html {
 }
 
 // 简易grid框架
+.container {
+  @include clearfix;
+}
+
 .body-container {
   width: 16rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  transition: margin-left .3s linear;
   @include clearfix;
 }
 

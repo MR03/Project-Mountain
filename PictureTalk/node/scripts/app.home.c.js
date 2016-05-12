@@ -2,17 +2,23 @@ let React = require('react');
 let ReactDOM = require('react-dom');
 
 // 头部
+
 let header = React.createClass({
     render: function () {
         return (
             <div className="header-container">
                 <div className="row bar">
-                    <i className="col fa fa-bars fa-2x"></i>
+                    <i className="col fa fa-bars fa-2x" onClick={this.handleMenu}></i>
                     <h1 className="col bar-title text-center">他的图客</h1>
                     <i className="col fa fa-envelope-o fa-2x"></i>
                 </div>
             </div>
         );
+    },
+    handleMenu: function() {
+        document.querySelector(".menu").style.visibility = 'visible';
+        document.querySelector(".menu").style.marginLeft = '0';
+        document.querySelector(".body-container").style.marginLeft = '13.75rem';
     }
 });
 
@@ -37,7 +43,7 @@ let avatar = React.createClass({
         );
     },
     handleClick: function() {
-        alert("点击")
+
     }
 });
 
@@ -78,5 +84,41 @@ let show = React.createClass({
     }
 })
 
+// menu
+let menu = React.createClass({
+    render: function() {
+        return (
+            <div className="container menu">
+                <header className="row menu-line"></header>
+                <section className="row">
+                    <ul className="container menu-list">
+                        <li className="row menu-line active">
+                            <div className="col menu-icon"><i className="fa fa-user"></i></div>
+                            <div className="col menu-title">
+                                <h3>我的图客</h3>
+                            </div>
+                            <div className="col menu-icon"><i className="fa fa-user"></i></div>
+                        </li>
+                        <li className="row menu-line">
+                            <div className="col menu-icon"><i className="fa fa-user"></i></div>
+                            <div className="col menu-title">
+                                <h3>我的图客</h3>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul className="container menu-list">
+                        <li className="row menu-line">
+                            <div className="col menu-icon"><i className="fa fa-user"></i></div>
+                            <div className="col menu-title">
+                                <h3>我的图客</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        );
+    }
+})
+
 // 输出
-module.exports = [header, avatar, nav, show];
+module.exports = [header, avatar, nav, show, menu];

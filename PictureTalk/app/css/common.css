@@ -144,10 +144,17 @@ html {
 .text-center {
   text-align: center; }
 
+.container:before, .container:after {
+  content: " ";
+  display: table; }
+
+.container:after {
+  clear: both; }
+
 .body-container {
   width: 16rem;
-  margin-left: auto;
-  margin-right: auto; }
+  margin-left: 0;
+  transition: margin-left .3s linear; }
   .body-container:before, .body-container:after {
     content: " ";
     display: table; }

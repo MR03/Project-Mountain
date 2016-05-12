@@ -58,6 +58,7 @@
 	var ReactDOM = __webpack_require__(34);
 
 	// 头部
+
 	var header = React.createClass({
 	    displayName: 'header',
 
@@ -68,7 +69,7 @@
 	            React.createElement(
 	                'div',
 	                { className: 'row bar' },
-	                React.createElement('i', { className: 'col fa fa-bars fa-2x' }),
+	                React.createElement('i', { className: 'col fa fa-bars fa-2x', onClick: this.handleMenu }),
 	                React.createElement(
 	                    'h1',
 	                    { className: 'col bar-title text-center' },
@@ -77,6 +78,11 @@
 	                React.createElement('i', { className: 'col fa fa-envelope-o fa-2x' })
 	            )
 	        );
+	    },
+	    handleMenu: function handleMenu() {
+	        document.querySelector(".menu").style.visibility = 'visible';
+	        document.querySelector(".menu").style.marginLeft = '0';
+	        document.querySelector(".body-container").style.marginLeft = '13.75rem';
 	    }
 	});
 
@@ -118,9 +124,7 @@
 	            )
 	        );
 	    },
-	    handleClick: function handleClick() {
-	        alert("点击");
-	    }
+	    handleClick: function handleClick() {}
 	});
 
 	// 导航栏
@@ -223,8 +227,92 @@
 	    }
 	});
 
+	// menu
+	var menu = React.createClass({
+	    displayName: 'menu',
+
+	    render: function render() {
+	        return React.createElement(
+	            'div',
+	            { className: 'container menu' },
+	            React.createElement('header', { className: 'row menu-line' }),
+	            React.createElement(
+	                'section',
+	                { className: 'row' },
+	                React.createElement(
+	                    'ul',
+	                    { className: 'container menu-list' },
+	                    React.createElement(
+	                        'li',
+	                        { className: 'row menu-line active' },
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-icon' },
+	                            React.createElement('i', { className: 'fa fa-user' })
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-title' },
+	                            React.createElement(
+	                                'h3',
+	                                null,
+	                                '我的图客'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-icon' },
+	                            React.createElement('i', { className: 'fa fa-user' })
+	                        )
+	                    ),
+	                    React.createElement(
+	                        'li',
+	                        { className: 'row menu-line' },
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-icon' },
+	                            React.createElement('i', { className: 'fa fa-user' })
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-title' },
+	                            React.createElement(
+	                                'h3',
+	                                null,
+	                                '我的图客'
+	                            )
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    'ul',
+	                    { className: 'container menu-list' },
+	                    React.createElement(
+	                        'li',
+	                        { className: 'row menu-line' },
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-icon' },
+	                            React.createElement('i', { className: 'fa fa-user' })
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'col menu-title' },
+	                            React.createElement(
+	                                'h3',
+	                                null,
+	                                '我的图客'
+	                            )
+	                        )
+	                    )
+	                )
+	            )
+	        );
+	    }
+	});
+
 	// 输出
-	module.exports = [header, avatar, nav, show];
+	module.exports = [header, avatar, nav, show, menu];
 
 /***/ },
 /* 2 */
@@ -20330,12 +20418,13 @@
 
 	var _require = __webpack_require__(1);
 
-	var _require2 = _slicedToArray(_require, 4);
+	var _require2 = _slicedToArray(_require, 5);
 
 	var Header = _require2[0];
 	var Avatar = _require2[1];
 	var Nav = _require2[2];
 	var Show = _require2[3];
+	var Menu = _require2[4];
 
 
 	ReactDOM.render(React.createElement(Header, null), document.getElementById('R-seader'));
@@ -20345,6 +20434,8 @@
 	ReactDOM.render(React.createElement(Nav, null), document.getElementById('R-nav'));
 
 	ReactDOM.render(React.createElement(Show, null), document.getElementById('R-show'));
+
+	ReactDOM.render(React.createElement(Menu, null), document.getElementById('R-menu'));
 
 /***/ }
 /******/ ]);

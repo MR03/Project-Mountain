@@ -1,7 +1,7 @@
 let React = require('react');
 let ReactDOM = require('react-dom');
 
-let [Header, Avatar, Nav, Show] = require('./app.home.c.js');
+let [Header, Avatar, Nav, Show, Menu] = require('./app.home.c.js');
 
 
 ReactDOM.render(
@@ -24,3 +24,7 @@ ReactDOM.render(
     document.getElementById('R-show')
 );
 
+ReactDOM.render(
+    (<Menu />),
+    document.getElementById('R-menu')
+);

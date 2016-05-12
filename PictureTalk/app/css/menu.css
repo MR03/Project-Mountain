@@ -1,0 +1,34 @@
+.container.menu {
+  width: 13.75rem;
+  background: #303030;
+  margin-left: 0;
+  height: 28.4rem;
+  position: fixed;
+  z-index: 6000;
+  color: #b9b9b9;
+  font-size: .7rem;
+  margin-left: -13.75rem;
+  visibility: hidden;
+  transition: margin-left .3s linear; }
+
+.menu-line {
+  width: 13.75rem;
+  padding: 0 .3rem;
+  background: #353535;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  margin: 0 0 .1rem 0; }
+
+.menu-line:active, .menu-line.active {
+  background: #ea4c88;
+  color: #ffffff; }
+
+.menu-list {
+  margin-bottom: 1rem; }
+
+.menu-icon {
+  width: 2.2rem;
+  text-align: center; }
+
+.menu-title {
+  width: 8.75rem; }
