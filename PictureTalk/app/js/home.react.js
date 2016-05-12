@@ -63,8 +63,8 @@
 
 	    render: function render() {
 	        return React.createElement(
-	            'header',
-	            { className: '.\r header-container' },
+	            'div',
+	            { className: 'header-container' },
 	            React.createElement(
 	                'div',
 	                { className: 'row bar' },

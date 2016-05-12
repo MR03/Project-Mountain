@@ -1,0 +1,15 @@
+{
+  "name": "SPA-demo02",
+  "version": "1.0.0",
+  "description": "SPA-demo02",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mr03",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1"
+  }
+}

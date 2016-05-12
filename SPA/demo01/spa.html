@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SPA</title>
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #777;
+        }
+        #spa {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            bottom: 8px;
+            right: 8px;
+            border-radius: 8px 8px 0 8px;
+            background-color: #fff;
+        }
+        .spa-slider {
+            position: absolute;
+            bottom: 0;
+            right: 2px;
+            width: 300px;
+            height: 16px;
+            cursor: pointer;
+            border-radius: 8px 0 0 0;
+            background-color: #f00;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+    <script>
+        // 简单情况下事件函数里面写业务逻辑也行
+        // 但是稍微复杂的情况下,一个事件里就会涉及多个业务逻辑
+        // 分不分开看情况了
+        // 参数和初始化必须有
+
+        var log = function(msg){
+            console.log(msg)
+        }
+
+        var spa = (function($){
+            var configMap = {
+                extended_height: 434,
+                extended_title: 'Click to retract',
+                retracted_height: 16,
+                retracted_title: 'Click to extend',
+                template_html: '<div class="spa-slider"><\/div>'
+            },
+            $chatSlider, toggleSlider, onClickSlider, initModule;
+
+
+            // 业务逻辑
+            toggleSlider = function(){
+                var slider_height = $chatSlider.height();
+
+                if( slider_height === configMap.retracted_height ) {
+                    $chatSlider.animate({height: configMap.extended_height}).attr('title', configMap.extended_title);
+                    return true;
+                }
+
+                else if( slider_height === configMap.extended_height ) {
+                    $chatSlider.animate({height: configMap.retracted_height}).attr('title', configMap.retracted_title);
+                    return false;
+                }
+            };
+
+            // 事件函数
+            onClickSlider = function(){
+                toggleSlider();
+                return false;
+            };
+
+            // 初始化
+            initModule = function($container){
+                $container.html(configMap.template_html);
+                $chatSlider = $container.find('.spa-slider');
+
+                $chatSlider.attr('title', configMap.retracted_title).click(onClickSlider);
+                return true;
+            };
+
+            return { initModule: initModule};
+        }(jQuery))
+
+    </script>
+    <script>
+        $(function(){
+            spa.initModule($('#spa'));
+        })
+    </script>
+</head>
+<body>
+    <div id="spa">
+    </div>
+</body>
+</html>

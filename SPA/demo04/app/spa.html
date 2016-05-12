@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>SPA Starter</title>
+    <link rel="stylesheet" href="/css/spa.css" type="text/css" />
+    <link rel="stylesheet" href="/css/spa.chat.css" type="text/css" />
+    <link rel="stylesheet" href="/css/spa.shell.css" type="text/css" />
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+    <script src="/js/jq/jquery.uriAnchor.js"></script>
+    <!--基础和工具-->
+    <script src="/js/spa.js"></script>
+    <script src="/js/spa.util.js"></script>
+    <!--shell-->
+    <script src="/js/spa.shell.js"></script>
+    <!--功能-->
+    <script src="/js/spa.model.js"></script>
+    <script src="/js/spa.chat.js"></script>
+    <script>
+        $(function(){
+            spa.initModule($('#spa'));
+        })
+    </script>
+</head>
+<body>
+    <div id="spa"></div>
+</body>
+</html>
