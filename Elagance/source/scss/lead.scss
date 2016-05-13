@@ -79,7 +79,7 @@
   position: relative;
 }
 
-.container.lead-body {
+.lead-body {
   width: 16rem;
   height: 28.4rem;
   background: url("/assets/img/bg_lead.png") no-repeat;
@@ -137,7 +137,7 @@
   margin: auto;
 }
 
-.lead-body-sign-in {
+.lead-body-sign-btn {
   width: 8rem;
   height: 2rem;
   background: transparent;
@@ -145,17 +145,7 @@
   border-radius: 3rem;
   color: #ffffff;
 }
-
-.lead-body-sign-up {
-  width: 8rem;
-  height: 2rem;
-  background: transparent;
-  border: .05rem solid #ffffff;
-  border-radius: 3rem;
-  color: #ffffff;
-}
-
-.active {
+.lead-body-sign-btn:active {
   border: none;
   background: #efdecc;
   color: #937f6b;

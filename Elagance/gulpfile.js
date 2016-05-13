@@ -25,7 +25,8 @@ var BP = {
         baseDir: './app'
     },
     html: {
-        src: './app/*.html'
+        src: './app/*.html',
+        text: './app/test/*.html'
     },
     css: {
         src: './app/assets/css/*.css'
@@ -62,6 +63,7 @@ gulp.task('default',['jade', 'scss'],function() {
     gulp.watch(BP.scripts.src,['webpack']);
     //page change
     gulp.watch(BP.html.src).on('change', reload);
+    gulp.watch(BP.html.text).on('change', reload);
     gulp.watch(BP.css.src).on('change', reload);
     gulp.watch(BP.js.src).on('change', reload);
     //livereload.listen();

@@ -4,8 +4,11 @@ var path = require("path");
 var config = {
     // 页面输出文件配置
     entry: {
+        // 测试
+        //core: './source/scripts/elagance.test.js',
         remSetting: './source/scripts/rem.js',
-        eLead: ['./source/scripts/elagance.js', './source/scripts/elagance.lead.shell.js']
+        eLead: ['./source/scripts/elagance.js', './source/scripts/elagance.lead.js'],
+        eHome: ['./source/scripts/elagance.js', './source/scripts/elagance.home.shell.js'],
     },
     // 输出配置
     output: {

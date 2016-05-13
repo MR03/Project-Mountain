@@ -1,9 +1,17 @@
-let elagance = {};
+// 定义应用
+// app:Elagance
 
-let log = function(msg) {
-    console.log(msg);
-}
+let app = {
+    configMap: {
+        baseUrl: '',
+        siteUrl: ''
+    }
+};
 
-module.exports = log;
+// 模块出口
+module.exports = app;
+
+
+
 
 
