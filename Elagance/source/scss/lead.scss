@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+// mixin
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// 微调
+.mb-01r {
+  margin-bottom: .1rem; }
+
+.mb-02r {
+  margin-bottom: .2rem; }
+
+.mb-03r {
+  margin-bottom: .3rem; }
+
+.mb-04r {
+  margin-bottom: .4rem; }
+
+.mb-05r {
+  margin-bottom: .5rem; }
+
+.mt-01r {
+  margin-top: .1rem; }
+
+.mt-02r {
+  margin-top: .2rem; }
+
+.mt-03r {
+  margin-top: .3rem; }
+
+.mt-04r {
+  margin-top: .4rem; }
+
+.mt-05r {
+  margin-top: .5rem; }
+
+.ml-01r {
+  margin-left: .1rem; }
+
+.ml-02r {
+  margin-left: .2rem; }
+
+.ml-03r {
+  margin-left: .3rem; }
+
+.ml-04r {
+  margin-left: .4rem; }
+
+.ml-05r {
+  margin-left: .5rem; }
+
+.mr-01r {
+  margin-right: .1rem; }
+
+.mr-02r {
+  margin-right: .2rem; }
+
+.mr-03r {
+  margin-right: .3rem; }
+
+.mr-04r {
+  margin-right: .4rem; }
+
+.mr-05r {
+  margin-right: .5rem; }
+
+.container {
+  @include clearfix;
+  display: block;
+  position: relative;
+}
+
+.container.lead-body {
+  width: 16rem;
+  height: 28.4rem;
+  background: url("/assets/img/bg_lead.png") no-repeat;
+  background-size: 16rem 28.4rem;
+}
+.lead-body-logo {
+  width: 2rem;
+  height: 2.45rem;
+  background: url("/assets/img/logo_normal.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 21rem;
+  margin: auto;
+}
+.lead-body-title {
+  width: 7rem;
+  height: .85rem;
+  background: url("/assets/img/title-lead.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 13rem;
+  margin: auto;
+}
+
+.lead-body-text {
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+  margin: auto;
+}
+
+.lead-body-text .word {
+  text-align: center;
+  color: #8d8d8d;
+}
+
+.lead-body-sign {
+  width: 8rem;
+  height: 6rem;
+  position: absolute;
+  top: 21rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.lead-body-sign-in {
+  width: 8rem;
+  height: 2rem;
+  background: transparent;
+  border: .05rem solid #ffffff;
+  border-radius: 3rem;
+  color: #ffffff;
+}
+
+.lead-body-sign-up {
+  width: 8rem;
+  height: 2rem;
+  background: transparent;
+  border: .05rem solid #ffffff;
+  border-radius: 3rem;
+  color: #ffffff;
+}
+
+.active {
+  border: none;
+  background: #efdecc;
+  color: #937f6b;
+}

@@ -1,0 +1,10 @@
+前端:
+IDE: WebStorm
+page:jade
+css:sass
+js: 原生
+自动化:gulp
+模块化和打包: webpack
+
+后端:
+nodejs

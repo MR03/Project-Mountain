@@ -1,0 +1,41 @@
+doctype html
+html(lang='zh-CN')
+   head
+      //- 编码和渲染
+      meta(charset='utf-8')
+      //- SEO
+      meta(name="keywords" content="app,学习")
+      meta(name="description" content="学习用作品")
+      meta(name="author" content="MR03")
+      //- 编码和渲染
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='renderer' content='webkit')
+      meta(name='apple-mobile-web-app-capable' content='yes')
+      meta(name='apple-mobile-web-app-status-bar-style' content='black')
+      meta(name='format-detection' content='telephone=no')
+      meta(name='wap-font-scale' content='no')
+      //- viewport
+      meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
+      //- 网页title
+      title Elagance
+      //- 自行确定normalize or reset
+      link(rel='styleSheet' href='//cdn.bootcss.com/normalize/4.1.1/normalize.min.css')
+      link(rel='styleSheet' href='//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css')
+      link(rel='stylesheet' href='/assets/css/reset.v1.css')
+      link(rel='stylesheet' href='/assets/css/lead.css')
+      //前置js
+      //- prefix-free用于自动添加css前缀
+      script(src='/js/remSetting.build.js')
+      script(src='/js/eLead.build.js')
+   body
+      //content
+      .container.lead-body
+         .lead-body-logo
+         .lead-body-title
+         .lead-body-text
+            h3.word 现在，找到自己的节奏
+         .lead-body-sign
+            button.lead-body-sign-in.mt-02r#signIn
+               span 登录
+            button.lead-body-sign-up.mt-05r
+               span 注册

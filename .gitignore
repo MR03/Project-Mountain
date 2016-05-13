@@ -47,3 +47,5 @@ node_modules
 /SSH/project/node/node_modules/*
 
 /PictureTalk/node_modules/*
+
+/Elagance/node_modules/*
