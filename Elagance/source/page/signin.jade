@@ -17,27 +17,16 @@ html(lang='zh-CN')
       //- viewport
       meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
       //- 网页title
-      title Elagance
+      title 登录
       //- 自行确定normalize or reset
-      link(rel='styleSheet' href='//cdn.bootcss.com/normalize/4.1.1/normalize.min.css')
+      link(rel='styleSheet' href='/assets/css/elagance.css')
       link(rel='styleSheet' href='//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css')
       link(rel='stylesheet' href='/assets/css/reset.v1.css')
-      link(rel='stylesheet' href='/assets/css/elagance.animate.css')
-      link(rel='stylesheet' href='/assets/css/lead.css')
+      link(rel='stylesheet' href='/assets/css/elagance.signin.v1.css')
       //前置js
       //- prefix-free用于自动添加css前缀
       script(src='/js/remSetting.build.js')
-      script(src='/js/eLead.build.js')
    body
       //content
       .container
-         .lead-body
-            .lead-body-logo.animated.fadeInDown
-            .lead-body-title
-            .lead-body-text
-               h3.word 现在，找到自己的节奏
-            .lead-body-sign
-               button.lead-body-sign-btn.mt-02r.animated.fadeIn#signIn
-                  span 登录
-               button.lead-body-sign-btn.mt-05r.animated.fadeIn#signUp
-                  span 注册
+         .signin-body

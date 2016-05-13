@@ -44,17 +44,120 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(3);
-	module.exports = __webpack_require__(5);
+	__webpack_require__(1);
+	module.exports = __webpack_require__(3);
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	// 定义应用
+	// app:Elagance
+
+	var app = {
+	    configMap: {
+	        baseUrl: '',
+	        siteUrl: ''
+	    }
+	};
+
+	// 模块出口
+	module.exports = app;
+
+/***/ },
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var sizzle = __webpack_require__(2);
+	// app-spa:lead
+
+	// 导入工具类
+	var utils = __webpack_require__(4);
+	// 导入应用
+	var app = __webpack_require__(1);
+	// 导入spa文件
+	var spa_lead = __webpack_require__(5);
+
+	// 配置和初始化sap
+	utils.ready(function () {
+	    // 注入app配置参数
+	    spa_lead(app);
+	});
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	// 数据区
+	// ----------------------------------
+
+	var utils = {}; // 工具对象
+	var doc = window.document; // 文档对象
+
+	// 方法实现区
+	// ----------------------------------
+
+	utils.ready = function (fn) {
+	    if (doc.readyState != 'loading') {
+	        fn();
+	    } else {
+	        doc.addEventListener('DOMContentLoaded', fn);
+	    }
+	};
+
+	// 模块出口
+	module.exports = utils;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var core = __webpack_require__(6);
+
+	var configMap = {};
+
+	var sizzleMap = {};
+
+	var signIn = function signIn(el) {
+	    var $signIn = core.$(el);
+	    core.on($signIn, 'click', function () {
+	        window.location = '/signin.html';
+	    });
+	};
+
+	var signUp = function signUp(el) {
+	    var $signUp = core.$(el);
+	    core.on($signUp, 'click', function () {
+	        core.log('跳转至注册界面');
+	    });
+	};
+
+	// 初始化
+	var initModule = function initModule() {
+	    // 具体绑定的元素统一在这里确定
+	    signIn('signIn');
+	    signUp('signUp');
+	};
+
+	// 模块出口
+	module.exports = initModule;
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var sizzle = __webpack_require__(7);
 
 	// 数据区
 	// ----------------------------------
@@ -95,7 +198,7 @@
 	module.exports = core;
 
 /***/ },
-/* 2 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;"use strict";
@@ -2242,109 +2345,6 @@
 	        }
 	    // EXPOSE
 	})(window);
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	// 定义应用
-	// app:Elagance
-
-	var app = {
-	    configMap: {
-	        baseUrl: '',
-	        siteUrl: ''
-	    }
-	};
-
-	// 模块出口
-	module.exports = app;
-
-/***/ },
-/* 4 */,
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	// app-spa:lead
-
-	// 导入工具类
-	var utils = __webpack_require__(6);
-	// 导入应用
-	var app = __webpack_require__(3);
-	// 导入spa文件
-	var spa_lead = __webpack_require__(7);
-
-	// 配置和初始化sap
-	utils.ready(function () {
-	    // 注入app配置参数
-	    spa_lead(app);
-	});
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	// 数据区
-	// ----------------------------------
-
-	var utils = {}; // 工具对象
-	var doc = window.document; // 文档对象
-
-	// 方法实现区
-	// ----------------------------------
-
-	utils.ready = function (fn) {
-	    if (doc.readyState != 'loading') {
-	        fn();
-	    } else {
-	        doc.addEventListener('DOMContentLoaded', fn);
-	    }
-	};
-
-	// 模块出口
-	module.exports = utils;
-
-/***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var core = __webpack_require__(1);
-
-	var configMap = {};
-
-	var sizzleMap = {};
-
-	var signIn = function signIn(el) {
-	    var $signIn = core.$(el);
-	    core.on($signIn, 'click', function () {
-	        core.log('跳转至登录界面');
-	    });
-	};
-
-	var signUp = function signUp(el) {
-	    var $signUp = core.$(el);
-	    core.on($signUp, 'click', function () {
-	        core.log('跳转至注册界面');
-	    });
-	};
-
-	// 初始化
-	var initModule = function initModule() {
-	    // 具体绑定的元素统一在这里确定
-	    signIn('signIn');
-	    signUp('signUp');
-	};
-
-	// 模块出口
-	module.exports = initModule;
 
 /***/ }
 /******/ ]);

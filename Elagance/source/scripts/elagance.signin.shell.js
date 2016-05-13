@@ -11,7 +11,7 @@ let sizzleMap = {
 let signIn = function(el) {
     let $signIn = core.$(el);
     core.on($signIn, 'click', function(){
-        window.location = '/signin.html';
+        core.log('跳转至登录界面')
     })
 };
 

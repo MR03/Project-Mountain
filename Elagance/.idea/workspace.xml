@@ -2,25 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a0ac189-a023-4f6a-93aa-64147d1a3fd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/elagance.animate.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.core.sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.home.shell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.lead.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.test.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.utils.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/page/sign-in.jade" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/test/test-core.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/img/bg-signin.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/lib/_animate.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/modules/_grid.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/modules/_minins.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/lib/_normalize.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/modules/_utils.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.signin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.signin.shell.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scss/elagance.signin.v1.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/eHome.build.js" afterPath="$PROJECT_DIR$/app/js/eHome.build.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/eLead.build.js" afterPath="$PROJECT_DIR$/app/js/eLead.build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scripts/elagance.js" afterPath="$PROJECT_DIR$/source/scripts/elagance.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" afterPath="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/css/lead.css" afterPath="$PROJECT_DIR$/app/assets/css/lead.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lead.html" afterPath="$PROJECT_DIR$/app/lead.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/page/lead.jade" afterPath="$PROJECT_DIR$/source/page/lead.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scss/home.scss" afterPath="$PROJECT_DIR$/source/scss/home.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scss/lead.scss" afterPath="$PROJECT_DIR$/source/scss/lead.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\page\sign-in.jade" afterPath="$PROJECT_DIR$/source/page/signin.jade" />
+      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\elagance.animate.scss" afterPath="$PROJECT_DIR$/source/scss/elagance.scss" />
+      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\reset.v1.scss" afterPath="$PROJECT_DIR$/source/scss/modules/_reset.v1.scss" />
     </list>
     <ignored path="elagance.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,34 +39,14 @@
     <favorites_list name="elagance" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49572128">
+    <splitter split-orientation="horizontal" split-proportion="0.49383518">
       <split-first>
         <leaf>
-          <file leaf-file-name="lead.jade" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
+          <file leaf-file-name="signin.jade" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/source/page/signin.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sign-in.jade" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/source/page/sign-in.jade">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2109375">
-                  <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="elagance.animate.scss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/source/scss/elagance.animate.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.409375">
+                  <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -77,11 +56,101 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="elagance.lead.shell.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/source/scripts/elagance.lead.shell.js">
+          <file leaf-file-name="elagance.signin.v1.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/elagance.signin.v1.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.3796875">
-                  <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+                <state vertical-scroll-proportion="-3.75">
+                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_utils.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/modules/_utils.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-45.75">
+                  <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="elagance.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/elagance.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.25">
+                  <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_grid.scss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/source/scss/modules/_grid.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.26821193">
+                  <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_animate.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/lib/_animate.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="lead.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/lead.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-1.5">
+                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_minins.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/modules/_minins.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-9.0">
+                  <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/home.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-1.5">
+                  <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_reset.v1.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/modules/_reset.v1.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-27.75">
+                  <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_normalize.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/source/scss/lib/_normalize.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -124,11 +193,20 @@
         <option value="$PROJECT_DIR$/source/scripts/elagance.utils.js" />
         <option value="$PROJECT_DIR$/source/scripts/elagance.core.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" />
         <option value="$PROJECT_DIR$/source/scripts/elagance.lead.js" />
         <option value="$PROJECT_DIR$/source/scripts/elagance.js" />
-        <option value="$PROJECT_DIR$/source/scss/lead.scss" />
         <option value="$PROJECT_DIR$/source/page/lead.jade" />
+        <option value="$PROJECT_DIR$/source/scss/elagance.sign-in.v1.scss" />
+        <option value="$PROJECT_DIR$/source/page/sign-in.jade" />
+        <option value="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" />
+        <option value="$PROJECT_DIR$/source/scss/_minins.scss" />
+        <option value="$PROJECT_DIR$/source/scss/_utils.scss" />
+        <option value="$PROJECT_DIR$/source/page/signin.jade" />
+        <option value="$PROJECT_DIR$/source/scss/elagance.scss" />
+        <option value="$PROJECT_DIR$/source/scss/elagance.signin.v1.scss" />
+        <option value="$PROJECT_DIR$/source/scss/_grid.scss" />
+        <option value="$PROJECT_DIR$/source/scss/lead.scss" />
+        <option value="$PROJECT_DIR$/source/scss/home.scss" />
       </list>
     </option>
   </component>
@@ -308,6 +386,28 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="elagance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Elagance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -351,13 +451,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\git\Project-Mountain\Elagance\source\page" />
       <recent name="F:\git\Project-Mountain\Elagance\source\scss" />
+      <recent name="F:\git\Project-Mountain\Elagance\app\assets\img" />
       <recent name="F:\git\Project-Mountain\Elagance\source\scripts" />
+      <recent name="F:\git\Project-Mountain\Elagance\source\page" />
       <recent name="F:\git\Project-Mountain\Elagance\source\scripts\lib" />
-      <recent name="F:\git\Project-Mountain\Elagance\app\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\git\Project-Mountain\Elagance\source\scss\modules" />
+      <recent name="F:\git\Project-Mountain\Elagance\source\scss\lib" />
       <recent name="F:\git\Project-Mountain\Elagance\app" />
       <recent name="F:\git\Project-Mountain\Elagance\app\assets" />
     </key>
@@ -422,10 +524,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1014" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14791666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29534882" sideWeight="0.50208336" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -496,14 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/scss/reset.v1.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4892812">
-          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -685,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/scss/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="33.75">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/scripts/elagance.core.sizzle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="4.8390627">
@@ -700,38 +786,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/scss/elagance.animate.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/scss/lead.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7777778">
-          <caret line="137" column="1" selection-start-line="137" selection-start-column="1" selection-end-line="137" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/page/sign-in.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2109375">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -745,10 +799,138 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scripts/elagance.signin.shell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scripts/elagance.signin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/source/scripts/elagance.lead.shell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.3796875">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../AlphaMM/project/node/scss/app-core/lib.v1.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13410597">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/css/elagance.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/lead.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/elagance.signin.v1.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/elagance.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.25">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/modules/_utils.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-45.75">
+          <caret line="61" column="24" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/modules/_reset.v1.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.75">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/lib/_normalize.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/modules/_minins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.0">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/lib/_animate.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/scss/modules/_grid.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26821193">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/page/signin.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.409375">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
       </provider>
