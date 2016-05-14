@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a0ac189-a023-4f6a-93aa-64147d1a3fd0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Elagance_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/elagance.lead.Class.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/js/hammer.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source/scripts/lib/hammer.min.js" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\elagance.animate.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\elagance.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\elagance.signin.v1.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\home.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\lead.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\app\assets\css\reset.v1.css" afterPath="" />
-      <change type="DELETED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\elagance.signin.v1.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/js/eLead.build.js" afterPath="$PROJECT_DIR$/app/js/eLead.build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scripts/elagance.core.js" afterPath="$PROJECT_DIR$/source/scripts/elagance.core.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/elagance.iml" afterPath="$PROJECT_DIR$/.idea/elagance.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" afterPath="$PROJECT_DIR$/source/scripts/elagance.lead.shell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/scss/elagance.scss" afterPath="$PROJECT_DIR$/source/scss/elagance.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/lead.html" afterPath="$PROJECT_DIR$/app/lead.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/page/lead.jade" afterPath="$PROJECT_DIR$/source/page/lead.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/signin.html" afterPath="$PROJECT_DIR$/app/signin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/page/signin.jade" afterPath="$PROJECT_DIR$/source/page/signin.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\app\test\test-core.html" afterPath="$PROJECT_DIR$/app/html/test-core.html" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scripts\elagance.core.sizzle.js" afterPath="$PROJECT_DIR$/source/scripts/lib/sizzle.js" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scripts\rem.js" afterPath="$PROJECT_DIR$/source/scripts/lib/rem.js" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\home.scss" afterPath="$PROJECT_DIR$/source/scss/_elagance.signin.v1.scss" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\lead.scss" afterPath="$PROJECT_DIR$/source/scss/elagance.lead.v1.scss" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\modules\_minins.scss" afterPath="$PROJECT_DIR$/source/scss/mixin/_clearfix.scss" />
-      <change type="MOVED" beforePath="F:\git\Project-Mountain\Elagance\source\scss\modules\_reset.v1.scss" afterPath="$PROJECT_DIR$/source/scss/modules/_reset.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/技术选型" afterPath="$PROJECT_DIR$/doc/技术选型" />
     </list>
     <ignored path="elagance.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,8 +38,8 @@
           <file leaf-file-name="lead.jade" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.2828125">
-                  <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+                <state vertical-scroll-proportion="0.5359375">
+                  <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -163,7 +132,6 @@
         <option value="$PROJECT_DIR$/source/elagance/elagance.js" />
         <option value="$PROJECT_DIR$/app/js/elagance.lead.shell.js" />
         <option value="$PROJECT_DIR$/app/js/elagance.js" />
-        <option value="$PROJECT_DIR$/doc/技术选型" />
         <option value="$PROJECT_DIR$/../.gitignore" />
         <option value="$PROJECT_DIR$/app/test/core.html" />
         <option value="$PROJECT_DIR$/source/scripts/lib/sizzle.js" />
@@ -198,6 +166,7 @@
         <option value="$PROJECT_DIR$/source/scss/_elagance.signin.v1.scss" />
         <option value="$PROJECT_DIR$/source/page/lead.jade" />
         <option value="$PROJECT_DIR$/source/scss/elagance.lead.v1.scss" />
+        <option value="$PROJECT_DIR$/doc/技术选型" />
       </list>
     </option>
   </component>
@@ -846,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/技术选型">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.253125">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.105960265">
@@ -1042,18 +1003,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2828125">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/source/scss/elagance.lead.v1.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17880794">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/技术选型">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2953125">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/page/lead.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5359375">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
