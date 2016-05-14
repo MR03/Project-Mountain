@@ -1,4 +1,4 @@
-let sizzle = require('./elagance.core.sizzle.js');
+let sizzle = require('./lib/sizzle.js');
 
 // 数据区
 // ----------------------------------

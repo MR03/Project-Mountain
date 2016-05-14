@@ -26,7 +26,7 @@ var BP = {
     },
     html: {
         src: './app/*.html',
-        text: './app/test/*.html'
+        viewSrc: './app/html/*.html'
     },
     css: {
         src: './app/assets/css/*.css'
@@ -36,7 +36,7 @@ var BP = {
     },
     jade: {
         src: './source/page/*.jade',
-        dist: './app'
+        dist: './app/html'
     },
     scss: {
         src: './source/scss/*.scss',
@@ -63,7 +63,7 @@ gulp.task('default',['jade', 'scss'],function() {
     gulp.watch(BP.scripts.src,['webpack']);
     //page change
     gulp.watch(BP.html.src).on('change', reload);
-    gulp.watch(BP.html.text).on('change', reload);
+    gulp.watch(BP.html.viewSrc).on('change', reload);
     gulp.watch(BP.css.src).on('change', reload);
     gulp.watch(BP.js.src).on('change', reload);
     //livereload.listen();

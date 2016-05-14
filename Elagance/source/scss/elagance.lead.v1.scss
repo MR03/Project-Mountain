@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+.app-view {
+  width: 16rem;
+  overflow: hidden;
+}
+
 .lead-body {
   width: 16rem;
   height: 28.4rem;
@@ -71,3 +76,5 @@
   background: #efdecc;
   color: #937f6b;
 }
+
+@import "elagance.signin.v1";

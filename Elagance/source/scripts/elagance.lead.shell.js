@@ -1,4 +1,7 @@
 let core = require('./elagance.core.js');
+let React = require('react');
+let ReactDOM = require('react-dom');
+let Text = require('./elagance.lead.Class.js');
 
 let configMap = {
 
@@ -8,6 +11,7 @@ let sizzleMap = {
 
 }
 
+// 登录
 let signIn = function(el) {
     let $signIn = core.$(el);
     core.on($signIn, 'click', function(){
@@ -15,6 +19,7 @@ let signIn = function(el) {
     })
 };
 
+// 注册
 let signUp = function(el) {
     let  $signUp = core.$(el);
     core.on($signUp, 'click', function(){
@@ -27,6 +32,11 @@ let initModule = function(){
     // 具体绑定的元素统一在这里确定
     signIn('signIn');
     signUp('signUp');
+
+    ReactDOM.render(
+        (<Text />),
+        document.getElementById('spa')
+    );
 }
 
 // 模块出口

@@ -1,4 +1,5 @@
 // rem布局自动计算font-size
+// 2016.05.14
 (function (doc, win) {
     var docEl = doc.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
