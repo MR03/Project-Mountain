@@ -28068,7 +28068,7 @@
 	        var cy = addons.classSet;
 	        var forgot_class = cx({
 	            'forgot': true,
-	            'hide': this.state.inup == true
+	            'hide': this.state.inup == false
 	        });
 	        return React.createElement(
 	            'div',
@@ -28099,8 +28099,13 @@
 	                ),
 	                React.createElement(
 	                    'h6',
-	                    { className: 'forgot' },
+	                    { className: forgot_class },
 	                    '忘记密码?'
+	                ),
+	                React.createElement(
+	                    'h6',
+	                    { className: 'help' },
+	                    '提示信息'
 	                )
 	            ),
 	            React.createElement(

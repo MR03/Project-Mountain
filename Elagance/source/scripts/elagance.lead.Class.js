@@ -68,7 +68,7 @@ let ViewSign = React.createClass({
         var cy = addons.classSet;
         var forgot_class = cx({
             'forgot': true,
-            'hide': this.state.inup == true
+            'hide': this.state.inup == false
         });
         return (
             <div className="signin-body">
@@ -82,7 +82,8 @@ let ViewSign = React.createClass({
                     <div className="input-form">
                         <input type="text" placeholder="Password" className="input-control" />
                     </div>
-                    <h6 className="forgot">忘记密码?</h6>
+                    <h6 className={forgot_class}>忘记密码?</h6>
+                    <h6 className="help">提示信息</h6>
                 </div>
                 <div className="lead-body-sign">
                     <button id="signIn" className="lead-body-sign-btn mt-02r animated fadeIn sign-active-2"><span>{this.state.inup ? '登录' : '注册'}</span></button>
