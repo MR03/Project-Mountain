@@ -39,7 +39,7 @@ var BP = {
         dist: './app/html'
     },
     scss: {
-        src: './source/scss/*.scss',
+        src: './source/scss/**/*.scss',
         dist: './app/assets/css'
     },
     scripts: {

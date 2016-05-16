@@ -1,9 +1,75 @@
 @charset "UTF-8";
 
+.view-signin {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.animate-text {
+  transition: transform 800ms linear;
+  transform:rotateY(180deg);
+}
 .signin-body {
   width: 16rem;
   height: 28.4rem;
   background: url("/assets/img/bg-signin.png") no-repeat;
   background-size: 16rem 28.4rem;
-  margin-left: 16rem;
+}
+.lead-signin-logo {
+  background-image: url("/assets/img/logo_light.png");
+}
+.lead-signin-title {
+  width: 8rem;
+  height: 2rem;
+  line-height: 2rem;
+  position: absolute;
+  text-align: center;
+  color: #464646;
+  top: 6.3rem;
+  left: 8.5rem;
+  transition: all 200ms linear;
+}
+.lead-signin-title.now {
+  font-size: 1rem;
+  color: #efdecc;
+  top: 6rem;
+  left: 4rem;
+  transition: all 200ms linear;
+}
+.sign-form {
+  width: 10rem;
+  height: 4rem;
+  position: absolute;
+  left: 3rem;
+  top: 11rem;
+}
+
+.input-control {
+  background: transparent;
+  border: none;
+  width: 9rem;
+  margin: 0 .5rem;
+  height: 2rem;
+  font-size: .7rem;
+  font-weight: bold;
+  line-height: 2rem;
+  text-align: center;
+  color: #ffffff;
+  border-bottom: .05rem solid rgba(255,255,255,.15);
+}
+
+.forgot {
+  color: #b4b4b4;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.sign-active-2:active {
+  border: none;
+  background: #2553b3;
+  color: #ffffff;
 }

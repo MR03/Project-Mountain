@@ -1,7 +1,8 @@
 let core = require('./elagance.core.js');
 let React = require('react');
 let ReactDOM = require('react-dom');
-let Text = require('./elagance.lead.Class.js');
+let ReactRouter = require('react-router');
+let [AppView, ViewLead] = require('./elagance.lead.Class.js');
 
 let configMap = {
 
@@ -34,7 +35,7 @@ let initModule = function(){
     signUp('signUp');
 
     ReactDOM.render(
-        (<Text />),
+        (<AppView />),
         document.getElementById('spa')
     );
 }

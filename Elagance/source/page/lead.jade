@@ -27,17 +27,17 @@ html(lang='zh-CN')
       script(src='/js/remSetting.build.js')
    body
       //content
-      .app-view
-         .container
+      .view
+         .view-container.view-lead
             .lead-body
                .lead-body-logo.animated.fadeInDown
                .lead-body-title
                .lead-body-text
                   h3.word 现在，找到自己的节奏
                .lead-body-sign
-                  button.lead-body-sign-btn.mt-02r.animated.fadeIn#signIn
+                  button.lead-body-sign-btn.mt-02r.animated.fadeIn.sign-active-1#signIn
                      span 登录
-                  button.lead-body-sign-btn.mt-05r.animated.fadeIn#signUp
+                  button.lead-body-sign-btn.mt-05r.animated.fadeIn.sign-active-1#signUp
                      span 注册
-         .container
+         .view-container.view-signin
             .signin-body

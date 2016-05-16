@@ -1437,13 +1437,25 @@ html {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; }
 
-.container {
-  display: block;
+.view {
+  width: 16rem;
+  min-height: 28.4rem;
+  height: auto;
+  overflow: hidden;
   position: relative; }
-  .container:before, .container:after {
+
+.view-black {
+  background: #404040; }
+
+.view-container {
+  display: block;
+  position: absolute;
+  transition: transform 300ms linear;
+  transform: none; }
+  .view-container:before, .view-container:after {
     content: " ";
     display: table; }
-  .container:after {
+  .view-container:after {
     clear: both; }
 
 .mb-01r {
@@ -1505,3 +1517,9 @@ html {
 
 .mr-05r {
   margin-right: .5rem; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }

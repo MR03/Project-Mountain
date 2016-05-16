@@ -1,8 +1,24 @@
 @charset "UTF-8";
 
-.container {
-  @include clearfix;
-  display: block;
+// app视图
+.view {
+  width: 16rem;
+  min-height: 28.4rem;
+  height: auto;
+  overflow: hidden;
   position: relative;
 }
+
+.view-black {
+  background: #404040;
+}
+
+.view-container {
+  @include clearfix;
+  display: block;
+  position: absolute;
+  transition: transform 300ms linear;
+  transform: none;
+}
+
 

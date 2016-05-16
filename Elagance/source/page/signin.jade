@@ -17,15 +17,30 @@ html(lang='zh-CN')
       //- viewport
       meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
       //- 网页title
-      title 登录
+      title Elagance
       //- 自行确定normalize or reset
       link(rel='styleSheet' href='//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css')
       link(rel='stylesheet' href='/assets/css/elagance.css')
-      link(rel='stylesheet' href='/assets/css/elagance.signin.v1.css')
+      link(rel='stylesheet' href='/assets/css/elagance.lead.v1.css')
       //前置js
       //- prefix-free用于自动添加css前缀
       script(src='/js/remSetting.build.js')
    body
       //content
-      .container
-         .signin-body
+      .view
+         .view-container.view-signin
+            .signin-body
+               .lead-body-logo.lead-signin-logo.animated.fadeInDown
+               h1.lead-signin-title.now Sign In
+               h2.lead-signin-title Sign Up
+               .sign-form
+                  .input-form.mb-05r
+                     input.input-control(type='text' placeholder='E-Mail')
+                  .input-form
+                     input.input-control(type='text' placeholder='Password')
+                  h6.forgot 忘记密码?
+               .lead-body-sign
+                  button.lead-body-sign-btn.mt-02r.animated.fadeIn.sign-active-2#signIn
+                     span 登录
+                  button.lead-body-sign-btn.mt-05r.animated.fadeIn.sign-active-2#signUp
+                     span 返回

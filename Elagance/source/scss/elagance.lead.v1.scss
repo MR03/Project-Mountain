@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
-.app-view {
-  width: 16rem;
-  overflow: hidden;
+.view-lead {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backface-visibility: hidden;
 }
 
 .lead-body {
@@ -14,7 +16,8 @@
 .lead-body-logo {
   width: 2rem;
   height: 2.45rem;
-  background: url("/assets/img/logo_normal.png") no-repeat;
+  background-image: url("/assets/img/logo_normal.png");
+  background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
   top: 0;
@@ -71,10 +74,20 @@
   border-radius: 3rem;
   color: #ffffff;
 }
-.lead-body-sign-btn:active {
+.sign-active-1:active {
   border: none;
   background: #efdecc;
   color: #937f6b;
+}
+
+.cut-container {
+  perspective: 1000;
+  -webkit-perspective: 1000;
+}
+.view .cut-container.cutto {
+  transition: transform 800ms linear;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
 }
 
 @import "elagance.signin.v1";

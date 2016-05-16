@@ -12,17 +12,36 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="wap-font-scale" content="no">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0">
-    <title>登录</title>
+    <title>Elagance</title>
     <link rel="styleSheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/elagance.css">
-    <link rel="stylesheet" href="/assets/css/elagance.signin.v1.css">
+    <link rel="stylesheet" href="/assets/css/elagance.lead.v1.css">
     <!--前置js-->
     <script src="/js/remSetting.build.js"></script>
   </head>
   <body>
     <!--content-->
-    <div class="container">
-      <div class="signin-body"></div>
+    <div class="view">
+      <div class="view-container view-signin">
+        <div class="signin-body">
+          <div class="lead-body-logo lead-signin-logo animated fadeInDown"></div>
+          <h1 class="lead-signin-title now">Sign In</h1>
+          <h2 class="lead-signin-title">Sign Up</h2>
+          <div class="sign-form">
+            <div class="input-form mb-05r">
+              <input type="text" placeholder="E-Mail" class="input-control">
+            </div>
+            <div class="input-form">
+              <input type="text" placeholder="Password" class="input-control">
+            </div>
+            <h6 class="forgot">忘记密码?</h6>
+          </div>
+          <div class="lead-body-sign">
+            <button id="signIn" class="lead-body-sign-btn mt-02r animated fadeIn sign-active-2"><span>登录</span></button>
+            <button id="signUp" class="lead-body-sign-btn mt-05r animated fadeIn sign-active-2"><span>返回</span></button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
