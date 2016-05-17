@@ -61,12 +61,17 @@
 .mr-05r {
   margin-right: .5rem; }
 
-.hide {
+.none {
   display: none;
 }
-.show {
+.block {
   display: block;
 }
-
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
 
 

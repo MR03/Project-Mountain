@@ -4,6 +4,7 @@ let hammer = require('./lib/hammer.min.js');
 let core = require('./elagance.core.js');
 let addons = require('react-addons');
 
+
 let AppView = React.createClass({
     render: function() {
         return (
@@ -13,7 +14,7 @@ let AppView = React.createClass({
                         <ViewLead />
                     </div>
                     <div className="view-container view-signin">
-                        <ViewSign />
+                        <ViewSign stateSign="in" />
                     </div>
                 </div>
             </div>
@@ -40,19 +41,17 @@ let ViewLead = React.createClass({
     handleSignIn: function() {
         // 真的能完全避免dom操作?,也太理想化了
         core.$('cut').setAttribute("class","cut-container cutto");
-        //core.$('viewSignIn').setAttribute("class","lead-signin-title now");
     },
     handleSignUp: function() {
-        // 真的能完全避免dom操作?,也太理想化了
         core.$('cut').setAttribute("class","cut-container cutto");
-        //core.$('viewSignUp').setAttribute("class","lead-signin-title now");
     }
 });
 
 let ViewSign = React.createClass({
     getInitialState: function() {
+        core.log(this.props.stateSign)
       return {
-          inup: true // true是登录界面,false是注册界面
+          inup: '' // true是登录界面,false是注册界面
       };
     },
     render: function() {
@@ -65,10 +64,9 @@ let ViewSign = React.createClass({
             'lead-signin-title': true,
             'now': this.state.inup == false
         });
-        var cy = addons.classSet;
         var forgot_class = cx({
             'forgot': true,
-            'hide': this.state.inup == false
+            'invisible': this.state.inup == false
         });
         return (
             <div className="signin-body">

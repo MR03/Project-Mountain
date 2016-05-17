@@ -135,32 +135,9 @@
 	var AppView = _require2[0];
 	var ViewLead = _require2[1];
 
-
-	var configMap = {};
-
-	var sizzleMap = {};
-
-	// 登录
-	var signIn = function signIn(el) {
-	    var $signIn = core.$(el);
-	    core.on($signIn, 'click', function () {
-	        window.location = '/signin.html';
-	    });
-	};
-
-	// 注册
-	var signUp = function signUp(el) {
-	    var $signUp = core.$(el);
-	    core.on($signUp, 'click', function () {
-	        core.log('跳转至注册界面');
-	    });
-	};
-
 	// 初始化
+
 	var initModule = function initModule() {
-	    // 具体绑定的元素统一在这里确定
-	    signIn('signIn');
-	    signUp('signUp');
 
 	    ReactDOM.render(React.createElement(AppView, null), document.getElementById('spa'));
 	};
@@ -27986,7 +27963,7 @@
 	                React.createElement(
 	                    'div',
 	                    { className: 'view-container view-signin' },
-	                    React.createElement(ViewSign, null)
+	                    React.createElement(ViewSign, { stateSign: 'in' })
 	                )
 	            )
 	        );
@@ -28038,12 +28015,9 @@
 	    handleSignIn: function handleSignIn() {
 	        // 真的能完全避免dom操作?,也太理想化了
 	        core.$('cut').setAttribute("class", "cut-container cutto");
-	        //core.$('viewSignIn').setAttribute("class","lead-signin-title now");
 	    },
 	    handleSignUp: function handleSignUp() {
-	        // 真的能完全避免dom操作?,也太理想化了
 	        core.$('cut').setAttribute("class", "cut-container cutto");
-	        //core.$('viewSignUp').setAttribute("class","lead-signin-title now");
 	    }
 	});
 
@@ -28051,8 +28025,9 @@
 	    displayName: 'ViewSign',
 
 	    getInitialState: function getInitialState() {
+	        core.log(this.props.stateSign);
 	        return {
-	            inup: true // true是登录界面,false是注册界面
+	            inup: '' // true是登录界面,false是注册界面
 	        };
 	    },
 	    render: function render() {
@@ -28065,10 +28040,9 @@
 	            'lead-signin-title': true,
 	            'now': this.state.inup == false
 	        });
-	        var cy = addons.classSet;
 	        var forgot_class = cx({
 	            'forgot': true,
-	            'hide': this.state.inup == false
+	            'invisible': this.state.inup == false
 	        });
 	        return React.createElement(
 	            'div',

@@ -43,12 +43,12 @@ var BP = {
         dist: './app/assets/css'
     },
     scripts: {
-        src: './source/scripts/*.js',
+        src: './source/scripts/**/*.js',
         dist: './app/js'
     }
 };
 // 默认任务,开发监听
-gulp.task('default',['jade', 'scss'],function() {
+gulp.task('default',['jade', 'scss', 'webpack'],function() {
     browserSync.init({
         server: {
             baseDir: BP.server.baseDir
