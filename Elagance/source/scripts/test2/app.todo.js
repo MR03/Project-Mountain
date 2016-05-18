@@ -1,23 +1,15 @@
 import React, { Component, PropTypes } from 'react'
 
- class Todo extends Component {
+
+class Todo extends Component {
     render() {
         return (
-            <li
-                style={{
-          textDecoration: this.props.completed ? 'line-through' : 'none',
-          cursor: this.props.completed ? 'default' : 'pointer'
-        }}>
-                {this.props.text}
-            </li>
+            <h1 onClick={(e) => this.handleClick(e)}>登录注册状态切换</h1>
         )
     }
+    handleClick() {
+        this.props.singChange("signup")
+    }
 }
-
-//Todo.propTypes = {
-//    onClick: PropTypes.func.isRequired,
-//    text: PropTypes.string.isRequired,
-//    completed: PropTypes.bool.isRequired
-//}
 
 export default Todo

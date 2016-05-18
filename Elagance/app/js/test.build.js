@@ -22445,8 +22445,7 @@
 	            return _react2.default.createElement(
 	                'a',
 	                { href: '#', onClick: function onClick(e) {
-	                        e.preventDefault();
-	                        _this2.props.onFilterChange(filter);
+	                        e.preventDefault();_this2.props.onFilterChange(filter);
 	                    } },
 	                name
 	            );

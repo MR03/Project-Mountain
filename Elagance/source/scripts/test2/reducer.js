@@ -1,33 +1,29 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from './action'
-const SHOW_ALL = VisibilityFilters;
+import {ADD_TODO, CHANGE_TODO, addTodo, changeTodo} from './action'
 
-function visibilityFilter(state = SHOW_ALL, action = {}) {
-    switch (action.type) {
-        case SET_VISIBILITY_FILTER:
-            return action.filter
-        default:
-            return state
+const initialState = [
+    {
+        sign: 'signin',
     }
-}
+];
 
-function todos(state = [], action = {}) {
+
+function todos(state = initialState, action = {}) {
     switch (action.type) {
         case ADD_TODO:
             return [
                 ...state,
                 {
-                    text: action.text,
-                    completed: false
+                    sign: action.sign,
                 }
             ]
-        case COMPLETE_TODO:
+        case CHANGE_TODO:
+            // 复杂UI切换需要保存状态,有限的用各什么函数来处理一下
             return [
-                ...state.slice(0, action.index),
-                Object.assign({}, state[action.index], {
-                    completed: true
-                }),
-                ...state.slice(action.index + 1)
+                //...state,
+                {
+                    sign: action.sign,
+                }
             ]
         default:
             return state
@@ -35,7 +31,6 @@ function todos(state = [], action = {}) {
 }
 
 const todoApp = combineReducers({
-    visibilityFilter,
     todos
 })
 

@@ -1,23 +1,17 @@
 import React, { Component, PropTypes } from 'react'
-import Todo from './app.todo'
 
-export default class TodoList extends Component {
+
+class TodoList extends Component {
     render() {
+        console.log(this.props.stats)
+        let last_stats = this.props.stats[this.props.stats.length - 1];
+
         return (
-            <ul>
-                {this.props.todos.map((todo, index) =>
-                    <Todo {...todo}
-                        key={index} />
-                )}
-            </ul>
+            <div>
+                <h1>{last_stats.sign == 'signin' ? '登录' : '注册'}</h1>
+            </div>
         )
     }
 }
 
-//TodoList.propTypes = {
-//    onTodoClick: PropTypes.func.isRequired,
-//    todos: PropTypes.arrayOf(PropTypes.shape({
-//        text: PropTypes.string.isRequired,
-//        completed: PropTypes.bool.isRequired
-//    }).isRequired).isRequired
-//}
+export default TodoList

@@ -52,17 +52,29 @@
 
 	var _reactDom = __webpack_require__(40);
 
-	var _redux = __webpack_require__(332);
-
-	var _reactRedux = __webpack_require__(345);
-
 	var _app = __webpack_require__(365);
 
 	var _app2 = _interopRequireDefault(_app);
 
+	var _redux = __webpack_require__(332);
+
+	var _reactRedux = __webpack_require__(345);
+
+	var _reducer = __webpack_require__(369);
+
+	var _reducer2 = _interopRequireDefault(_reducer);
+
+	var _action = __webpack_require__(366);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _reactDom.render)(_react2.default.createElement(_app2.default, null), document.getElementById('spa'));
+	var store = (0, _redux.createStore)(_reducer2.default); // 切换登录和注册界面
+
+	(0, _reactDom.render)(_react2.default.createElement(
+	    _reactRedux.Provider,
+	    { store: store },
+	    _react2.default.createElement(_app2.default, null)
+	), document.getElementById('spa'));
 
 /***/ },
 /* 1 */,
@@ -22056,10 +22068,6 @@
 
 	var _app4 = _interopRequireDefault(_app3);
 
-	var _app5 = __webpack_require__(370);
-
-	var _app6 = _interopRequireDefault(_app5);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22080,14 +22088,17 @@
 	    _createClass(App, [{
 	        key: 'render',
 	        value: function render() {
+	            var _props = this.props;
+	            var stats = _props.stats;
+	            var dispatch = _props.dispatch;
+
 	            return _react2.default.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(_app2.default, { onAddClick: function onAddClick(text) {
-	                        return text;
+	                _react2.default.createElement(_app2.default, { singChange: function singChange(change) {
+	                        return dispatch((0, _action.changeTodo)(change));
 	                    } }),
-	                _react2.default.createElement(_app4.default, { todos: visibleTodos }),
-	                _react2.default.createElement(_app6.default, null)
+	                _react2.default.createElement(_app4.default, { stats: stats })
 	            );
 	        }
 	    }]);
@@ -22095,20 +22106,13 @@
 	    return App;
 	}(_react.Component);
 
-	// 验证
-	//App.propTypes = {
-	//    visibleTodos: PropTypes.arrayOf(PropTypes.shape({
-	//        text: PropTypes.string.isRequired,
-	//        completed: PropTypes.bool.isRequired
-	//    }).isRequired).isRequired,
-	//    visibilityFilter: PropTypes.oneOf([
-	//        'SHOW_ALL',
-	//        'SHOW_COMPLETED',
-	//        'SHOW_ACTIVE'
-	//    ]).isRequired
-	//}
+	function select(state) {
+	    return {
+	        stats: state.todos
+	    };
+	}
 
-	exports.default = App;
+	exports.default = (0, _reactRedux.connect)(select)(App);
 
 /***/ },
 /* 366 */
@@ -22119,188 +22123,33 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	/*
-	 * action
-	 */
-
-	// 也可以写字符串,不过这样复用容易
 	var ADD_TODO = 'ADD_TODO';
-	var COMPLETE_TODO = 'COMPLETE_TODO';
-	var SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
+	var CHANGE_TODO = 'CHANGE_TODO';
 
-	var VisibilityFilters = {
-	    SHOW_ALL: 'SHOW_ALL',
-	    SHOW_COMPLETED: 'SHOW_COMPLETED',
-	    SHOW_ACTIVE: 'SHOW_ACTIVE'
-	};
-
-	/*
-	 * action 创建函数
-	 */
-
-	function addTodo(text) {
-	    return { type: ADD_TODO, text: text };
+	function addTodo(sign) {
+	    return {
+	        type: ADD_TODO,
+	        sign: sign
+	    };
 	}
 
-	function completeTodo(index) {
-	    return { type: COMPLETE_TODO, index: index };
-	}
-
-	function setVisibilityFilter(filter) {
-	    return { type: SET_VISIBILITY_FILTER, filter: filter };
+	function changeTodo(sign) {
+	    return {
+	        type: CHANGE_TODO,
+	        sign: sign
+	    };
 	}
 
 	exports.ADD_TODO = ADD_TODO;
-	exports.COMPLETE_TODO = COMPLETE_TODO;
-	exports.SET_VISIBILITY_FILTER = SET_VISIBILITY_FILTER;
-	exports.VisibilityFilters = VisibilityFilters;
+	exports.CHANGE_TODO = CHANGE_TODO;
 	exports.addTodo = addTodo;
-	exports.completeTodo = completeTodo;
-	exports.setVisibilityFilter = setVisibilityFilter;
+	exports.changeTodo = changeTodo;
 
 /***/ },
 /* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(8);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var AddTodo = function (_Component) {
-	    _inherits(AddTodo, _Component);
-
-	    function AddTodo() {
-	        _classCallCheck(this, AddTodo);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(AddTodo).apply(this, arguments));
-	    }
-
-	    _createClass(AddTodo, [{
-	        key: 'render',
-	        value: function render() {
-	            var _this2 = this;
-
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement('input', { type: 'text', ref: 'input' }),
-	                _react2.default.createElement(
-	                    'button',
-	                    { onClick: function onClick(e) {
-	                            return _this2.handleClick(e);
-	                        } },
-	                    'Add'
-	                )
-	            );
-	        }
-	    }, {
-	        key: 'handleClick',
-	        value: function handleClick(e) {
-	            var node = this.refs.input;
-	            var text = node.value.trim();
-	            console.log(text);
-	            this.props.onAddClick(text);
-	            node.value = '';
-	        }
-	    }]);
-
-	    return AddTodo;
-	}(_react.Component);
-
-	//AddTodo.propTypes = {
-	//    onAddClick: PropTypes.func.isRequired
-	//}
-
-	exports.default = AddTodo;
-
-/***/ },
-/* 368 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(8);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _app = __webpack_require__(369);
-
-	var _app2 = _interopRequireDefault(_app);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var TodoList = function (_Component) {
-	    _inherits(TodoList, _Component);
-
-	    function TodoList() {
-	        _classCallCheck(this, TodoList);
-
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(TodoList).apply(this, arguments));
-	    }
-
-	    _createClass(TodoList, [{
-	        key: 'render',
-	        value: function render() {
-	            return _react2.default.createElement(
-	                'ul',
-	                null,
-	                this.props.todos.map(function (todo, index) {
-	                    return _react2.default.createElement(_app2.default, _extends({}, todo, {
-	                        key: index }));
-	                })
-	            );
-	        }
-	    }]);
-
-	    return TodoList;
-	}(_react.Component);
-
-	//TodoList.propTypes = {
-	//    onTodoClick: PropTypes.func.isRequired,
-	//    todos: PropTypes.arrayOf(PropTypes.shape({
-	//        text: PropTypes.string.isRequired,
-	//        completed: PropTypes.bool.isRequired
-	//    }).isRequired).isRequired
-	//}
-
-
-	exports.default = TodoList;
-
-/***/ },
-/* 369 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -22330,33 +22179,32 @@
 	    }
 
 	    _createClass(Todo, [{
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
+	            var _this2 = this;
+
 	            return _react2.default.createElement(
-	                'li',
-	                {
-	                    style: {
-	                        textDecoration: this.props.completed ? 'line-through' : 'none',
-	                        cursor: this.props.completed ? 'default' : 'pointer'
+	                "h1",
+	                { onClick: function onClick(e) {
+	                        return _this2.handleClick(e);
 	                    } },
-	                this.props.text
+	                "登录注册状态切换"
 	            );
+	        }
+	    }, {
+	        key: "handleClick",
+	        value: function handleClick() {
+	            this.props.singChange("signup");
 	        }
 	    }]);
 
 	    return Todo;
 	}(_react.Component);
 
-	//Todo.propTypes = {
-	//    onClick: PropTypes.func.isRequired,
-	//    text: PropTypes.string.isRequired,
-	//    completed: PropTypes.bool.isRequired
-	//}
-
 	exports.default = Todo;
 
 /***/ },
-/* 370 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22379,55 +22227,84 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Footer = function (_Component) {
-	    _inherits(Footer, _Component);
+	var TodoList = function (_Component) {
+	    _inherits(TodoList, _Component);
 
-	    function Footer() {
-	        _classCallCheck(this, Footer);
+	    function TodoList() {
+	        _classCallCheck(this, TodoList);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Footer).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(TodoList).apply(this, arguments));
 	    }
 
-	    _createClass(Footer, [{
-	        key: 'renderFilter',
-	        value: function renderFilter(filter, name) {
-	            var _this2 = this;
-
-	            if (filter === this.props.filter) {
-	                return name;
-	            }
-
-	            return _react2.default.createElement(
-	                'a',
-	                { href: '#', onClick: function onClick(e) {
-	                        e.preventDefault();
-	                        _this2.props.onFilterChange(filter);
-	                    } },
-	                name
-	            );
-	        }
-	    }, {
+	    _createClass(TodoList, [{
 	        key: 'render',
 	        value: function render() {
+	            console.log(this.props.stats);
+	            var last_stats = this.props.stats[this.props.stats.length - 1];
+
 	            return _react2.default.createElement(
-	                'p',
+	                'div',
 	                null,
-	                'Show:',
-	                ' ',
-	                this.renderFilter('SHOW_ALL', 'All'),
-	                ', ',
-	                this.renderFilter('SHOW_COMPLETED', 'Completed'),
-	                ', ',
-	                this.renderFilter('SHOW_ACTIVE', 'Active'),
-	                '.'
+	                _react2.default.createElement(
+	                    'h1',
+	                    null,
+	                    last_stats.sign == 'signin' ? '登录' : '注册'
+	                )
 	            );
 	        }
 	    }]);
 
-	    return Footer;
+	    return TodoList;
 	}(_react.Component);
 
-	exports.default = Footer;
+	exports.default = TodoList;
+
+/***/ },
+/* 369 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _redux = __webpack_require__(332);
+
+	var _action = __webpack_require__(366);
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var initialState = [{
+	    sign: 'signin'
+	}];
+
+	function todos() {
+	    var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+	    var action = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+	    switch (action.type) {
+	        case _action.ADD_TODO:
+	            return [].concat(_toConsumableArray(state), [{
+	                sign: action.sign
+	            }]);
+	        case _action.CHANGE_TODO:
+	            // 复杂UI切换需要保存状态,有限的用各什么函数来处理一下
+	            return [
+	            //...state,
+	            {
+	                sign: action.sign
+	            }];
+	        default:
+	            return state;
+	    }
+	}
+
+	var todoApp = (0, _redux.combineReducers)({
+	    todos: todos
+	});
+
+	exports.default = todoApp;
 
 /***/ }
 /******/ ]);

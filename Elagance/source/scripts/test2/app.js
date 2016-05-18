@@ -1,34 +1,26 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } from './action'
-import AddTodo from './app.addtodo'
+import {ADD_TODO, CHANGE_TODO, addTodo, changeTodo} from './action'
+import Todo from './app.todo'
 import TodoList from './app.todolist'
-import Footer from './app.footer'
+
 
 class App extends Component {
     render() {
+        const { stats ,dispatch } = this.props
         return (
             <div>
-                <AddTodo onAddClick={ text => text } />
-                <TodoList todos={visibleTodos} />
-                <Footer />
+                <Todo singChange={change => dispatch(changeTodo(change))} />
+                <TodoList stats={stats} />
             </div>
         )
     }
 }
 
+function select(state) {
+    return {
+        stats: state.todos
+    }
+}
 
-// 验证
-//App.propTypes = {
-//    visibleTodos: PropTypes.arrayOf(PropTypes.shape({
-//        text: PropTypes.string.isRequired,
-//        completed: PropTypes.bool.isRequired
-//    }).isRequired).isRequired,
-//    visibilityFilter: PropTypes.oneOf([
-//        'SHOW_ALL',
-//        'SHOW_COMPLETED',
-//        'SHOW_ACTIVE'
-//    ]).isRequired
-//}
-
-export default App
+export default connect(select)(App)
