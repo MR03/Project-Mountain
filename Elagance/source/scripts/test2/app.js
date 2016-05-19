@@ -7,7 +7,7 @@ import TodoList from './app.todolist'
 
 class App extends Component {
     render() {
-        const { stats ,dispatch } = this.props
+        let { stats ,dispatch } = this.props
         return (
             <div>
                 <Todo singChange={change => dispatch(changeTodo(change))} />
@@ -18,6 +18,7 @@ class App extends Component {
 }
 
 function select(state) {
+    console.log(state.todos)
     return {
         stats: state.todos
     }

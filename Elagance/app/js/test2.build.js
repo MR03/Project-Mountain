@@ -22107,6 +22107,7 @@
 	}(_react.Component);
 
 	function select(state) {
+	    console.log(state.todos);
 	    return {
 	        stats: state.todos
 	    };
@@ -22239,7 +22240,6 @@
 	    _createClass(TodoList, [{
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.props.stats);
 	            var last_stats = this.props.stats[this.props.stats.length - 1];
 
 	            return _react2.default.createElement(
@@ -22290,11 +22290,9 @@
 	            }]);
 	        case _action.CHANGE_TODO:
 	            // 复杂UI切换需要保存状态,有限的用各什么函数来处理一下
-	            return [
-	            //...state,
-	            {
+	            return [].concat(_toConsumableArray(state), [{
 	                sign: action.sign
-	            }];
+	            }]);
 	        default:
 	            return state;
 	    }

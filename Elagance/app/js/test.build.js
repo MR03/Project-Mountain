@@ -22185,7 +22185,9 @@
 	 */
 
 	function addTodo(text) {
-	    return { type: ADD_TODO, text: text };
+	    return {
+	        type: ADD_TODO, text: text
+	    };
 	}
 
 	function completeTodo(index) {
@@ -22502,6 +22504,7 @@
 	    var state = arguments.length <= 0 || arguments[0] === undefined ? SHOW_ALL : arguments[0];
 	    var action = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
 
+	    console.log(action);
 	    switch (action.type) {
 	        case _test.SET_VISIBILITY_FILTER:
 	            return action.filter;

@@ -20,7 +20,7 @@ function todos(state = initialState, action = {}) {
         case CHANGE_TODO:
             // 复杂UI切换需要保存状态,有限的用各什么函数来处理一下
             return [
-                //...state,
+                ...state,
                 {
                     sign: action.sign,
                 }
