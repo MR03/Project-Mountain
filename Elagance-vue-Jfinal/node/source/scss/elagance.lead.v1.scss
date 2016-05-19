@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+.view-lead {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.lead-body {
+  width: 16rem;
+  height: 28.4rem;
+  background: url("/assets/img/bg_lead.png") no-repeat;
+  background-size: 16rem 28.4rem;
+}
+.lead-body-logo {
+  width: 2rem;
+  height: 2.45rem;
+  background-image: url("/assets/img/logo_normal.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 21rem;
+  margin: auto;
+}
+.lead-body-title {
+  width: 7rem;
+  height: .85rem;
+  background: url("/assets/img/title-lead.png") no-repeat;
+  background-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 13rem;
+  margin: auto;
+}
+
+.lead-body-text {
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 8rem;
+  margin: auto;
+}
+
+.lead-body-text .word {
+  text-align: center;
+  color: #8d8d8d;
+}
+
+.lead-body-sign {
+  width: 8rem;
+  height: 6rem;
+  position: absolute;
+  top: 21rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.lead-body-sign-btn {
+  width: 8rem;
+  height: 2rem;
+  background: transparent;
+  border: .05rem solid #ffffff;
+  border-radius: 3rem;
+  color: #ffffff;
+}
+.sign-active-1:active {
+  border: none;
+  background: #efdecc;
+  color: #937f6b;
+}
+
+.cut-container {
+  perspective: 1000;
+  -webkit-perspective: 1000;
+}
+.view .cut-container.cutto {
+  transition: transform 800ms linear;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+@import "elagance.signin.v1";

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+// mixin
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+

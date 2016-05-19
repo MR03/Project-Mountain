@@ -45,7 +45,8 @@ node_modules
 /SSH/lib/*
 /SSH/project/out/*
 /SSH/project/node/node_modules/*
-
 /PictureTalk/node_modules/*
-
 /Elagance/node_modules/*
+
+/Elagance-vue-Jfinal/out/*
+/Elagance-vue-Jfinal/node/node_modules/*
