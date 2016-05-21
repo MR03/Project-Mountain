@@ -5,25 +5,37 @@ import resource from 'vue-resource'
 
 /*
  * 注册参数/DOM地图/状态管理
+ * 使用基本的Flux架构处理状态
  */
 
-let configMap
-let queryMap
-let stateMap
 
 // 注册参数
+let configMap
+// DOM地图
+let queryMap
+// 状态store
+let store
+
+
 configMap = {
 
 }
 
-// DOM地图
+
 queryMap = {
 
 }
 
-// stateMap
-stateMap = {
-    to_sign: true
+store = {
+    state: {
+        sign: true
+    },
+    setSign_true: function() {
+        this.state.sign = true
+    },
+    setSign_false: function() {
+        this.state.sign = false
+    }
 }
 
 /*
@@ -39,22 +51,25 @@ let setVM_sign
 
 cut = function() {
     core.$('cut').setAttribute("class","cut-container cutto");
+    page('#sign')
 }
 
 setVM_lead = function() {
     let vm = new Vue({
         el:'#view-lead',
-        data: stateMap,
+        data: {
+            privateState: {},
+            publicState: store.state
+        },
         methods: {
             signInTo: function(e) {
-                stateMap.to_sign = true
+                store.setSign_true()
                 cut()
-                page('#signin')
+
             },
             signUpTo: function(e) {
-                stateMap.to_sign = false
+                store.setSign_false()
                 cut()
-                page('#signon')
             }
         }
     })
@@ -63,28 +78,46 @@ setVM_lead = function() {
 setVM_sign = function() {
     let vm = new Vue({
         el:'#view-sign',
-        data: stateMap,
+        data: {
+            privateState: {
+                mobile: '',
+                password: ''
+            },
+            publicState: store.state
+        },
         methods: {
             toSignUp: function(e) {
-                stateMap.to_sign = false
+                store.setSign_false()
             },
             toSignIn: function(e) {
-                stateMap.to_sign = true
+                store.setSign_true()
             },
             sign: function(e) {
-                if(stateMap.to_sign) {
+                // 格式化提交参数
+                let postMap = core.postMap({
+                    url: '/api/test',
+                    data: {
+                        flag: 'sign',
+                        mobile: '测试数据',
+                        password: '123456789qwertui111'
+                    }
+                });
+
+                // ajax提交检查
+                this.$http.post(postMap).then(
+                    function (response) {
+                        // success callback
+                        window.location = '/home'
+                        core.log(response.data)
+                    },  function (response) {
+                        // error callback
+                    });
+
+                // 根据状态登录/注册
+                if(store.state.sign) {
                     // 登录逻辑
-                    this.$http.get({url: '/api/test'}).then(
-                        function (response) {
-                            // success callback
-                            core.log(response)
-
-
-                        },  function (response) {
-                            // error callback
-                        });
                 }
-                else if (!stateMap.to_sign) {
+                else if (!store.state.sign) {
                     // 注册逻辑
                 }
                 else {
@@ -99,6 +132,7 @@ setVM_sign = function() {
 let initModule = function(){
     // 注册通信插件
     Vue.use(resource)
+    // 注册Vue VM
     setVM_lead()
     setVM_sign()
 }

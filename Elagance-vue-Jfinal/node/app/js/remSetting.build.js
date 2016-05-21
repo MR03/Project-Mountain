@@ -42,40 +42,24 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(1);
-	module.exports = __webpack_require__(2);
-
-
-/***/ },
-/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
 
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// 定义应用
-	// app:Elagance
+	// rem布局自动计算font-size
+	(function (doc, win) {
+	    var docEl = doc.documentElement,
+	        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+	        recalc = function recalc() {
+	        var clientWidth = docEl.clientWidth;
+	        if (!clientWidth) return;
+	        docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+	    };
 
-	var app = {
-	    configMap: {
-	        baseUrl: '',
-	        siteUrl: ''
-	    },
-	    jsonFlag: 'jd'
-	};
-
-	// 模块出口
-	exports.default = app;
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	"use strict";
+	    if (!doc.addEventListener) return;
+	    win.addEventListener(resizeEvt, recalc, false);
+	    doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);
 
 /***/ }
 /******/ ]);

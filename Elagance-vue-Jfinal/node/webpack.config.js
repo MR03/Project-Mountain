@@ -1,8 +1,6 @@
 var webpack = require('webpack');
-var path = require("path");
 
-
-var config = {
+module.exports = {
     // 页面输出文件配置
     entry: {
         // 测试
@@ -29,5 +27,3 @@ var config = {
         ]
     }
 }
-
-module.exports = config;

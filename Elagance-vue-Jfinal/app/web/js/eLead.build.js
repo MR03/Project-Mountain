@@ -64,7 +64,8 @@
 	    configMap: {
 	        baseUrl: '',
 	        siteUrl: ''
-	    }
+	    },
+	    jsonFlag: 'jd'
 	};
 
 	// 模块出口
@@ -129,21 +130,30 @@
 
 	/*
 	 * 注册参数/DOM地图/状态管理
+	 * 使用基本的Flux架构处理状态
 	 */
 
-	var configMap = void 0;
-	var queryMap = void 0;
-	var stateMap = void 0;
-
 	// 注册参数
+	var configMap = void 0;
+	// DOM地图
+	var queryMap = void 0;
+	// 状态store
+	var store = void 0;
+
 	configMap = {};
 
-	// DOM地图
 	queryMap = {};
 
-	// stateMap
-	stateMap = {
-	    to_sign: true
+	store = {
+	    state: {
+	        sign: true
+	    },
+	    setSign_true: function setSign_true() {
+	        this.state.sign = true;
+	    },
+	    setSign_false: function setSign_false() {
+	        this.state.sign = false;
+	    }
 	};
 
 	/*
@@ -159,22 +169,24 @@
 
 	cut = function cut() {
 	    _elagance2.default.$('cut').setAttribute("class", "cut-container cutto");
+	    (0, _page2.default)('#sign');
 	};
 
 	setVM_lead = function setVM_lead() {
 	    var vm = new _vue2.default({
 	        el: '#view-lead',
-	        data: stateMap,
+	        data: {
+	            privateState: {},
+	            publicState: store.state
+	        },
 	        methods: {
 	            signInTo: function signInTo(e) {
-	                stateMap.to_sign = true;
+	                store.setSign_true();
 	                cut();
-	                (0, _page2.default)('#signin');
 	            },
 	            signUpTo: function signUpTo(e) {
-	                stateMap.to_sign = false;
+	                store.setSign_false();
 	                cut();
-	                (0, _page2.default)('#signon');
 	            }
 	        }
 	    });
@@ -183,24 +195,44 @@
 	setVM_sign = function setVM_sign() {
 	    var vm = new _vue2.default({
 	        el: '#view-sign',
-	        data: stateMap,
+	        data: {
+	            privateState: {
+	                mobile: '',
+	                password: ''
+	            },
+	            publicState: store.state
+	        },
 	        methods: {
 	            toSignUp: function toSignUp(e) {
-	                stateMap.to_sign = false;
+	                store.setSign_false();
 	            },
 	            toSignIn: function toSignIn(e) {
-	                stateMap.to_sign = true;
+	                store.setSign_true();
 	            },
 	            sign: function sign(e) {
-	                if (stateMap.to_sign) {
+	                // 格式化提交参数
+	                var postMap = _elagance2.default.postMap({
+	                    url: '/api/test',
+	                    data: {
+	                        flag: 'sign',
+	                        mobile: '测试数据',
+	                        password: '123456789qwertui111'
+	                    }
+	                });
+
+	                // ajax提交检查
+	                this.$http.post(postMap).then(function (response) {
+	                    // success callback
+	                    window.location = '/home';
+	                    _elagance2.default.log(response.data);
+	                }, function (response) {
+	                    // error callback
+	                });
+
+	                // 根据状态登录/注册
+	                if (store.state.sign) {
 	                    // 登录逻辑
-	                    this.$http.get({ url: '/api/test' }).then(function (response) {
-	                        // success callback
-	                        _elagance2.default.log(response);
-	                    }, function (response) {
-	                        // error callback
-	                    });
-	                } else if (!stateMap.to_sign) {
+	                } else if (!store.state.sign) {
 	                        // 注册逻辑
 	                    } else {
 	                            _elagance2.default.log('未知的错误');
@@ -214,6 +246,7 @@
 	var initModule = function initModule() {
 	    // 注册通信插件
 	    _vue2.default.use(_vueResource2.default);
+	    // 注册Vue VM
 	    setVM_lead();
 	    setVM_sign();
 	};
@@ -10366,6 +10399,9 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 	var sizzle = __webpack_require__(8);
 
 	// 数据区
@@ -10374,10 +10410,12 @@
 	var core = {}; // 核心对象
 	var doc = window.document; // 文档对象
 
-	// 方法声明区
+	// 私有方法声明
 	// ----------------------------------
 
 	var log = void 0; // 打印语句
+	var toQueryString = void 0; // 格式化json
+	var _cloneObject = void 0; // 深拷贝对象
 
 	// 方法实现区
 	// ----------------------------------
@@ -10402,6 +10440,51 @@
 
 	// 使用sizzle选择器
 	core.sizzle = sizzle;
+
+	// dom就绪后执行
+	core.ready = function (fn) {
+	    if (doc.readyState != 'loading') {
+	        fn();
+	    } else {
+	        doc.addEventListener('DOMContentLoaded', fn);
+	    }
+	};
+
+	// json处理函数
+	core.toQueryString = toQueryString = function toQueryString(obj) {
+	    for (var index in obj) {
+	        obj[index] = encodeURIComponent(obj[index]);
+	    }
+
+	    obj = JSON.stringify(obj);
+	    return obj;
+	};
+
+	core.cloneObject = _cloneObject = function cloneObject(obj) {
+	    var clone = {};
+
+	    for (var index in obj) {
+	        // 递归
+	        clone[index] = _typeof(obj[index]) === 'object' ? _cloneObject(obj[index]) : obj[index];
+	    }
+
+	    return clone;
+	};
+
+	// 参数处理
+	core.postMap = function (obj) {
+	    var reformat = obj;
+	    var data = _cloneObject(obj.data);
+
+	    if (reformat.url === '' || !reformat.url || reformat.data === '' || !reformat.data) {
+	        log('url参数或data数据有问题');
+	    } else {
+	        reformat.url = encodeURI(obj.url);
+	        reformat['data'] = {};
+	        reformat['data']['jd'] = toQueryString(data);
+	    }
+	    return reformat;
+	};
 
 	// 模块出口
 	exports.default = core;
@@ -12991,7 +13074,7 @@
 	  };
 
 	  /**
-	   * Initialize `route` with the given HTTP `path`,
+	   * Initialize `Route` with the given HTTP `path`,
 	   * and an array of `callbacks` and `options`.
 	   *
 	   * Options:
@@ -13015,7 +13098,7 @@
 	  }
 
 	  /**
-	   * Expose `route`.
+	   * Expose `Route`.
 	   */
 
 	  page.Route = Route;

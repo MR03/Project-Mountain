@@ -5,7 +5,8 @@ let app = {
     configMap: {
         baseUrl: '',
         siteUrl: ''
-    }
+    },
+    jsonFlag: 'jd'
 }
 
 // 模块出口

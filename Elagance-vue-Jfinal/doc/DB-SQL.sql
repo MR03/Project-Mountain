@@ -10,8 +10,8 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   users_id SERIAL PRIMARY KEY COMMENT '用户ID',
   users_name VARCHAR(20) COMMENT '用户名称',
-  email VARCHAR(20) NOT NULL COMMENT '注册邮箱',
-  tel VARCHAR(20) COMMENT '注册电话',
+  email VARCHAR(20) COMMENT '注册邮箱',
+  tel VARCHAR(20) NOT NULL COMMENT '注册电话',
   password_hash CHAR(64) NOT NULL COMMENT '密码',
   salt VARCHAR(10) NOT NULL COMMENT '密码干扰串'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '用户账号表';
@@ -19,7 +19,7 @@ CREATE TABLE users (
 
 INSERT INTO users (users_id, users_name, email, tel, password_hash, salt)
 VALUES (DEFAULT, 'admin', 'admin@mao.com', '13012345678', 'admin','admin')
-------------------------------------------------------------------
+# ------------------------------------------------------------------
 -- 表信息:店铺表
 -- 类型:普通表
 --

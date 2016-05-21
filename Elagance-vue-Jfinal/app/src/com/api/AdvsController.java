@@ -1,37 +1,38 @@
 package com.api;
 
+import com.config.AppConfig;
 import com.model.Advs;
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.core.Controller;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 /**
  * Created by Administrator on 2016/4/27.
  */
 public class AdvsController extends Controller {
+//    json通信
     private String para = "error";
     private JSONObject jp;
 
     // 接收分发
     public void index(){
+       // 解决字符串乱码
+        try {
+            para = URLDecoder.decode(getPara(AppConfig.jsonFlag), "UTF8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        jp = JSONObject.parseObject(para);
 
-        para = getPara("name");
-//        // 解决字符串乱码
-//        try {
-//            para = URLDecoder.decode(getPara(AppConfig.jsonFlag), "UTF8");
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
-//        jp = JSONObject.parseObject(para);
 
-//        String send = null;
-//        send = jp.getString("op");
-        System.out.println(para);
-        setAttr("banner", "success11111111122222221");
-        renderJson(new String[]{"banner"});
+        String flag = jp.getString("flag");
+        System.out.println(flag);
 
-//        if( send.equals("all")) {
-//            getAll();
-//        }
+        if( flag.equals("sign")) {
+            sign();
+        }
 //        if( send.equals("create")) {
 //            advsCreate();
 //        }
@@ -41,6 +42,11 @@ public class AdvsController extends Controller {
 //        if( send.equals("update")) {
 //            advsUpdate();
 //        }
+    }
+
+    private void sign() {
+        setAttr("banner", "sdfsdf");
+        renderJson(new String[]{"banner"});
     }
 
     // 返回全部广告

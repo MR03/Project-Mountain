@@ -42,19 +42,19 @@
           <div class="view-container view-signin" id="view-sign">
             <div class="signin-body">
               <div class="lead-body-logo lead-signin-logo animated fadeInDown"></div>
-              <h1 class="lead-signin-title" v-bind:class="{'now': to_sign}" v-on:click="toSignUp">登录</h1>
-              <h2 class="lead-signin-title" v-bind:class="{'now': !to_sign}" v-on:click="toSignIn">注册</h2>
+              <h1 class="lead-signin-title" v-bind:class="{'now': publicState.sign}" v-on:click="toSignUp">登录</h1>
+              <h2 class="lead-signin-title" v-bind:class="{'now': !publicState.sign}" v-on:click="toSignIn">注册</h2>
               <div class="sign-form">
                 <div class="input-form mb-05r">
-                  <input type="text" placeholder="E-Mail" class="input-control">
+                  <input type="text" placeholder="手机号码" class="input-control" v-model="privateState.mobile">
                 </div>
                 <div class="input-form">
-                  <input type="text" placeholder="Password" class="input-control">
+                  <input type="text" placeholder="密码" class="input-control" v-model="privateState.password">
                 </div>
-                <h6 class="forgot" v-bind:class="{'none': !to_sign}">忘记密码?</h6>
+                <h6 class="forgot" v-bind:class="{'none': !publicState.sign}">忘记密码?</h6>
               </div>
               <div class="lead-body-sign">
-                <button class="lead-body-sign-btn mt-02r animated fadeIn sign-active-2" v-on:click="sign"><span>{{to_sign ? '登录' : '注册'}}</span></button>
+                <button class="lead-body-sign-btn mt-02r animated fadeIn sign-active-2" v-on:click="sign"><span>{{publicState.sign ? '登录' : '注册'}}</span></button>
                 <button class="lead-body-sign-btn mt-05r animated fadeIn sign-active-2"><span>随便逛逛</span></button>
               </div>
             </div>

@@ -5,6 +5,7 @@ import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
 import com.jfinal.plugin.c3p0.C3p0Plugin;
+import com.route.SpaRoute;
 
 public class AppConfig extends JFinalConfig {
     public static String jsonFlag = "jd";
@@ -20,6 +21,10 @@ public class AppConfig extends JFinalConfig {
     public void configRoute(Routes me) {
         // 入口路由
         me.add("/api/test", AdvsController.class, "/");
+
+
+        // spaRoot路由
+        me.add("/home", SpaRoute.class, "/");
     }
 
     public static C3p0Plugin createC3p0Plugin() {

@@ -44,38 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(1);
-	module.exports = __webpack_require__(2);
+	(function webpackMissingModule() { throw new Error("Cannot find module \"F:\\\""); }());
+	(function webpackMissingModule() { throw new Error("Cannot find module \"F:\\\""); }());
 
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	// 定义应用
-	// app:Elagance
-
-	var app = {
-	    configMap: {
-	        baseUrl: '',
-	        siteUrl: ''
-	    },
-	    jsonFlag: 'jd'
-	};
-
-	// 模块出口
-	exports.default = app;
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	"use strict";
 
 /***/ }
 /******/ ]);

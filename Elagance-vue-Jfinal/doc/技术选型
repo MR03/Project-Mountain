@@ -6,6 +6,5 @@ js: 原生
 自动化:gulp
 模块化和打包: webpack
 强依赖框架: vue
-
-后端:
-nodejs
+server:jfinal
+通信:json
