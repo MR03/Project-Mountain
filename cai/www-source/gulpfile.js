@@ -25,18 +25,21 @@ var BP = {
     jade: {
         source: './source/jade/**/*.jade',
         dist: './app',
-        app: './app/*.html'
+        app: './app/*.html',
+        out: '../www'
     },
     scss: {
         source: './source/scss/**/*.scss',
         dist: './app/assets/css',
-        app: './app/assets/css/*.css'
+        app: './app/assets/css/**/*.css',
+        out: '../www/assets/css'
     },
     scripts: {
         // 防止随意改动lib里的库
-        source: './source/scripts/modules/*.js',
+        source: './source/scripts/lib/*.js',
         dist: './app/js',
-        app: './app/js/*.js'
+        app: './app/js/*.js',
+        out: '../www/js'
     }
 };
 // 默认任务,开发监听
@@ -65,6 +68,7 @@ gulp.task('jade', function() {
             pretty: true
         }))
         .pipe(gulp.dest(BP.jade.dist))
+        .pipe(gulp.dest(BP.jade.out))
 });
 //sass任务
 gulp.task('scss', function() {
@@ -73,19 +77,24 @@ gulp.task('scss', function() {
         .pipe(scss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest(BP.scss.dist))
+        .pipe(gulp.dest(BP.scss.out))
 });
 
 // 重写source
 var scriptsArr = [
-    './source/scripts/modules/utils.v1.js',
-    './source/scripts/modules/shell.v1.js',
-    './source/scripts/modules/lead.v1.js',
-    './source/scripts/modules/app.v1.js'
+    './source/scripts/modules/test.js'
 ];
 gulp.task('scripts', function() {
     return gulp.src(scriptsArr)
         .pipe(concat('app.js'))
         .pipe(gulp.dest(BP.scripts.dist))
+        .pipe(gulp.dest(BP.scripts.out))
+});
+gulp.task('lib', function() {
+    return gulp.src(BP.scripts.source)
+        .pipe(concat('lib.js'))
+        .pipe(gulp.dest(BP.scripts.dist))
+        .pipe(gulp.dest(BP.scripts.out))
 });
 
 

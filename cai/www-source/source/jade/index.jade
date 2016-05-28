@@ -1,3 +1,37 @@
-//
-   Created by Administrator on 2016/5/27.
-
+doctype html
+html(lang='zh-CN')
+   head
+      //- 编码和渲染
+      meta(charset='utf-8')
+      //- 编码和渲染
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
+      meta(name='renderer' content='webkit')
+      meta(name='apple-mobile-web-app-capable' content='yes')
+      meta(name='apple-mobile-web-app-status-bar-style' content='black')
+      meta(name='format-detection' content='telephone=no')
+      meta(name='wap-font-scale' content='no')
+      meta(name='msapplication-tap-highlight' content='no')
+      //- viewport
+      meta(name='viewport' content='maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,width=device-width,initial-scale=1.0')
+      //- 网页title
+      title 菜谱
+      //- link
+      link(rel='styleSheet' href='./assets/css/lib/lib.css')
+      link(rel='styleSheet' href='./assets/css/framework/framework.css')
+      link(rel='styleSheet' href='./assets/css/modules/modules.css')
+      //
+      script(src='./js/rem.js')
+   body
+      //content
+      .view-root
+         .view.r
+            .container.bar-container
+               .row.bar.bar-head
+                  .col.bar-ico
+                     i.fa.fa-bars
+                  .col.bar-thitle
+                     h3.text-left 菜谱
+                  .col.bar-ico
+                     i.fa.fa-search
+                  .col.bar-ico
+                     i.fa.fa-ellipsis-v
