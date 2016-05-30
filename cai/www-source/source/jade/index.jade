@@ -20,7 +20,7 @@ html(lang='zh-CN')
       link(rel='styleSheet' href='./assets/css/framework/framework.css')
       link(rel='styleSheet' href='./assets/css/modules/modules.css')
       //
-      script(src='./js/rem.js')
+      script(src='./js/lib.js')
    body
       //content
       .view-root
@@ -30,8 +30,28 @@ html(lang='zh-CN')
                   .col.bar-ico
                      i.fa.fa-bars
                   .col.bar-thitle
-                     h3.text-left 菜谱
+                     h3.text-left#view 菜谱
                   .col.bar-ico
                      i.fa.fa-search
                   .col.bar-ico
                      i.fa.fa-ellipsis-v
+            .container
+               #blank
+                  - for (var i = 0; i < 10; i++) {
+                     .row.b-pannel--row
+                        .col.b-pannel-img
+                           img(src='./assets/img/food_1.jpg')
+                        .col.b-pannel-msg(c:click)
+                           .col.b-pannel-msg-img
+                              .b-pannel-msg-img-wrap
+                                 img.img-round(src='./assets/img/author_1.png')
+                           .col.b-pannel-msg-text
+                              h3.b-pannel-msg-text-title 老婆饼
+                              h5.b-pannel-msg-text-type 点心
+                           .col.b-pannel-msg-star
+                              h6.b-pannel-msg-star-wrap
+                                 i.fa.fa-heart.mr-03r
+                                 span.b-pannel-msg-star-sum 345
+                  - }
+
+      script(src='./js/index.build.js')

@@ -1,6 +1,7 @@
 package com.config;
 
 import com.api.AdvsController;
+import com.api.TestController;
 import com.jfinal.config.*;
 import com.jfinal.kit.PropKit;
 import com.jfinal.plugin.activerecord.ActiveRecordPlugin;
@@ -19,9 +20,9 @@ public class AppConfig extends JFinalConfig {
 
     @Override
     public void configRoute(Routes me) {
-        // 入口路由
+        // api路由
         me.add("/api/test", AdvsController.class, "/");
-
+        me.add("/api/cors", TestController.class, "/");
 
         // spaRoot路由
         me.add("/home", SpaRoute.class, "/");

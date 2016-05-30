@@ -4,17 +4,27 @@
   "description": "core",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ww": "webpack --watch"
+  },
+  "dependencies": {
+    "vue": "^1.0.24"
   },
   "author": "mr03",
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.8.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "webpack": "^1.13.0",
     "browser-sync": "^2.11.1",
+    "gulp-livereload": "^3.8.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.1.0",
     "gulp-pug": "^3.0.2",
-    "gulp-sass": "^2.1.1"
+    "gulp-sass": "^2.1.1",
+    "vue-resource": "^0.7.0"
   }
 }

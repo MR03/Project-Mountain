@@ -20,30 +20,30 @@ var browserSync = require('browser-sync').create(),
     // 基础参数, BP = Basic Params
 var BP = {
     server: {
-        baseDir: './app',
+        baseDir: '../www',
     },
     jade: {
         source: './source/jade/**/*.jade',
-        dist: './app',
-        app: './app/*.html',
+        //dist: './app',
+        app: '../www/*.html',
         out: '../www'
     },
     scss: {
         source: './source/scss/**/*.scss',
-        dist: './app/assets/css',
-        app: './app/assets/css/**/*.css',
+        //dist: './app/assets/css',
+        app: '../www/assets/css/**/*.css',
         out: '../www/assets/css'
     },
     scripts: {
         // 防止随意改动lib里的库
         source: './source/scripts/lib/*.js',
-        dist: './app/js',
-        app: './app/js/*.js',
+        //dist: './app/js',
+        app: '../www/js/*.js',
         out: '../www/js'
     }
 };
 // 默认任务,开发监听
-gulp.task('default',['jade', 'scss', 'scripts'], function() {
+gulp.task('default',['jade', 'scss'], function() {
     browserSync.init({
         server: {
             baseDir: BP.server.baseDir
@@ -55,7 +55,7 @@ gulp.task('default',['jade', 'scss', 'scripts'], function() {
     // scss任务监视
     gulp.watch(BP.scss.source,['scss']);
     // scripts任务监视
-    gulp.watch(BP.scripts.source,['scripts']);
+    //gulp.watch(BP.scripts.source,['scripts']);
     // page reload(html/css/js)
     gulp.watch(BP.jade.app).on('change', reload);
     gulp.watch(BP.scss.app).on('change', reload);
@@ -67,7 +67,7 @@ gulp.task('jade', function() {
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest(BP.jade.dist))
+        //.pipe(gulp.dest(BP.jade.dist))
         .pipe(gulp.dest(BP.jade.out))
 });
 //sass任务
@@ -76,7 +76,7 @@ gulp.task('scss', function() {
         .pipe(plumber())
         .pipe(scss())
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest(BP.scss.dist))
+        //.pipe(gulp.dest(BP.scss.dist))
         .pipe(gulp.dest(BP.scss.out))
 });
 
