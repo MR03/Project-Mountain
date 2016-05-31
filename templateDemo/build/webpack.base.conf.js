@@ -21,10 +21,10 @@ module.exports = {
       'components': path.resolve(__dirname, '../src/components')
     }
   },
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
-  },
-  module: {
+    resolveLoader: {
+      fallback: [path.join(__dirname, '../node_modules')]
+    },
+    module: {
     loaders: [
       {
         test: /\.vue$/,

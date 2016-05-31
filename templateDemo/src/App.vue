@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
 import Hello from './components/Hello'
 
 export default {

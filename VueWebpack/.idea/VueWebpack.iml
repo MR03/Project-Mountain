@@ -4,6 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="templateDemo node_modules" level="project" />
+    <orderEntry type="library" name="VueWebpack node_modules" level="project" />
   </component>
 </module>

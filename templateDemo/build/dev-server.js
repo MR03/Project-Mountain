@@ -1,19 +1,24 @@
+/*
+ * 开发模式-配置服务器
+ */
+
+// 模块引入
 var path = require('path')
 var express = require('express')
 var webpack = require('webpack')
-var config = require('../config')
+var config = require('../config') // 引入config文件夹,默认加载index.js
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf')
+  : require('./webpack.dev.conf')  // 根据定义常量,选择注册文件,该处是同文件夹的webpack.dev.conf.js
 
 // default port where dev server listens for incoming traffic
-var port = process.env.PORT || config.dev.port
+var port = process.env.PORT || config.dev.port // 本地端口:默认是8080
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
-var proxyTable = config.dev.proxyTable
+var proxyTable = config.dev.proxyTable //代理配置
 
-var app = express()
+var app = express() // express服务器对象
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -56,6 +61,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.build.assetsPublicPath, config.build.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
+// 服务器开始监听
 module.exports = app.listen(port, function (err) {
   if (err) {
     console.log(err)
