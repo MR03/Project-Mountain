@@ -3,6 +3,13 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
+
+// 输出注册参数Map
+
+var configMap = {
+
+}
+
 module.exports = {
   entry: {
     index: './source/scripts/page/index',
@@ -24,6 +31,10 @@ module.exports = {
         loader: 'babel'
       },
       {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract("style","css!sass")
+      },
+      {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract("style", "css")
       },
@@ -41,7 +52,7 @@ module.exports = {
       filename:'../page/index.html'
     }),
     new HtmlWebpackPlugin({
-      chunks:['bank'],
+      chunks: ['bank'],
       template:'./source/view/bank.html',
       inject:true,
       filename:'../page/bank.html'
