@@ -1,4 +1,4 @@
 # VueWebpack
 
-> Vue配置模板
+> Vue工程配置模板
 

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Webpack配置",
   "scripts": {
-    "dev": "webpack --w",
+    "ww": "webpack --w",
+    "ws": "webpack-dev-server",
     "test": ""
   },
   "author": "MR03",
