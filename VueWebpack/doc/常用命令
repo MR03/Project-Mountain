@@ -1,1 +1,4 @@
-删除node模块: rimraf node_modules,需要安装rimraf
+// 单webpack
+
+删除node模块: rimraf node_modules,需要全局安装rimraf
+启动:npm run dev
