@@ -1,11 +1,11 @@
 import test from './style/core/test.css'
 
-alert($('h1').text())
+alert("h111")
 
 new Vue({
     el: '#test',
     data: {
-        msg: 'hhh11111112222222222222'
+        msg: 'hhh'
     }
 })
 

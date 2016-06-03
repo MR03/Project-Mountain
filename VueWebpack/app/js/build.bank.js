@@ -1,2 +1,25 @@
-webpackJsonp([0],[function(e,n,t){"use strict";function u(e){return e&&e.__esModule?e:{"default":e}}var c=t(1);u(c)}]);
-//# sourceMappingURL=build.bank.js.map
+webpackJsonp([0],[
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _vue = __webpack_require__(1);
+
+	var _vue2 = _interopRequireDefault(_vue);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// storeMap
+	var storeMap = {};
+
+	// 方法
+
+	var test = function test() {};
+
+	//new Vue({
+	//    el: 'body'
+	//})
+
+/***/ }
+]);

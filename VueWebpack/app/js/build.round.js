@@ -1,2 +1,14 @@
-webpackJsonp([2],[function(e,n,t){"use strict";function u(e){return e&&e.__esModule?e:{"default":e}}var c=t(1);u(c)}]);
-//# sourceMappingURL=build.round.js.map
+webpackJsonp([2],[
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _vue = __webpack_require__(1);
+
+	var _vue2 = _interopRequireDefault(_vue);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }
+]);

@@ -10,16 +10,16 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 module.exports = {
   // 获取入口js文件,格式shell.xxx.js/后续优化为函数?
   entry: {
-    index : './source/shell.index',
-    bank : './source/shell.bank',
-    round: './source/shell.round'
+    index : './source/shell.index.js',
+    bank : './source/shell.bank.js',
+    round: './source/shell.round.js'
   },
   // 输出
   output: {
-    path: path.join(__dirname, 'app/js'),   //文件输出目录
-    publicPath: "./",   // 配置文件发布路径，不用时注释掉,使用webpack-dev-server必须有此项
-    filename: 'build.[name].js',   //根据入口文件输出的对应多个文件名
-    chunkFilename: 'app/js/chunk.[id].js'   //chunk生成的配置
+    path: path.join(__dirname, 'app'),   //文件输出目录
+    //publicPath: "/app/",   // 配置文件发布路径，不用时注释掉
+    filename: 'js/build.[name].js',   //根据入口文件输出的对应多个文件名
+    chunkFilename: 'js/chunk.[id].js'   //chunk生成的配置
   },
   // loader使用简写
   module: {
@@ -59,28 +59,21 @@ module.exports = {
       Vue: 'vue'
     }),
     // 将公共代码抽离出来合并为一个文件
-    new CommonsChunkPlugin('common.js'),
+    new CommonsChunkPlugin('js/common.js'),
     // js文件的压缩
     new UglifyJsPlugin({
       compress: {
         warnings: false
-      }
+      },
+      except: ['$', 'exports', 'require']    //排除关键字
     }),
     // 单独输出css
-    new ExtractTextPlugin("../assets/css/[name].css"),
+    new ExtractTextPlugin("assets/css/[name].css"),
     // 页面模板输出配置
     new HtmlWebpackPlugin(htmlView('index')),
     new HtmlWebpackPlugin(htmlView('bank')),
     new HtmlWebpackPlugin(htmlView('round'))
   ],
-  devServer: {
-    host: 'localhost',
-    port: 8080,   // 默认8080
-    hot: false,
-    inline: true,
-    noInfo: true, // 不显示服务器提示信息
-    historyApiFallback: true
-  },
   // 生成sourcemap,便于开发调试,不用可去掉
   devtool: 'source-map'
 };
@@ -92,7 +85,7 @@ function htmlView(str) {
   return {
     chunks: [str],   // 需要引入的chunk，不配置就会引入所有页面的资源
     template: './source/view/' + str + '.html',   // html模板路径
-    filename: '../' + str + '.html',   // 生成的html存放路径
-    inject: 'body'   // js插入的位置，true/'head'/'body'/false
+    filename: './' + str + '.html',   // 生成的html存放路径
+    inject: 'true'   // js插入的位置，true/'head'/'body'/false
   }
 }
