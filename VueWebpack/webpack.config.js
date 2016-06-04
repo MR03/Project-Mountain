@@ -17,8 +17,10 @@ var configMap = {
 
 // webpack配置
 // 编译ES6的配置在.babelrc文件里
+// 启动命令键package.json的scripts
 var config = {
-  // 获取入口js文件,格式shell.xxx.js/后续优化为函数?
+  // 获取入口js文件,格式shell.xxx.js
+  // 后续优化为函数
   entry: setEntry(configMap.name),
   // 输出
   output: {
@@ -27,6 +29,7 @@ var config = {
     filename: 'js/build.[name].js',   //根据入口文件输出的对应多个文件名
     chunkFilename: 'js/chunk.[id].js'   //chunk生成的配置
   },
+  // loader依赖
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
   },
@@ -86,6 +89,7 @@ var config = {
     new ExtractTextPlugin("assets/css/[name].css"),
     // 页面模板输出配置用函数push
   ],
+  // webpack-dev-server配置
   devServer: {
     contentBase: './app/',
     historyApiFallback: true,
@@ -105,7 +109,6 @@ function setEntry(arr) {
   }
   return entry
 }
-
 
 // HtmlWebpackPlugin配置对象push到config里
 // @params arr:模板数组
@@ -131,5 +134,6 @@ function htmlView(str) {
   }
 }
 
+// 配置输出
 module.exports = config;
 
