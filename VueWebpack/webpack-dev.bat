@@ -1,1 +1,1 @@
-npm run s
+npm run d

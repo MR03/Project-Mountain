@@ -5,7 +5,7 @@
   "scripts": {
     "b": "webpack --progress --colors",
     "w": "webpack --watch --progress --colors",
-    "s": "webpack-dev-server --inline --progress --colors",
+    "d": "webpack-dev-server --inline --progress --colors",
     "test": ""
   },
   "author": "MR03",
