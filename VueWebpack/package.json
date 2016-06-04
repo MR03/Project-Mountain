@@ -4,7 +4,7 @@
   "description": "Webpack配置",
   "scripts": {
     "b": "webpack --progress --colors",
-    "w": "webpack --watch --progress --colors",
+    "w": "webpack --watch --progress --colors --profile",
     "d": "webpack-dev-server --inline --progress --colors",
     "test": ""
   },

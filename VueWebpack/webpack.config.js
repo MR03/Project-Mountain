@@ -8,6 +8,7 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 
 // 配置Map
 var configMap = {
+  // 统一名称
   name: [
     'index',
     'bank',
@@ -20,7 +21,8 @@ var configMap = {
 // 启动命令键package.json的scripts
 var config = {
   // 获取入口js文件,格式shell.xxx.js
-  // 后续优化为函数
+  // 现优化为函数
+  // 单文件模式,前缀为shell
   entry: setEntry(configMap.name),
   // 输出
   output: {
@@ -33,7 +35,8 @@ var config = {
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
   },
-  // loader使用简写
+  // loader使用
+  // 简写
   module: {
     loaders: [
       {
@@ -68,7 +71,9 @@ var config = {
     // 暂无, 留空
     alias: {
       //
-    }
+    },
+    // 补全文件后缀
+    extensions: ['','.js','.json']
   },
   plugins: [
     // 提供全局的变量，在模块中使用无需用require引入
@@ -91,6 +96,7 @@ var config = {
   ],
   // webpack-dev-server配置
   devServer: {
+    port: 3000,
     contentBase: './app/',
     historyApiFallback: true,
     noInfo: true
