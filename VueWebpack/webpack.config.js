@@ -92,6 +92,9 @@ var config = {
       compress: {
         warnings: false
       },
+      output: {
+        comments: false
+      },
       except: ['$', 'exports', 'require']    //排除关键字
     }),
     // 单独输出css
@@ -106,7 +109,7 @@ var config = {
     noInfo: true
   },
   // 生成sourcemap,便于开发调试,不用可去掉
-  devtool: ' source-map'
+  devtool: 'source-map'
 };
 
 // 根据注册参数自动获取entry
