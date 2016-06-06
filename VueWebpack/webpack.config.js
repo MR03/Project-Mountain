@@ -83,7 +83,7 @@ var config = {
     }),
     // 将公共代码抽离出来合并为一个文件
     new CommonsChunkPlugin('js/common.js'),
-    // js文件的压缩
+    // 文件压缩
     new UglifyJsPlugin({
       compress: {
         warnings: false
