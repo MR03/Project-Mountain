@@ -82,7 +82,11 @@ var config = {
       Vue: 'vue'
     }),
     // 将公共代码抽离出来合并为一个文件
-    new CommonsChunkPlugin('js/common.js'),
+    new CommonsChunkPlugin({
+      name: 'common',
+      filename: 'js/common.js',
+      minChunks: 2
+    }),
     // 文件压缩
     new UglifyJsPlugin({
       compress: {
@@ -102,7 +106,7 @@ var config = {
     noInfo: true
   },
   // 生成sourcemap,便于开发调试,不用可去掉
-  devtool: 'eval'
+  devtool: ' source-map'
 };
 
 // 根据注册参数自动获取entry
