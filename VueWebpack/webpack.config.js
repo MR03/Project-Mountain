@@ -10,13 +10,14 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 var configMap = {
   // 统一名称
   name: [
-    'template'
+    'template',
+    'index'
   ]
 }
 
 // webpack配置
 // 编译ES6的配置在.babelrc文件里
-// 启动命令键package.json的scripts
+// 启动命令见package.json的scripts
 var config = {
   // 获取入口js文件,格式shell.xxx.js
   // 现优化为函数
@@ -66,12 +67,11 @@ var config = {
   },
   resolve: {
     // 配置别名，在项目中可缩减引用路径
-    // 暂无, 留空
     alias: {
-      //
+      app: './config.app.js'   // 应用定义
     },
     // 补全文件后缀
-    extensions: ['','.js','.json','.css', '.scss']
+    extensions: ['', '.vue', '.js', '.json', '.css', '.scss']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),  // 代码热替换, 实验性功能,注意
@@ -79,12 +79,13 @@ var config = {
     // 提供全局的变量，在模块中使用无需用require引入
     new webpack.ProvidePlugin({
       $: 'jquery',
-      Vue: 'vue'
+      Vue: 'vue',
+      resource: 'vue-resource'
     }),
     // 将公共代码抽离出来合并为一个文件
     new CommonsChunkPlugin({
       name: 'common',
-      filename: 'js/common.js',
+      filename: 'js/build.common.js',
       minChunks: 2
     }),
     // 单独输出css

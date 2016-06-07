@@ -1,24 +1,22 @@
 <template>
-    <div id="app">
-        <h1>这是测试网页!!!!</h1>
-        <a href="index.html">跳转</a>
-        <h1>{{ msg }}</h1>
+    <div class="bar-header">
+        <h1 class="text-center">{{msg}}</h1>
     </div>
 </template>
 
 <style>
-    body {
-        font-family: Helvetica, sans-serif;
+    .bar-header h1 {
+        font-size: 50px;
     }
 </style>
 
 <script type="text/babel">
     export default {
-        data() {
-        return {
-            msg: 'Hello Vue!22222'
+        data: function() {
+            return {
+                msg: '头部组件'
+            }
         }
-    }
     }
 </script>
 

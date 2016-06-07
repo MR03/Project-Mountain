@@ -1,14 +1,13 @@
 {
   "name": "VueWebpack-Demo",
   "version": "1.0.0",
-  "description": "Vue项目的Webpack配置",
+  "description": "VueWebpack的Webpack配置",
   "scripts": {
     "b": "cross-env NODE_ENV=production webpack --progress --colors --hide-modules --display-error-details",
     "w": "webpack --watch --progress --colors --profile",
     "d": "webpack-dev-server --inline --progress --colors",
     "test": ""
   },
-  "license": "MIT",
   "author": "MR03",
   "dependencies": {
     "vue": "^1.0.24",
@@ -31,6 +30,7 @@
     "vue-hot-reload-api": "^1.3.2",
     "vue-html-loader": "^1.2.2",
     "vue-loader": "^8.5.2",
+    "vue-resource": "^0.7.2",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"

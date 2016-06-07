@@ -1,0 +1,4 @@
+{
+  "name": "测试数据通信插件",
+  "plugin": "vue-resource"
+}

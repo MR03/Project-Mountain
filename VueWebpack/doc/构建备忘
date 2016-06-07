@@ -1,0 +1,3 @@
+// 需要安装nodejs
+// npm下载速度较慢,安装cnpm
+// 命令见package.json的"scripts"
