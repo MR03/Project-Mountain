@@ -1,2 +1,2 @@
-webpackJsonp([1],[function(t,e,n){(function(t,e){"use strict";function o(t){return t&&t.__esModule?t:{"default":t}}var l=n(4);o(l);t("body").text(),new e({el:"#test",data:{msg:"hello world!"}})}).call(e,n(1),n(2))},,,,function(t,e){}]);
+webpackJsonp([3],[function(e,n,t){"use strict";function u(e){return e&&e.__esModule?e:{"default":e}}var c=t(1);u(c)}]);
 //# sourceMappingURL=build.index.js.map

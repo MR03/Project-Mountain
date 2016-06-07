@@ -1,6 +1,6 @@
 # VueWebpack
 
-> Vue工程配置模板
+> 积分银行前端工程目录
 
 # bat
 

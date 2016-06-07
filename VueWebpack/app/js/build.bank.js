@@ -1,2 +1,2 @@
-webpackJsonp([0],[function(t,c,n){(function(t){"use strict";t("body").text()}).call(c,n(1))}]);
+webpackJsonp([4],[function(c,n){"use strict"}]);
 //# sourceMappingURL=build.bank.js.map

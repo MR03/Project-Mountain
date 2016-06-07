@@ -10,9 +10,7 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
 var configMap = {
   // 统一名称
   name: [
-    'index',
-    'bank',
-    'round'
+    'template'
   ]
 }
 
@@ -28,14 +26,14 @@ var config = {
   output: {
     path: path.join(__dirname, 'app'),   //文件输出目录
     publicPath: "/",   // 配置文件发布路径，不用时注释掉
-    filename: 'js/build.[name].js',   //根据入口文件输出的对应多个文件名
+    filename: 'js/build.[name].js',   //根据入口文件输出的对应多个文件名,如果需要hash值,加上[hash]
     chunkFilename: 'js/chunk.[id].js'   //chunk生成的配置
   },
   // loader依赖
   resolveLoader: {
     root: path.join(__dirname, 'node_modules'),
   },
-  // loader使用
+  // loader配置
   // 简写
   module: {
     loaders: [
@@ -73,9 +71,11 @@ var config = {
       //
     },
     // 补全文件后缀
-    extensions: ['','.js','.json']
+    extensions: ['','.js','.json','.css', '.scss']
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),  // 代码热替换, 实验性功能,注意
+    new webpack.NoErrorsPlugin(),   // 报错但不退出webpack进程
     // 提供全局的变量，在模块中使用无需用require引入
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -87,18 +87,8 @@ var config = {
       filename: 'js/common.js',
       minChunks: 2
     }),
-    // 文件压缩
-    new UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false
-      },
-      except: ['$', 'exports', 'require']    //排除关键字
-    }),
     // 单独输出css
-    new ExtractTextPlugin("assets/css/[name].css"),
+    new ExtractTextPlugin("assets/css/build.[name].css"),
     // 页面模板输出配置用函数push
   ],
   // webpack-dev-server配置
@@ -107,9 +97,10 @@ var config = {
     contentBase: './app/',
     historyApiFallback: true,
     noInfo: true
+    // 视情况配置代理
   },
   // 生成sourcemap,便于开发调试,不用可去掉
-  devtool: 'source-map'
+  devtool: '#eval-source-map'
 };
 
 // 根据注册参数自动获取entry
@@ -137,14 +128,39 @@ htmlPush(configMap.name)
 
 // HtmlWebpackPlugin配置对象函数
 // @params str:view文件前缀
-// @return 单例对象
+// @return 配置对象
 function htmlView(str) {
   return {
     chunks: [str],   // 需要引入的chunk，不配置就会引入所有页面的资源
-    template: './source/view/' + str + '.html',   // html模板路径
+    // source/wrap/template/template.html
+    template: './source/modules/' + str + '/' + str +  '.html',   // html模板路径
     filename: './' + str + '.html',   // 生成的html存放路径
-    inject: 'true'   // js插入的位置，true/'head'/'body'/false
+    inject: true,   // js插入的位置，true/'head'/'body'/false
+    hash: true // hash值
   }
+}
+
+// 编译输出
+if(process.env.NODE_ENV === 'production') {
+  config.devtool = '#source-map'
+  config.plugins = (config.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    // 文件压缩
+    new UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
+      except: ['$', 'exports', 'require']    //排除关键字
+    }),
+    new webpack.optimize.OccurenceOrderPlugin()
+  ])
 }
 
 // 配置输出
