@@ -1,7 +1,7 @@
 // 包含模块
 var path=require('path')
 var webpack = require('webpack')
-var ExtractTextPlugin = require("extract-text-webpack-plugin")
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
@@ -26,7 +26,7 @@ var config = {
   // 输出
   output: {
     path: path.join(__dirname, 'app'),   //文件输出目录
-    publicPath: "/",   // 配置文件发布路径，不用时注释掉
+    publicPath: '/',   // 配置文件发布路径，不用时注释掉
     filename: 'js/build.[name].js',   //根据入口文件输出的对应多个文件名,如果需要hash值,加上[hash]
     chunkFilename: 'js/chunk.[id].js'   //chunk生成的配置
   },
@@ -40,30 +40,37 @@ var config = {
     loaders: [
       {
         test: /\.vue$/,
+        exclude: /node_modules/,
         loader: 'vue'
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        loader: 'babel'
       },
       {
         test: /\.json$/,
+        exclude: /node_modules/,
         loader: 'json'
       },
       {
-        test: /\.html$/,
-        loader: 'vue-html'
-      },
-      {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style","css!sass")
+        exclude: /node_modules/,
+        // 编译scss,导出独立css文件并添加浏览器前缀
+        loader: ExtractTextPlugin.extract('style','css!autoprefixer?{"browsers":["last 2 versions", "> 5%", "iOS 7"]}!sass')
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style", "css")
+        exclude: /node_modules/,
+        // 导出独立css文件并添加浏览器前缀
+        loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?{"browsers":["last 2 versions", "> 5%", "iOS 7"]}')
       },
     ]
+  },
+  vue: {
+    loaders:{
+      js:'babel'
+    }
   },
   resolve: {
     // 配置别名，在项目中可缩减引用路径
@@ -89,7 +96,7 @@ var config = {
       minChunks: 2
     }),
     // 单独输出css
-    new ExtractTextPlugin("assets/css/build.[name].css"),
+    new ExtractTextPlugin('assets/css/build.[name].css'),
     // 页面模板输出配置用函数push
   ],
   // webpack-dev-server配置

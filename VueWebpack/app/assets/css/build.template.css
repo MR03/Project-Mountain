@@ -1,2 +1,2 @@
-body{background:#eee;font-size:20px}
+body{background:-webkit-linear-gradient(bottom,#000,#fff);background:linear-gradient(0deg,#000,#fff);font-size:20px;-webkit-transform:translate(10%,10%);transform:translate(10%,10%)}
 /*# sourceMappingURL=build.template.css.map*/
