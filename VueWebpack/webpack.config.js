@@ -6,6 +6,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin
 var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin
+var HotModuleReplacementPlugin = webpack.HotModuleReplacementPlugin
+var NoErrorsPlugin = webpack.NoErrorsPlugin
+var ProvidePlugin = webpack.ProvidePlugin
+var OccurenceOrderPlugin = webpack.optimize.OccurenceOrderPlugin
+var DefinePlugin = webpack.DefinePlugin
 
 // 配置Map,暂无
 var configMap = setSourceMap()
@@ -65,6 +70,7 @@ var config = {
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         loader: "html"
       }
     ]
@@ -83,10 +89,10 @@ var config = {
     extensions: ['', '.vue', '.js', '.json', '.css', '.scss']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),  // 代码热替换, 实验性功能,注意
-    new webpack.NoErrorsPlugin(),   // 报错但不退出webpack进程
+    new HotModuleReplacementPlugin(),  // 代码热替换, 实验性功能,注意
+    new NoErrorsPlugin(),   // 报错但不退出webpack进程
     // 提供全局的变量，在模块中使用无需用require引入
-    new webpack.ProvidePlugin({
+    new ProvidePlugin({
       $: 'jquery',
       Vue: 'vue',
       resource: 'vue-resource'
@@ -167,7 +173,7 @@ if(process.env.NODE_ENV === 'production') {
   // sourcemap格式修改
   config.devtool = '#source-map'
   config.plugins = (config.plugins || []).concat([
-    new webpack.DefinePlugin({
+    new DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
@@ -182,7 +188,7 @@ if(process.env.NODE_ENV === 'production') {
       },
       except: ['$', 'exports', 'require']    //排除关键字
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new OccurenceOrderPlugin()
   ])
 }
 
