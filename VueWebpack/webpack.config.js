@@ -12,7 +12,7 @@ var ProvidePlugin = webpack.ProvidePlugin
 var OccurenceOrderPlugin = webpack.optimize.OccurenceOrderPlugin
 var DefinePlugin = webpack.DefinePlugin
 
-// 配置Map,暂无
+// 配置Map
 var configMap = setSourceMap()
 
 // webpack配置
@@ -35,6 +35,7 @@ var config = {
   },
   // loader配置
   // 简写
+  // babel设置在.babelrc里
   module: {
     loaders: [
       {
@@ -64,9 +65,9 @@ var config = {
         loader: ExtractTextPlugin.extract('style', 'css!autoprefixer?{"browsers":["last 2 versions", "> 5%", "iOS 7"]}')
       },
       {
-        test: /\.(png|jpg|gif|jpeg)$/, // 新文件格式要添加在此
+        test: /\.(png|jpg|gif|jpeg)$/, // 新图片文件格式要添加在此
         exclude: /node_modules/,
-        loader: 'url?limit=10240&name=assets/img/[name].[hash].[ext]' // ext是文件格式,小于10k的转base64
+        loader: 'url?limit=10240&name=assets/img/[name].[ext]?[hash]' // ext是文件格式,小于10k的转base64
       },
       {
         test: /\.html$/,
@@ -75,9 +76,12 @@ var config = {
       }
     ]
   },
+  // vue配置，合并输出css
   vue: {
     loaders:{
-      js:'babel'
+      js: 'babel',
+      css: ExtractTextPlugin.extract('vue-style', 'css'),
+      scss: ExtractTextPlugin.extract('vue-style', 'css!sass')
     }
   },
   resolve: {
@@ -86,7 +90,7 @@ var config = {
       app: path.join(__dirname, 'source/config.app.js')   // 应用定义
     },
     // 补全文件后缀
-    extensions: ['', '.vue', '.js', '.json', '.css', '.scss']
+    extensions: ['', '.vue', '.js', '.json', '.css', '.scss', '.png', '.jpeg', '.jpg']
   },
   plugins: [
     new HotModuleReplacementPlugin(),  // 代码热替换, 实验性功能,注意

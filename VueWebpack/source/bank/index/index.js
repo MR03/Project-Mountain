@@ -1,5 +1,5 @@
 // 模块导入
-import Barheader from '../../components/bar.header'
+import Barheader from '../../public/components/bar.header'
 
 /*
  * 注册参数/DOM地图/状态管理
@@ -39,12 +39,12 @@ spa.hello = function() {
     new Vue({
         el: '#test',
         ready: function(){
-            this.$http.get('/mock.json').then(
-                function (response) {
-                    console.log(response.data)
-                },  function (response) {
-                    // error callback
-                });
+            //this.$http.get('/mock.json').then(
+            //    function (response) {
+            //        console.log(response.data)
+            //    },  function (response) {
+            //        // error callback
+            //    });
         },
         data: {
             msg: 'hello world!'
